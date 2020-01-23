@@ -1,0 +1,614 @@
+Script started on 2020-01-23 16:23:42-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+bklayma1@g7-13:~/tmp/lab0$ ls ~/.ssh
+authorized_keys  id_rsa  id_rsa.pub  known_hosts
+bklayma1@g7-13:~/tmp/lab0$ ssh-copy-id -i bklayma1@remote
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/bklayma1/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+bklayma1@remote's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'bklayma1@remote'"
+and check to make sure that only the key(s) you wanted were added.
+
+bklayma1@g7-13:~/tmp/lab0$ emacs ~/.profile
+bklayma1@g7-13:~/tmp/lab0$ emacs ~umrigar/cs240/bin/student.rc
+bklayma1@g7-13:~/tmp/lab0$ emacs ~/.bashrc
+bklayma1@g7-13:~/tmp/lab0$ emacs ~/.bashrcumrigar/cs240/bin/student.rc/.profile[K
+bklayma1@g7-13:~/tmp/lab0$ ^V[Kssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+bash: ssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git: No such file or directory
+bklayma1@g7-13:~/tmp/lab0$ mkdir -p ~/projects
+bklayma1@g7-13:~/tmp/lab0$ cd ~/projects/
+bklayma1@g7-13:~/projects$ git vlon[K[K[K[Kclov[Kne ^[^?[K[Kssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+Cloning into 'cs240'...
+user@remote.cs.binghamton.edu's password: 
+
+Permission denied, please try again.
+user@remote.cs.binghamton.edu's password: 
+Permission denied, please try again.
+user@remote.cs.binghamton.edu's password: 
+^[^[^Z
+[1]+  Stopped                 git clone ssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+bklayma1@g7-13:~/projects$ git clone ssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/[1Pgit-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/g[1Pit-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/gi[1Pt-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git[1P-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cb@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ck@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+fatal: destination path 'cs240' already exists and is not an empty directory.
+bklayma1@g7-13:~/projects$ git clone ssh://bklayma1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+fatal: destination path 'cs240' already exists and is not an empty directory.
+bklayma1@g7-13:~/projects$ ls ~umrigar/git-repos/
+cs240.git  cs544.git  lab8.git	test.git
+bklayma1@g7-13:~/projects$ ls ~umrigar/git-repos/git clone ssh://bklayma1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+fatal: destination path 'cs240' already exists and is not an empty directory.
+bklayma1@g7-13:~/projects$ ls
+cs240
+bklayma1@g7-13:~/projects$ ls cs240/
+bklayma1@g7-13:~/projects$ ls cs240/[Kgit clone ssh://bklayma1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+fatal: destination path 'cs240' already exists and is not an empty directory.
+bklayma1@g7-13:~/projects$ ls
+cs240
+bklayma1@g7-13:~/projects$ cd cs240/
+bklayma1@g7-13:~/projects/cs240$ ls
+bklayma1@g7-13:~/projects/cs240$ cd ../
+bklayma1@g7-13:~/projects$ ls -la
+total 4
+drwxr-xr-x  3 bklayma1 bklayma1   26 Jan 23 16:28 .
+drwxr-x--x 34 bklayma1 bklayma1 4096 Jan 23 16:29 ..
+drwxr-xr-x  3 bklayma1 bklayma1   25 Jan 23 16:28 cs240
+bklayma1@g7-13:~/projects$ rm -rf cs240/
+bklayma1@g7-13:~/projects$ ls
+bklayma1@g7-13:~/projects$ lsrm -rf cs240/[7Pls -lacd ../[4Plscd cs240/ls[Kgit clone ssh://bklayma1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+Cloning into 'cs240'...
+Enter passphrase for key '/home/bklayma1/.ssh/id_rsa': 
+/home/bklayma1/.bashrc: line 1: /home/umrigar/cs240/bin/student.rc: Permission denied
+remote: Enumerating objects: 217, done.[K
+remote: Counting objects:   0% (1/217)   [Kremote: Counting objects:   1% (3/217)   [Kremote: Counting objects:   2% (5/217)   [Kremote: Counting objects:   3% (7/217)   [Kremote: Counting objects:   4% (9/217)   [Kremote: Counting objects:   5% (11/217)   [Kremote: Counting objects:   6% (14/217)   [Kremote: Counting objects:   7% (16/217)   [Kremote: Counting objects:   8% (18/217)   [Kremote: Counting objects:   9% (20/217)   [Kremote: Counting objects:  10% (22/217)   [Kremote: Counting objects:  11% (24/217)   [Kremote: Counting objects:  12% (27/217)   [Kremote: Counting objects:  13% (29/217)   [Kremote: Counting objects:  14% (31/217)   [Kremote: Counting objects:  15% (33/217)   [Kremote: Counting objects:  16% (35/217)   [Kremote: Counting objects:  17% (37/217)   [Kremote: Counting objects:  18% (40/217)   [Kremote: Counting objects:  19% (42/217)   [Kremote: Counting objects:  20% (44/217)   [Kremote: Counting objects:  21% (46/217)   [Kremote: Counting objects:  22% (48/217)   [Kremote: Counting objects:  23% (50/217)   [Kremote: Counting objects:  24% (53/217)   [Kremote: Counting objects:  25% (55/217)   [Kremote: Counting objects:  26% (57/217)   [Kremote: Counting objects:  27% (59/217)   [Kremote: Counting objects:  28% (61/217)   [Kremote: Counting objects:  29% (63/217)   [Kremote: Counting objects:  30% (66/217)   [Kremote: Counting objects:  31% (68/217)   [Kremote: Counting objects:  32% (70/217)   [Kremote: Counting objects:  33% (72/217)   [Kremote: Counting objects:  34% (74/217)   [Kremote: Counting objects:  35% (76/217)   [Kremote: Counting objects:  36% (79/217)   [Kremote: Counting objects:  37% (81/217)   [Kremote: Counting objects:  38% (83/217)   [Kremote: Counting objects:  39% (85/217)   [Kremote: Counting objects:  40% (87/217)   [Kremote: Counting objects:  41% (89/217)   [Kremote: Counting objects:  42% (92/217)   [Kremote: Counting objects:  43% (94/217)   [Kremote: Counting objects:  44% (96/217)   [Kremote: Counting objects:  45% (98/217)   [Kremote: Counting objects:  46% (100/217)   [Kremote: Counting objects:  47% (102/217)   [Kremote: Counting objects:  48% (105/217)   [Kremote: Counting objects:  49% (107/217)   [Kremote: Counting objects:  50% (109/217)   [Kremote: Counting objects:  51% (111/217)   [Kremote: Counting objects:  52% (113/217)   [Kremote: Counting objects:  53% (116/217)   [Kremote: Counting objects:  54% (118/217)   [Kremote: Counting objects:  55% (120/217)   [Kremote: Counting objects:  56% (122/217)   [Kremote: Counting objects:  57% (124/217)   [Kremote: Counting objects:  58% (126/217)   [Kremote: Counting objects:  59% (129/217)   [Kremote: Counting objects:  60% (131/217)   [Kremote: Counting objects:  61% (133/217)   [Kremote: Counting objects:  62% (135/217)   [Kremote: Counting objects:  63% (137/217)   [Kremote: Counting objects:  64% (139/217)   [Kremote: Counting objects:  65% (142/217)   [Kremote: Counting objects:  66% (144/217)   [Kremote: Counting objects:  67% (146/217)   [Kremote: Counting objects:  68% (148/217)   [Kremote: Counting objects:  69% (150/217)   [Kremote: Counting objects:  70% (152/217)   [Kremote: Counting objects:  71% (155/217)   [Kremote: Counting objects:  72% (157/217)   [Kremote: Counting objects:  73% (159/217)   [Kremote: Counting objects:  74% (161/217)   [Kremote: Counting objects:  75% (163/217)   [Kremote: Counting objects:  76% (165/217)   [Kremote: Counting objects:  77% (168/217)   [Kremote: Counting objects:  78% (170/217)   [Kremote: Counting objects:  79% (172/217)   [Kremote: Counting objects:  80% (174/217)   [Kremote: Counting objects:  81% (176/217)   [Kremote: Counting objects:  82% (178/217)   [Kremote: Counting objects:  83% (181/217)   [Kremote: Counting objects:  84% (183/217)   [Kremote: Counting objects:  85% (185/217)   [Kremote: Counting objects:  86% (187/217)   [Kremote: Counting objects:  87% (189/217)   [Kremote: Counting objects:  88% (191/217)   [Kremote: Counting objects:  89% (194/217)   [Kremote: Counting objects:  90% (196/217)   [Kremote: Counting objects:  91% (198/217)   [Kremote: Counting objects:  92% (200/217)   [Kremote: Counting objects:  93% (202/217)   [Kremote: Counting objects:  94% (204/217)   [Kremote: Counting objects:  95% (207/217)   [Kremote: Counting objects:  96% (209/217)   [Kremote: Counting objects:  97% (211/217)   [Kremote: Counting objects:  98% (213/217)   [Kremote: Counting objects:  99% (215/217)   [Kremote: Counting objects: 100% (217/217)   [Kremote: Counting objects: 100% (217/217), done.[K
+remote: Compressing objects:   0% (1/208)   [Kremote: Compressing objects:   1% (3/208)   [Kremote: Compressing objects:   2% (5/208)   [Kremote: Compressing objects:   3% (7/208)   [Kremote: Compressing objects:   4% (9/208)   [Kremote: Compressing objects:   5% (11/208)   [Kremote: Compressing objects:   6% (13/208)   [Kremote: Compressing objects:   7% (15/208)   [Kremote: Compressing objects:   8% (17/208)   [Kremote: Compressing objects:   9% (19/208)   [Kremote: Compressing objects:  10% (21/208)   [Kremote: Compressing objects:  11% (23/208)   [Kremote: Compressing objects:  12% (25/208)   [Kremote: Compressing objects:  13% (28/208)   [Kremote: Compressing objects:  14% (30/208)   [Kremote: Compressing objects:  15% (32/208)   [Kremote: Compressing objects:  16% (34/208)   [Kremote: Compressing objects:  17% (36/208)   [Kremote: Compressing objects:  18% (38/208)   [Kremote: Compressing objects:  19% (40/208)   [Kremote: Compressing objects:  20% (42/208)   [Kremote: Compressing objects:  21% (44/208)   [Kremote: Compressing objects:  22% (46/208)   [Kremote: Compressing objects:  23% (48/208)   [Kremote: Compressing objects:  24% (50/208)   [Kremote: Compressing objects:  25% (52/208)   [Kremote: Compressing objects:  26% (55/208)   [Kremote: Compressing objects:  27% (57/208)   [Kremote: Compressing objects:  28% (59/208)   [Kremote: Compressing objects:  29% (61/208)   [Kremote: Compressing objects:  30% (63/208)   [Kremote: Compressing objects:  31% (65/208)   [Kremote: Compressing objects:  32% (67/208)   [Kremote: Compressing objects:  33% (69/208)   [Kremote: Compressing objects:  34% (71/208)   [Kremote: Compressing objects:  35% (73/208)   [Kremote: Compressing objects:  36% (75/208)   [Kremote: Compressing objects:  37% (77/208)   [Kremote: Compressing objects:  38% (80/208)   [Kremote: Compressing objects:  39% (82/208)   [Kremote: Compressing objects:  40% (84/208)   [Kremote: Compressing objects:  41% (86/208)   [Kremote: Compressing objects:  42% (88/208)   [Kremote: Compressing objects:  43% (90/208)   [Kremote: Compressing objects:  44% (92/208)   [Kremote: Compressing objects:  45% (94/208)   [Kremote: Compressing objects:  46% (96/208)   [Kremote: Compressing objects:  47% (98/208)   [Kremote: Compressing objects:  48% (100/208)   [Kremote: Compressing objects:  49% (102/208)   [Kremote: Compressing objects:  50% (104/208)   [Kremote: Compressing objects:  51% (107/208)   [Kremote: Compressing objects:  52% (109/208)   [Kremote: Compressing objects:  53% (111/208)   [Kremote: Compressing objects:  54% (113/208)   [Kremote: Compressing objects:  55% (115/208)   [Kremote: Compressing objects:  56% (117/208)   [Kremote: Compressing objects:  57% (119/208)   [Kremote: Compressing objects:  58% (121/208)   [Kremote: Compressing objects:  59% (123/208)   [Kremote: Compressing objects:  60% (125/208)   [Kremote: Compressing objects:  61% (127/208)   [Kremote: Compressing objects:  62% (129/208)   [Kremote: Compressing objects:  63% (132/208)   [Kremote: Compressing objects:  64% (134/208)   [Kremote: Compressing objects:  65% (136/208)   [Kremote: Compressing objects:  66% (138/208)   [Kremote: Compressing objects:  67% (140/208)   [Kremote: Compressing objects:  68% (142/208)   [Kremote: Compressing objects:  69% (144/208)   [Kremote: Compressing objects:  70% (146/208)   [Kremote: Compressing objects:  71% (148/208)   [Kremote: Compressing objects:  72% (150/208)   [Kremote: Compressing objects:  73% (152/208)   [Kremote: Compressing objects:  74% (154/208)   [Kremote: Compressing objects:  75% (156/208)   [Kremote: Compressing objects:  76% (159/208)   [Kremote: Compressing objects:  77% (161/208)   [Kremote: Compressing objects:  78% (163/208)   [Kremote: Compressing objects:  79% (165/208)   [Kremote: Compressing objects:  80% (167/208)   [Kremote: Compressing objects:  81% (169/208)   [Kremote: Compressing objects:  82% (171/208)   [Kremote: Compressing objects:  83% (173/208)   [Kremote: Compressing objects:  84% (175/208)   [Kremote: Compressing objects:  85% (177/208)   [Kremote: Compressing objects:  86% (179/208)   [Kremote: Compressing objects:  87% (181/208)   [Kremote: Compressing objects:  88% (184/208)   [Kremote: Compressing objects:  89% (186/208)   [Kremote: Compressing objects:  90% (188/208)   [Kremote: Compressing objects:  91% (190/208)   [Kremote: Compressing objects:  92% (192/208)   [Kremote: Compressing objects:  93% (194/208)   [Kremote: Compressing objects:  94% (196/208)   [Kremote: Compressing objects:  95% (198/208)   [Kremote: Compressing objects:  96% (200/208)   [Kremote: Compressing objects:  97% (202/208)   [Kremote: Compressing objects:  98% (204/208)   [Kremote: Compressing objects:  99% (206/208)   [Kremote: Compressing objects: 100% (208/208)   [Kremote: Compressing objects: 100% (208/208), done.[K
+Receiving objects:   0% (1/217)   Receiving objects:   1% (3/217)   Receiving objects:   2% (5/217)   Receiving objects:   3% (7/217)   Receiving objects:   4% (9/217)   Receiving objects:   5% (11/217)   Receiving objects:   6% (14/217)   Receiving objects:   7% (16/217)   Receiving objects:   8% (18/217)   Receiving objects:   9% (20/217)   Receiving objects:  10% (22/217)   Receiving objects:  11% (24/217)   Receiving objects:  12% (27/217)   Receiving objects:  13% (29/217)   Receiving objects:  14% (31/217)   Receiving objects:  15% (33/217)   Receiving objects:  16% (35/217)   Receiving objects:  17% (37/217)   Receiving objects:  18% (40/217)   Receiving objects:  19% (42/217)   Receiving objects:  20% (44/217)   Receiving objects:  21% (46/217)   Receiving objects:  22% (48/217)   Receiving objects:  23% (50/217)   Receiving objects:  24% (53/217)   Receiving objects:  25% (55/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  26% (57/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  27% (59/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  28% (61/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  29% (63/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  30% (66/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  31% (68/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  32% (70/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  33% (72/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  34% (74/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  35% (76/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  36% (79/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  37% (81/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  38% (83/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  39% (85/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  40% (87/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  41% (89/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  42% (92/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  43% (94/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  44% (96/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  45% (98/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  46% (100/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  47% (102/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  48% (105/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  49% (107/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  50% (109/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  51% (111/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  52% (113/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  53% (116/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  54% (118/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  55% (120/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  56% (122/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  57% (124/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  58% (126/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  59% (129/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  60% (131/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  61% (133/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  62% (135/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  63% (137/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  64% (139/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  65% (142/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  66% (144/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  67% (146/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  68% (148/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  69% (150/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  70% (152/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  71% (155/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  72% (157/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  73% (159/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  74% (161/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  75% (163/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  76% (165/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  77% (168/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  78% (170/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  79% (172/217), 2.32 MiB | 4.61 MiB/s   remote: Total 217 (delta 92), reused 0 (delta 0)[K
+Receiving objects:  80% (174/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  81% (176/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  82% (178/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  83% (181/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  84% (183/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  85% (185/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  86% (187/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  87% (189/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  88% (191/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  89% (194/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  90% (196/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  91% (198/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  92% (200/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  93% (202/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  94% (204/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  95% (207/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  96% (209/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  97% (211/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  98% (213/217), 2.32 MiB | 4.61 MiB/s   Receiving objects:  99% (215/217), 2.32 MiB | 4.61 MiB/s   Receiving objects: 100% (217/217), 2.32 MiB | 4.61 MiB/s   Receiving objects: 100% (217/217), 3.07 MiB | 5.31 MiB/s, done.
+Resolving deltas:   0% (0/92)   Resolving deltas:   2% (2/92)   Resolving deltas:   3% (3/92)   Resolving deltas:   4% (4/92)   Resolving deltas:   6% (6/92)   Resolving deltas:   9% (9/92)   Resolving deltas:  14% (13/92)   Resolving deltas:  29% (27/92)   Resolving deltas:  33% (31/92)   Resolving deltas:  34% (32/92)   Resolving deltas:  38% (35/92)   Resolving deltas:  41% (38/92)   Resolving deltas:  42% (39/92)   Resolving deltas:  45% (42/92)   Resolving deltas:  47% (44/92)   Resolving deltas:  52% (48/92)   Resolving deltas:  53% (49/92)   Resolving deltas:  54% (50/92)   Resolving deltas:  55% (51/92)   Resolving deltas:  56% (52/92)   Resolving deltas:  57% (53/92)   Resolving deltas:  60% (56/92)   Resolving deltas:  61% (57/92)   Resolving deltas:  63% (58/92)   Resolving deltas:  65% (60/92)   Resolving deltas:  72% (67/92)   Resolving deltas:  75% (69/92)   Resolving deltas:  81% (75/92)   Resolving deltas:  82% (76/92)   Resolving deltas:  83% (77/92)   Resolving deltas:  84% (78/92)   Resolving deltas:  85% (79/92)   Resolving deltas:  88% (81/92)   Resolving deltas:  97% (90/92)   Resolving deltas: 100% (92/92)   Resolving deltas: 100% (92/92), done.
+bklayma1@g7-13:~/projects$ cd ~
+bklayma1@g7-13:~$ ln -s projects/cs240/
+bklayma1@g7-13:~$ ls
+ 8.21.19.txt		  Documents		    t1.c
+'Adder Subtractor.circ'   Downloads		    T1.s
+ Arduino		  git-repos		    Templates
+ bin-c.log		 'K-Map Practice.circ'	   '#test.c#'
+ cat.log		  lab			    tmp
+ cs120			  ls.log		    v1.s
+ cs220			  Music			    v.c
+ Cs220			  Pictures		    Videos
+ cs240			 'Practice Minterms.circ'   x.c
+ Desktop		  projects
+ dir			  Public
+bklayma1@g7-13:~$ lsn -s projects/cs240/ .
+ln: failed to create symbolic link './cs240': File exists
+bklayma1@g7-13:~$ ls ~/cs240
+announce.html  docs	      hws	  labs	    README.md
+announce.umt   exams-quizzes  index.html  misc	    slides
+assets	       exercises      index.umt   projects  umt.make
+bklayma1@g7-13:~$ cd ~/git-repos/cs240
+bash: cd: /home/bklayma1/git-repos/cs240: No such file or directory
+bklayma1@g7-13:~$ cd ~[K[K[K[Kls ~/git-repos/
+lab8.git
+bklayma1@g7-13:~$ ls
+ 8.21.19.txt		  Documents		    t1.c
+'Adder Subtractor.circ'   Downloads		    T1.s
+ Arduino		  git-repos		    Templates
+ bin-c.log		 'K-Map Practice.circ'	   '#test.c#'
+ cat.log		  lab			    tmp
+ cs120			  ls.log		    v1.s
+ cs220			  Music			    v.c
+ Cs220			  Pictures		    Videos
+ cs240			 'Practice Minterms.circ'   x.c
+ Desktop		  projects
+ dir			  Public
+bklayma1@g7-13:~$ cd ..
+bklayma1@g7-13:/home$ ls
+aabrey1      cwetzel2	       jlevin38     nate	       slin111
+aagraw11     cwickiz1	       jli452	    nayan1	       sliu
+aaharon1     cwong11	       jli461	    naydin2	       sliu22
+aakin1	     cyang58	       jliebe12     nayef	       slnu1
+aalamer1     cybersec	       jlin129	    nbellam1	       sloscal1
+aambilw1     czhang27	       jlin269	    nbethan1	       smahmud2
+aamer	     czhou5	       jliu212	    nboeker1	       smanne1
+aandhar2     dallen9	       jloew	    nboyd3	       smartpark
+aanveka2     danzelo1	       jlouie2	    nburzyn1	       smasara1
+aashraf1     davehall	       jlu56	    ncilsal2	       smason8
+abalkum      davehallldap      jmcmah10     ncorvi1	       smestry1
+abelmna1     davidl	       jmeguir1     ndagost1	       smircha1
+abeltre1     dbalkan	       jmessin2     ndedios1	       smoore4
+abet	     dbottch1	       jmitche6     ndefeli2	       smorram1
+abetrev      dchhabd1	       jmohrma1     ndeshmu1	       smorri11
+abettest     dcordei1	       jmontgo4     NFS11	       smukka1
+abhagwa1     ddas1	       jmontgo5     ngarg3	       snagarak1
+abharan1     ddefazi1	       jocampo1     ngawade1	       snatu1
+abhat3	     ddemicc1	       josgood2     ngoyal1	       snimhan1
+abixby1      ddesai9	       joyedap1     ngreene5	       software
+abloodg1     ddhuri1	       jpan33	    ngrosso1	       soshay1
+abommin1     ddoddag1	       jparikh1     ngujar1	       sozdemi2
+abozkur1     devtyushkin       jpark349     ngupta4	       sozden1
+aburke5      dfan2	       jphilem1     nhofman1	       spalshe1
+acanino1     dfeinma1	       jquezad1     nilton	       spark215
+acarter6     dferna15	       jramli1	    nkimura	       sparra2
+aceylan1     dfitzge3	       jrandha1     nkokne1	       sparuch1
+achaud12     dfletch1	       jraskin3     nkommur1	       spatwa1
+achaud15     dgarden1	       jren18	    nli19	       spradha1
+achaudh9     dgaviol1	       jrising1     nmarman1	       sraghav2
+achavan4     dgeorge7	       jrodr151     nmishra1	       srally1
+achen172     dglazer1	       jrosen46     nmonast1	       srao12
+acheseb1     dgleaso2	       jrosen52     npatel62	       srapell2
+achhabr1     dgouvou1	       jrosswog     npatel64	       sraut1
+achotal1     dgriffith1        jrothbe3     npatil5	       srazak
+aclancy1     dharper1	       jryder	    npelleg1	       srevade1
+acmweb	     dhintz1	       jsanch49     npeters1	       sriram
+acohen13     dhuang43	       jschmit2     npoda1	       srupnar1
+acohen89     dickman	       jseiber1     nreisch1	       ss1
+acullo1      dima	       jshaikh1     nrogosz1	       ssahabh1
+acurrer1     dirwin1	       jsharke	    nruizto1	       ssahani1
+adesu1	     djacobs7	       jsiegel6     nsamant1	       ssalick1
+adhruv1      djagtap1	       jsimon7	    nsane3885	       ssamate1
+adilliw1     djhender	       jsimone1     nsharm11	       ssanaga1
+admread      djwillia	       jskovro1     nstecyn1	       ssankhe1
+adnan	     dkim17	       jstanle2     ntinen	       ssarems1
+adogana1     dkunkel	       jstein27     nuruchi1	       ssawwan1
+advweb	     dlam15	       jsteinberg   nvallej1	       ssaxena3
+aeghbal1     dli114	       jstpier1     nvander1	       ssayyad1
+aeker1	     dlockye1	       jstrohm1     nwallin1	       ssenkes1
+aevans1      dlundgren	       jstruck1     nxu4	       ssenthil
+afarrel3     dmacejk1	       jsu6	    oakgrove	       sshah90
+afelsen3     dmaisur1	       jsuhr2	    oalamut1	       ssharm53
+afergus6     dmeisel1	       jsutton3     ocinar1	       sshin
+aferrei3     dmosess1	       jswift3	    ocummin1	       ssing117
+agarcia3     dmu1	       jszacha1     oertan1	       ssingh99
+agarcia4     dnair3	       jterner1     ohatwal1	       ssivaku1
+agarrit1     dnarasi1	       jthakka1     oiffert1	       ssultan6
+ageorg39     doneal1	       jthoma64     okilic1	       sswetha
+agermos1     dpan8	       jtricoz1     okircan1	       stammis1
+agill10      dpaskal1	       jvail1	    okulkar4	       stapadi1
+agim1	     dpatel39	       jwang36	    omavitu1	       stapkee1
+agjonba1     dpatil2	       jweacho1     onur	       star
+agoetz3      dpaul12	       jweng8	    oolojed1	       steflik
+agoncal2     dpetzol2	       jwetzel1     optiweb	       sthorat2
+agrace2      dpham4	       jwhitak4     osanile1	       sthorat3
+agreenb3     dreyes12	       jwhite48     osayili1	       stoke1
+agross22     drichards1        jwill128     osnetsvn	       studio
+aguarin3     drseuss	       jwolter1     osweb	       studio.nobackup
+agujara1     dryan6	       jwong123     oudawan1	       sunyibo
+agummal1     dschroe1	       jwoyevo1     pacts	       svibhut1
+aheffer1     dschust2	       jwu166	    pdeshpa2	       svishwa2
+ahoriha1     dskoda1	       jwu6	    pdeshpa3	       swaghma1
+ajain13      dtelson1	       jyadav1	    pdexter1	       swang130
+ajain35      dthakur1	       jyao	    pfeng1	       swang206
+ajasper      dthatch1	       jyao6	    phao3	       swang214
+ajimen29     dtierne2	       jyoo45	    phdweb	       sweimer1
+ajinete1     dtimmer1	       jzee2019     phil	       syarram1
+ajohan78     dtownle1	       jzhang	    phmsvn	       syeung10
+ajoshi1      dwalcot1	       kagyapo1     pixelcode	       sysadmin
+akadu1	     dwalter2	       kandrad2     pkandhi1	       syudhoa1
+akafore1     dwang84	       kang	    pkapoor2	       szaman5
+akaleli1     dyang32	       kartik	    pkariya1	       szhai2
+akancha1     dzhang46	       kbahulkar    pkarthi1	       szhan188
+akapur4      eadler1	       kbaumst2     pkaushi1	       szhang
+akayhan1     eaktas	       kchanda2     pkulkar3	       szhu5
+akenjal1     ealdreabi	       kchings1     plnu2	       tabdazi1
+akenned8     eates1	       kchiu	    plonkar1	       tagrawa1
+akhot1	     ebasan1	       kcitlak1     pmadden	       talon1
+akulka17     ebaule1	       kcox4	    pmaino1	       tameesh
+akunz3	     ebenz1	       kdamodh1     pmcgoug1	       tbabako1
+alal2	     ebonzek1	       kdayala1     pokurog1	       tballin1
+alee884      ebreban1	       kdeshpa5     ppagar1	       tbarten1
+alee889      ecetine2	       kdh	    pparekh1	       tbartens
+alevenb1     eciraco1	       kdoughe2     pparmar2	       tbhagoo1
+aliang30     ecodrin1	       kdublin1     ppatel3	       tbrentar
+aliu81	     ecoolid1	       kfang2	    ppatel85	       tbrown57
+alongo5      edede1	       kferna11     ppatel95	       tchan29
+amadnic2     edurney1	       kgaffne1     ppatil7	       tcheng8
+amahaja4     eelliot4	       kgajwan1     ppawar3	       tchu4
+amathe13     eetheri1	       kgell1	    ppriyam1	       tdevadit
+amccart9     eezor1	       kghose	    pqi1	       test
+amchugh2     efergus3	       kgiampo1     prasanna	       tfan4
+amcmanu4     egeorge8	       kgoel1	    preddir1	       tfasano1
+ameya	     ehaddad1	       kgulve1	    preddyl1	       tgabrie2
+amillik1     ehuang35	       khaled	    project	       tgilber5
+amishr11     einal1	       khanson3     projects	       tgisi1
+anaik4	     eisikte1	       kharras	    projects.nobackup  tgonzag1
+anand	     ejang1	       khenneb1     psaha4	       tgrusze1
+anayak2      elakic1	       khill9	    psaha5	       tgundel1
+aneeman      elancer1	       khirana1     psahu1	       tgurung2
+aneesh	     elanger4	       khsieh3	    psammon1	       thalai1
+anikam1      elurye1	       kjayapr1     psehraw1	       thoa1
+ankit	     emarang1	       kjones47     psemegr1	       thoelze1
+aorella1     emattison	       kkasara1     pshang1	       thorowi1
+apadman1     emcnier2	       kkoka1	    pshrest1	       thung1
+apatel	     emergepl	       kkulkar3     psilves1	       thur1
+apateri1     emoelle2	       kkumawa1     psin	       ticket
+aperlow1     engage	       kkurtz	    psingh43	       tkapadi1
+aplotko1     epalani1	       klewis24     psinha1	       tkatz1
+aputnal1     epona	       kliu20	    ptanpur1	       tkump1
+aquach1      erdil	       kmahmou1     ptezcan1	       tli16
+arahma	     eserdar1	       kmanriq1     pthakka4	       tliu76
+aravind      eshapir9	       kmore4	    ptilley1	       tloja1
+arayala1     estern7	       kmoshie1     puppula1	       tlucher1
+arizzo10     et		       kna3	    pvalenta	       tman1
+arohill1     eterrac1	       knadeem1     pwakodi1	       tmarder1
+artir	     etilden	       knip1	    pwalke1	       tmatusz1
+asahai1      evorosh1	       koneill7     pwang22	       tpmsim
+asawant2     eway1	       kong	    pweb	       tquiles1
+asawwal1     eyalcin1	       kpathak1     pwilber1	       trecupe1
+aschwa30     eyavasc1	       kphill11     pyang	       tredban1
+aselvan1     ezagnus1	       kpierce5     pzhao3	       tsharma6
+aservet1     faculty	       kragava1     qjia4	       tshores1
+asharif1     faculty.nobackup  kramana1     qliang8	       tsrivas1
+asharm14     facweb	       kruan1	    qxiong1	       tstache1
+asharm47     fafram1	       ksaini1	    qzhang61	       tsteige1
+ashimiz1     falmato1	       ksawant1     raj		       tton1
+ashimiz2     fantona1	       ksingh35     rambast1	       tunsel1
+ashinde3     fbrione1	       ksingh42     ramsurat1	       twang61
+ashiral1     fchai1	       kstigle1     rbadada1	       twellin1
+asing134     femmanu1	       ksun1	    rberlan1	       twilli81
+astensl1     find	       kthote1	    rbey1	       twojtuk1
+astjohn      fitz	       ktiao1	    rbhowmik	       twrigh13
+astrong3     fmri	       kusovski     rblazej1	       txu
+athaile1     foreman	       kvartak2     rchen102	       tzhao7
+athakur2     forweb	       kwadeka1     rcheung5	       ubalci1
+atiwari3     fscott1	       kwallac6     rchowda1	       udeshpa1
+atom2	     ftahmas1	       kwan2	    rcomerf1	       uergash1
+atweedy1     gadu	       kwill113     rdelval1	       ukayaal1
+auy2	     gaic	       kwrite1	    rdhuri1	       umrigar
+avanroi1     gaming	       kyan12	    reckert	       upe
+avenetos1    garrison	       kyi3	    regress	       upuvvad1
+avinan	     gbejara1	       lander	    remadm	       urahman1
+aviswan3     gbenyis1	       larson	    rerinfo1	       usatlas1
+avora4	     gbiyani1	       lcanale2     reswara1	       usatlas2
+awalley1     gchen21	       lcoats1	    reu		       uscms01
+awaring1     gcrl	       ldo	    reu09	       uscms02
+awest3	     geert	       legion	    reustac1	       vbadagu1
+awilso16     ggonzal9	       legion2	    rfujita1	       vbakshi1
+aworm1	     ghlp	       lenny	    rgeary1	       vbandew1
+ayenugu1     ghose	       levliya1     rgirong1	       vbeauge1
+ayeung9      ghyan	       lgustaf1     rgollap1	       vbhosal1
+azaccag1     gkumar1	       lhsueh1	    rgonzal	       vchaska1
+balandi1     gliu10	       lijun	    rgunczl1	       vdevara2
+baltar	     globus	       liymn	    rhainin1	       vinkolar
+barry	     gmore3	       lkendal1     richardsond        vkatrag2
+bbeeral1     gmyers	       lkollur1     rimai1	       vkumari1
+bbrea1	     grad	       llasurd1     rimbro1	       vlsiweb
+bbuchan1     grad.nobackup     llu17	    rjoseph3	       vmalcev1
+bchadha1     grase	       lmanwan1     rkaur21	       vmunish1
+bchen111     grattih1	       lok	    rkelley2	       vparekh1
+bchen114     gredozu1	       lornawel     rklein14	       vragovs1
+bchoudh4     grid	       lrosenb1     rkugver1	       vsingh2
+bchrobot     gridex	       lsc01	    rkulka22	       vtran6
+bcohada1     gridweb	       lsearsangel  rlangen1	       vyadav1
+bdeore1      gsivana1	       lsunny1	    rlevass1	       watadv
+bdevrie1     gsoweb	       ltaveir1     rlotlik1	       wbennet1
+bdikmen1     gsteinb1	       lwisdom1     rmarvin1	       wcornej1
+bdobriy1     gstodda1	       lxu31	    rmccaul1	       wdai
+beaumont     gtan	       lyadagi1     rmccorm4	       wduan1
+bestus1      gtaskin1	       lyalcin1     rmei6	       weinscgg
+bgrant11     guydosh	       lyu	    rmeliti1	       welu
+bharari1     gvalenc2	       maber1	    rmittal1	       whuebne1
+bhogan9      gwang23	       maguila2     rmusale1	       wkeller3
+bizar1	     gwilber1	       mallingt     rnatara2	       wkenned1
+bkalayc1     gwint1	       maple	    robotics	       wleng1
+bkeuria1     gyerrad1	       marsene1     rorourk2	       wliu5
+bklayma1     hahuja1	       marss86	    rosew	       wliu68
+blackburn    halzein1	       marysomma1   rpena9	       wmeng
+blee75	     haygan1	       matlab	    rpokhar1	       wni
+blewis9      hbagdi1	       maziz3	    rquinli1	       wyang
+bliebe1      hbalu1	       mbagonis5    rrausha1	       wzhangc1
+bliew1	     hbrown10	       mbayhoc1     rriess1	       wzhao1
+blong	     hburkha1	       mbellus1     rriley	       xchen269
+blu20	     hburns3	       mbradsh3     rsaptar2	       xdeng7
+bmarti38     hchen113	       mcaldro1     rsaraf1	       xgao1
+bni2	     hdesai1	       mcetin3	    rsaxena3	       xgarcia2
+bpoliks      head	       mchen12	    rsayers1	       xguo38
+bpreise1     hfu11	       mcohen76     rshahul1	       xianli
+brathke1     hgarg1	       mcole8	    rshand1	       xli180
+brichar7     hjia3	       mdamiat1     rsharpe1	       xli210
+brobergj     hkang	       mdang1	    rshendl1	       xliang24
+brood	     hkilic2	       mdelgad1     rsmith23	       xluo22
+brose7	     hkulkar1	       mdevend1     rsomapu1	       xpeng
+brothbe3     hlauder1	       mdobies1     rsumit	       xshi1
+bsadhna1     hlum1	       meng	    rtes-mc	       xu_haohang
+bsaliba1     hmahaja1	       merwyn	    rthaiva1	       xwang247
+bsendir1     hmanda1	       mfarrel8     rthete1	       xwei
+bstace1      hmense1	       mfata3	    rwang4	       xwu30
+bsweet2      hmulla1	       mforcella    rwright3	       xwu9
+btas1	     hnikam1	       mfoster7     ryder	       xyu44
+btaylor1     hoeppner	       mgadi1	    rzaveri1	       xzhan215
+bugzilla     hpacher1	       mghayoumi    rzhang	       xzhan244
+bvuduth1     hparmar1	       mghosal1     rzheng14	       xzhang7
+bwang2	     hpham3	       mgogats1     sacosta8	       xzhang99
+bweiss1      hqin4	       mgomez4	    sagrawa4	       yanwang
+bwong28      hrasal1	       mgovinda     sahire1	       yaoliu
+byan2	     hribic1	       mgreen	    salqaht1	       ybai4
+byang20      hrode1	       mgupta3	    sameer	       ychandi1
+bzee1	     hroeder1	       mhems1	    samgrid	       ychen161
+bzhang73     hsloan1	       mhubli1	    samiri1	       ychen415
+cadathlon    hstein6	       mike	    samoore	       ydaggup1
+canlin	     huilu	       millerti     santobu	       yding25
+capsweb      hvadoda1	       mis	    sarnold4	       yegilme1
+cauchym      hwang161	       mjain8	    saswani1	       yguo71
+cayachi1     hwu71	       mjiang39     satoshi	       yhan1
+cazukwu1     hxiao4	       mjones46     saurabh	       yhu15
+cbanvar1     hyang51	       mkatz37	    sazarae1	       yhu92
+cbartol1     hyi2	       mkayaalp     sbadri1	       yhuan171
+cbehan1      hyingbo1	       mkhasaw1     sbailey6	       yingsun
+cbond2	     hzeng	       mkhoman1     sbankar1	       yjadhav1
+cbrugna1     hzhu1	       mkyea1	    sbaptis2	       yjagda1
+cchen17      hzou1	       mlatypo1     sbdc	       yjagdal1
+cchen8	     ids-web	       mlewis	    sbengal2	       yjiang5
+cchiauz1     igomez1	       mlin71	    sbettad1	       yjun1
+cchilds1     igoreli1	       mliu56	    sblack3	       ykucuk1
+cchoi20      ikilinc1	       mlrg	    sboggar1	       yli241
+ccipp1	     iliano	       mmadhan1     sbohn1	       yli418
+ccloss1      indangered        mmallow1     sbommal1	       ylin
+ccui5	     intrieri	       mmangal1     sbourke1	       ylin145
+ccui7	     iperdom1	       mmillar3     sbravo1	       ylin153
+cdaware1     isarfat1	       mmille60     scanavan	       yliu158
+cdf	     israat	       mmuffol1     scao16	       yliu377
+cdimegl1     ivdgl	       mnorton1     schaska1	       yliu401
+cdonovi1     iwobi	       mnussba2     schaud16	       ylu0
+cdowdle1     jabbott3	       mobicom2016  schen232	       ypan13
+cfiutak1     jalbert5	       molavar1     schinch1	       ypan3
+cglashe1     jalexa10	       monalisa     scogay1	       ypatel9
+cgopina1     jamjoom	       mozkaya1     scraver	       ysaglam1
+cguo9	     jarnold5	       mozsoy	    sdenman1	       yshinga1
+cgupta	     jarora2	       mparker4     sdesai12	       ysun106
+cguvenc1     jawayan1	       mparlaw1     sdesai13	       ysun59
+chanusa      jbabbit1	       mpatel43     sdesai14	       ytang4
+chao	     jbarkov1	       mpecha2	    sdesai9	       ytang43
+chart7	     jbarret3	       mperaza1     sdhanas1	       ytao15
+cherna19     jbednasz	       mpinz1	    sdhanek1	       yteng1
+chouck	     jberg3	       mplohet1     sdias1	       yxu
+chuang31     jburns11	       mpressi1     sdinc1	       yxu133
+ciweb	     jcadett1	       mquinn5	    sdoddam1	       yyang200
+cjenkin1     jcen3	       mreale	    sdoski1	       yyang202
+cjian1	     jchen249	       mreid9	    sdss	       yzhan202
+cjiang21     jchen441	       mriver25     secarch	       yzhan401
+cjoaqui1     jcipoll1	       mrldata	    secweb	       yzhang25
+cjones43     jcoddin1	       mrosato	    sforker1	       yzhang8
+ckshirs1     jcope1	       mroshid1     sgallag3	       zaugust1
+ckulkar2     jcurtin4	       mrotlev1     sgampal1	       zbayrak1
+clandgr1     jdaley2	       mruffne1     sgcpu	       zdu
+cli22	     jdeflor1	       msarica1     sgokarn1	       zfadika
+clin18	     jderder1	       mschult7     sgowdra1	       zfield2
+clindsa1     jdiaz48	       mschutz2     sgreenb8	       zfrankl1
+cliu118      jditkof1	       msha	    sgrimm2	       zge3
+clow1	     jdua1	       mshah38	    sgupta38	       zguo
+cmachaf1     jedouar1	       mshakar1     shalaha1	       zhangy
+cmcborr1     jeimer1	       msheldo2     shan	       zhangying
+cmmiller     jeipp1	       mshelto3     shane	       zhongfei
+cmontgo1     jelwell	       msim	    shanson1	       zhuang28
+cmoore2      jelwell1	       mslocum1     shanuma1	       zhuang80
+cmunro1      jeymer1	       mspano2	    shegde1	       ziegler
+colinb	     jfeinla1	       msweb	    shuhong	       zkabari1
+cpandit1     jferrin1	       msyed3	    siftekh1	       zkazemi1
+cpingal1     jgallia1	       mtan23	    sigda	       zli137
+cquelle3     jgoldb42	       mthakka2     simple	       zli160
+cs350	     jgumien1	       mthanga1     simplepath	       zli191
+cs441-test   jgwak1	       mtullo1	    sjain13	       zli192
+cs540sw      jhaller1	       munsal1	    sjanasw1	       zlin2
+csabet01_oc  jhart3	       mvallad1     sjoshi14	       zlin89
+csabet02_oc  jhartog1	       mvangor3     skadiri1	       zmarian1
+csabet03_oc  jhastie1	       mvani1	    skaldat1	       zqiu4
+cschnei3     jherath1	       mwarfor1     skalidi1	       zseymou1
+csherla1     jhertik1	       mweb	    skbu007	       zshu1
+csiegle1     jhicks	       mwerner7     skolhap1	       zwang252
+csimak1      jhuyghu1	       myan28	    skonath1	       zwen7
+cs-ipc	     jjacob44	       myuksek1     skorade1	       zzhan145
+csperry1     jjeanba2	       mzheng47     skothap1	       zzhan150
+csweb	     jjjcart	       mz-matlab    skremli1	       zzhan218
+ctran20      jjose1	       nabate1	    skumar	       zzhang27
+ctrembl1     jkassne1	       nael	    skunz1
+cutler	     jlei23	       nananth1     slellis1
+cviezel1     jleona15	       nanohub	    slin100
+bklayma1@g7-13:/home$ cd bklayma1/
+bklayma1@g7-13:~$ ls
+ 8.21.19.txt		  Documents		    t1.c
+'Adder Subtractor.circ'   Downloads		    T1.s
+ Arduino		  git-repos		    Templates
+ bin-c.log		 'K-Map Practice.circ'	   '#test.c#'
+ cat.log		  lab			    tmp
+ cs120			  ls.log		    v1.s
+ cs220			  Music			    v.c
+ Cs220			  Pictures		    Videos
+ cs240			 'Practice Minterms.circ'   x.c
+ Desktop		  projects
+ dir			  Public
+bklayma1@g7-13:~$ cd ~/git-repos/cs240[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit clone ssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos[1P/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos/[1Pcs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos/c[1Ps240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos/cs[1P240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cb@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ck@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+fatal: destination path 'cs240' already exists and is not an empty directory.
+bklayma1@g7-13:~$ cd ~/projects/
+bklayma1@g7-13:~/projects$ ls
+cs240
+bklayma1@g7-13:~/projects$ lscd ~/projects/git clone ssh://bklayma1@remote.cs.binghamton.edu/~umrigar/git-repos/cs240.git
+fatal: destination path 'cs240' already exists and is not an empty directory.
+bklayma1@g7-13:~/projects$ cd ~
+bklayma1@g7-13:~$ ls
+ 8.21.19.txt		  Documents		    t1.c
+'Adder Subtractor.circ'   Downloads		    T1.s
+ Arduino		  git-repos		    Templates
+ bin-c.log		 'K-Map Practice.circ'	   '#test.c#'
+ cat.log		  lab			    tmp
+ cs120			  ls.log		    v1.s
+ cs220			  Music			    v.c
+ Cs220			  Pictures		    Videos
+ cs240			 'Practice Minterms.circ'   x.c
+ Desktop		  projects
+ dir			  Public
+bklayma1@g7-13:~$ ln -s projects/x[Kcs240/
+ln: failed to create symbolic link './cs240': File exists
+bklayma1@g7-13:~$ ln -s projects/cs240/[K .
+ln: failed to create symbolic link './cs240': File exists
+bklayma1@g7-13:~$ ls ~
+ 8.21.19.txt		  Documents		    t1.c
+'Adder Subtractor.circ'   Downloads		    T1.s
+ Arduino		  git-repos		    Templates
+ bin-c.log		 'K-Map Practice.circ'	   '#test.c#'
+ cat.log		  lab			    tmp
+ cs120			  ls.log		    v1.s
+ cs220			  Music			    v.c
+ Cs220			  Pictures		    Videos
+ cs240			 'Practice Minterms.circ'   x.c
+ Desktop		  projects
+ dir			  Public
+bklayma1@g7-13:~$ cd ~/git-repos//c[K[Kc[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kemacs crontab -e
+bklayma1@g7-13:~$ emacs crontab -e
+bklayma1@g7-13:~$ crontab -l | tail
+crontabs: No such file or directory
+bklayma1@g7-13:~$ EDITOR=emacs crontab -e
+crontabs: No such file or directory
+bklayma1@g7-13:~$ ls
+ 8.21.19.txt		  Documents		   '*scratch*'
+'Adder Subtractor.circ'   Downloads		   '*scratch*~'
+ Arduino		  git-repos		    t1.c
+ bin-c.log		 'K-Map Practice.circ'	    T1.s
+ cat.log		  lab			    Templates
+ cs120			  ls.log		   '#test.c#'
+ cs220			  Music			    tmp
+ Cs220			  Pictures		    v1.s
+ cs240			 'Practice Minterms.circ'   v.c
+ Desktop		  projects		    Videos
+ dir			  Public		    x.c
+bklayma1@g7-13:~$ git loh[Kg -N
+fatal: not a git repository (or any parent up to mount point /import)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+bklayma1@g7-13:~$ ls
+ 8.21.19.txt		  Documents		   '*scratch*'
+'Adder Subtractor.circ'   Downloads		   '*scratch*~'
+ Arduino		  git-repos		    t1.c
+ bin-c.log		 'K-Map Practice.circ'	    T1.s
+ cat.log		  lab			    Templates
+ cs120			  ls.log		   '#test.c#'
+ cs220			  Music			    tmp
+ Cs220			  Pictures		    v1.s
+ cs240			 'Practice Minterms.circ'   v.c
+ Desktop		  projects		    Videos
+ dir			  Public		    x.c
+bklayma1@g7-13:~$ cd cs240
+bklayma1@g7-13:~/cs240$ git log -N
+fatal: unrecognized argument: -N
+bklayma1@g7-13:~/cs240$ git log -1
+[?1h=[33mcommit 9e96ef3a13ea620d96e7b2a0bc1462d227d670d2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31m[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;31m[m[33m[m[1;31morigin/HEAD[m[33m)[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Thu Jan 23 14:14:16 2020 -0500[m
+[m
+    trivial changes[m
+[K[?1l>bklayma1@g7-13:~/cs240$ git log -5
+[?1h=[33mcommit 9e96ef3a13ea620d96e7b2a0bc1462d227d670d2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31m[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;31m[m[33m[m[1;31morigin/HEAD[m[33m)[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Thu Jan 23 14:14:16 2020 -0500[m
+[m
+    trivial changes[m
+[m
+[33mcommit 8d6dd352014a55daef6e897d54d5bc33650ca50f[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Thu Jan 23 13:40:58 2020 -0500[m
+[m
+    added abet requirements to syllabus[m
+[m
+[33mcommit 24681db1cd13af495d8c1511f77123e5d91ed1dd[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Thu Jan 23 08:17:24 2020 -0500[m
+[m
+    added grading guidelines[m
+[m
+[33mcommit b28da302c11169a1a76ebab0b25099bb8241c34b[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Jan 22 22:01:19 2020 -0500[m
+[m
+:[K[K    update syllabus and lab0 with TA info[m
+:[K[K[m
+:[K[K[33mcommit 8d242d7ee425f9c85f96bb6923179e7390091716[m[m
+:[K[K[?1l>
+[2]+  Stopped                 git log -5
+bklayma1@g7-13:~/cs240$ git log -3 labs/lab0/[K.umt
+fatal: ambiguous argument 'labs/lab0.umt': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+bklayma1@g7-13:~/cs240$ git diff -r [K[K[K[K[K[K[K[K[K[K[K[Kgit diff[K[K[K[Klog -3 [K[K[K[K[K[K[K[K[Kt lof[Kg -3 labs/lab0/
+[?1h=[33mcommit b28da302c11169a1a76ebab0b25099bb8241c34b[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Jan 22 22:01:19 2020 -0500[m
+[m
+    update syllabus and lab0 with TA info[m
+[m
+[33mcommit a88d192bdd3e654416bd9b1156ffb4f7153e9906[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Tue Jan 21 12:01:22 2020 -0500[m
+[m
+    update lab0[m
+[m
+[33mcommit e422c027d1f1dd696301045f9fe2d426fcd1e362[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Tue Jan 21 12:00:11 2020 -0500[m
+[m
+    update[m
+[K[?1l>bklayma1@g7-13:~/cs240$ git diff -r b28da302c11169a1a76ebab0b25099bb8241c34b lab s/lab0/
+[?1h=[K[?1l>bklayma1@g7-13:~/cs240$ git diff -r b28da302c11169a1a76ebab0b25099bb8241c34b labs/lab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/[1Plab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/l[1Pab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/la[1Pb0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/lab[1P0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/lab0[1P/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/lab0/[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1c34b labs/lab0/ [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+fatal: ambiguous argument '1c34b': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+bklayma1@g7-13:~/cs240$ git diff -r 1c34b labs/lab0/b28da302c11169a1a76ebab0b25099bb8241c34b labs/lab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/[1Plab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/l[1Pab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/la[1Pb0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab[1P0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab0[1P/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab0/[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab0/ [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P labs/lab0/
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/
+[?1h=[K[?1l>bklayma1@g7-13:~/cs240$ git diff -r b28da labs/lab0/[C[K
+[?1h=[K[?1l>bklayma1@g7-13:~/cs240$ git diff -r b28da labs/lab0/[K[C[C[C[C[C[C[C[C[C[C/1c34b[C[C[C[C[C[C[C[C[C[C[Cb28da302c11169a1a76ebab0b25099bb8241c34b labs/lab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/[1Plab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/l[1Pab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/la[1Pb0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab[1P0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab0[1P/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab0/[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C labs/lab0/ [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P labs/lab0/
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/
+[?1h=[K[?1l>bklayma1@g7-13:~/cs240$ git diff -r b28d labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[1P labs/lab0/[C labs/lab0/e422c027d1f1dd696301045f9fe2d426fcd1e362  labs/lab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs[1P/lab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/[1Plab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/l[1Pab0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/la[1Pb0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/lab[1P0/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/lab0[1P/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/lab0/[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  labs/lab0/ [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+[?1h=[1mdiff --git a/labs/lab0/lab0.html b/labs/lab0/lab0.html[m[m
+[1mindex 93c29c0..4efe2a0 100644[m[m
+[1m--- a/labs/lab0/lab0.html[m[m
+[1m+++ b/labs/lab0/lab0.html[m[m
+[36m@@ -2,22 +2,22 @@[m[m
+ <html lang="en-US">[m[m
+   <head>[m[m
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="s[m tylesheet">[m[m
+[31m-    <link href="../..//assets/styles/article.css" rel="stylesheet" type="text/c[m [31mss" /> [m[m
+[32m+[m[32m    <link href="../../assets/styles/article.css" rel="stylesheet" type="text/cs[m [32m[m[32ms" />[m[41m [m[m
+     <title>CS 240: CS Account Setup</title>[m[m
+     <link href="lab0/hl-fine_blue.css" rel="stylesheet"/>[m[m
+   </head>[m[m
+   <body>[m[m
+     <nav>[m[m
+       <ul>[m[m
+[31m-       <li><a href="../..//index.html" class="material-icons">house</a></li>[m[m
+[31m-       <li><a href="../..//docs/index.html">Docs</a></li>[m[m
+[31m-       <li><a href="../..//exams-quizzes/index.html">Exams &amp; Quizzes</a></l[m [31mi>[m[m
+:[K[K[?1l>
+[3]+  Stopped                 git diff -r e422c labs/lab0/
+bklayma1@g7-13:~/cs240$ cd ~/projects
+bklayma1@g7-13:~/projects$ git clone https://github.com/Bklayman/i240b.git
+Cloning into 'i240b'...
+remote: Enumerating objects: 4, done.[K
+remote: Counting objects:  25% (1/4)[Kremote: Counting objects:  50% (2/4)[Kremote: Counting objects:  75% (3/4)[Kremote: Counting objects: 100% (4/4)[Kremote: Counting objects: 100% (4/4), done.[K
+remote: Compressing objects:  33% (1/3)[Kremote: Compressing objects:  66% (2/3)[Kremote: Compressing objects: 100% (3/3)[Kremote: Compressing objects: 100% (3/3), done.[K
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  25% (1/4)   Unpacking objects:  50% (2/4)   Unpacking objects:  75% (3/4)   Unpacking objects: 100% (4/4)   Unpacking objects: 100% (4/4), done.
+bklayma1@g7-13:~/projects$ ln -s proje[K[K[K[K[K~/projects/cs240/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls ~/projects/
+cs240  i240b
+bklayma1@g7-13:~/projects$ ln -s projec[K[K[K[K[K[K~/projects/i240b/ .
+ln: failed to create symbolic link './i240b': File exists
+bklayma1@g7-13:~/projects$ ln -s ~/projects/i240b/ .[K
+ln: failed to create symbolic link './i240b': File exists
+bklayma1@g7-13:~/projects$ ln -s ~/projects/i240b/ .
+ln: failed to create symbolic link './i240b': File exists
+bklayma1@g7-13:~/projects$ ln -s ~/projects/i240b/ .[K~
+bklayma1@g7-13:~/projects$ mkdir -p ~/projects
+bklayma1@g7-13:~/projects$ cd ~/projects/
+bklayma1@g7-13:~/projects$ git clone https://github.com/Bklayman/i240b.git
+fatal: destination path 'i240b' already exists and is not an empty directory.
+bklayma1@g7-13:~/projects$ ls -dl ~/cs240 ~/i240b
+lrwxrwxrwx 1 bklayma1 bklayma1 15 Jan 23 16:32 /home/bklayma1/cs240 -> projects/cs240/
+lrwxrwxrwx 1 bklayma1 bklayma1 30 Jan 23 16:52 /home/bklayma1/i240b -> /home/bklayma1/projects/i240b/
+bklayma1@g7-13:~/projects$ ls -l ~/.ssh ~/cs240 ~/i240b
+lrwxrwxrwx 1 bklayma1 bklayma1 15 Jan 23 16:32 /home/bklayma1/cs240 -> projects/cs240/
+lrwxrwxrwx 1 bklayma1 bklayma1 30 Jan 23 16:52 /home/bklayma1/i240b -> /home/bklayma1/projects/i240b/
+
+/home/bklayma1/.ssh:
+total 16
+-rw------- 1 bklayma1 bklayma1  818 Jan 23 16:24 authorized_keys
+-rw------- 1 bklayma1 bklay
