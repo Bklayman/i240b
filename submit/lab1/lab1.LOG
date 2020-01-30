@@ -1,0 +1,892 @@
+Script started on 2020-01-30 16:33:00-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+bash: /home/umrigar/cs240/bin/student.rc: Permission denied
+bklayma1@g7-10:~$ cd i240b
+bklayma1@g7-10:~/i240b$ git branch -l
+[?1h=  lab0[m[m
+* [32mmaster[m[m
+[K[?1l>bklayma1@g7-10:~/i240b$ git checkout -b lan1[K[Kb1
+Switched to a new branch 'lab1'
+bklayma1@g7-10:~/i240b$ ls
+README.md  submit
+bklayma1@g7-10:~/i240b$ cd submit/
+bklayma1@g7-10:~/i240b/submit$ ls
+lab0
+bklayma1@g7-10:~/i240b/submit$ mkdir lab1
+bklayma1@g7-10:~/i240b/submit$ ls
+lab0  lab1
+bklayma1@g7-10:~/i240b/submit$ cd lab1
+bklayma1@g7-10:~/i240b/submit/lab1$ ls
+0-hello       2-separate-compilation  4-dependencies
+1-monolithic  3-makefile	      5-auto-dependencies
+bklayma1@g7-10:~/i240b/submit/lab1$ cd 0-hello/`[K
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ ls -l
+total 4
+-rw-r--r-- 1 bklayma1 bklayma1 79 Jan 30 16:23 hello.cc
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ make
+make: *** No targets specified and no makefile found.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ make hello
+g++     hello.cc   -o hello
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ ls -l
+total 24
+-rwxr-xr-x 1 bklayma1 bklayma1 17248 Jan 30 16:36 hello
+-rw-r--r-- 1 bklayma1 bklayma1    79 Jan 30 16:23 hello.cc
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ file hello
+hello: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=99af5e976454700966eadf73920a1f533966fdc8, not stripped
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ ./hello 
+hello world
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ -p | less
+bash: -p: command not found
+[?1049h[22;0;0t[?1h=[K[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K [KESCESC[K  [K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K-[K[7mCannot change the -p (--pattern) option  (press RETURN)[27m[24;1H[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K|mark: [K[7mInvalid mark letter  (press RETURN)[27m[24;1H[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K...skipping...
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K [KESCESC[K[?1l>[?1049l[23;0;0t
+[1]+  Stopped                 -p | less
+bklayma1@g7-10:~/i240b/submit/lab1/0-hello$ cd ../1-monolithic/
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ ls
+fns-compare.cc
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ make fns-compare.cc [K[K[K[K
+g++     fns-compare.cc   -o fns-compare
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ ./fns-compare 
+1 100000
+10 1e+06
+100 1e+07
+1000 1e+08
+10000 1e+09
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ g++ -g -Wall -std=c_[K++17 fns-compare.cc -o fns-compare
+[01m[Kfns-compare.cc:11:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Kdouble quadratic(double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[Kquadratic[m[K(double n)
+ [01;35m[K^~~~~~~~~[m[K
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ ls
+fns-compare  fns-compare.cc
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ emacs fns-compare.cc 
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ emacs fns-compare.cc ls[Kg++ -g -Wall -std=c++17 fns-compare.cc -o fns-compare
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ ./fns-compare 
+1 100000 1000
+10 1e+06 100000
+100 1e+07 1e+07
+1000 1e+08 1e+09
+10000 1e+09 1e+11
+bklayma1@g7-10:~/i240b/submit/lab1/1-monolithic$ cd ../2-separate-compilation/
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ ls
+fns-compare.cc	fns-compare.hh	linear.cc
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ emacs fns-compare.cc  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K 
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ -g -Wall -std=c++17 -c fns-compare.cc
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$  g++ -g -Wall -std=c++17 -c linear.cc
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ fns-compare.o linear.o -o fns-compare
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ fns-compare.o linear.o -o fns-compare[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C g++ -g -Wall -std=c++[4P17 -c linear.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg++ -g -Wall -std=c++17 -c fns-compare.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C g++ -g -Wall -std=c++[4P17 -c linear.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg++ fns-compare.o linear.o -o fns-compare[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls
+fns-compare  fns-compare.cc  fns-compare.hh  fns-compare.o  linear.cc  linear.o
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ emacs fns-compare.cc  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K 
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ ls
+[01m[Kg++:[m[K [01;31m[Kerror: [m[Kls: No such file or directory
+[01m[Kg++:[m[K [01;31m[Kfatal error: [m[Kno input files
+compilation terminated.
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ ls
+fns-compare  fns-compare.cc  fns-compare.hh  fns-compare.o  linear.cc  linear.o
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ ls
+fns-compare  fns-compare.cc  fns-compare.hh  fns-compare.o  linear.cc  linear.o
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ emacs gqadratic.cc
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ emacs[K[K[K[K[Kemacs gqadratic.cc[Kemacs quadratic.cc 
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ -g -Wall -std=c++ 17 -c quadratic.cc
+[01m[Kquadratic.cc:5:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Kdouble quadratic(double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[Kquadratic[m[K(double n)
+ [01;35m[K^~~~~~~~~[m[K
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ -g -Wall -std=c++17 -c quadratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[1Pquadratic.cc[C[C[C[C[C[1Pquadratic.cc[C[C[C[C[1Pquadratic.cc[C[C[C[1Pquadratic.cc[C[C[1Pquadratic.cc[C[1Pquadratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cqu[1Padratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cqua[1Pdratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquad[1Pratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadr[1Patic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadra[1Ptic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadrat[1Pic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadrati[1Pc.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadratic[1P.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadratic.[1Pcc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadratic.c[C[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadratic.cc[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cquadratic.cc [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pquadratic.cc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pquadratic.cc[1Pquadratic.cc[1Pquadratic.cc[1Pquadratic.cc
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x20): undefined reference to `main'
+/usr/bin/ld: /tmp/ccT9inlB.o: in function `__static_initialization_and_destruction_0(int, int)':
+quadratic.cc:(.text+0xb9): undefined reference to `register_fn(FnInfo)'
+collect2: error: ld returned 1 exit status
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ quadratic.cc-g -Wall -std=c++17 -c quadratic.cc
+[01m[Kquadratic.cc:5:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Kdouble quadratic(double)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[Kquadratic[m[K(double n)
+ [01;35m[K^~~~~~~~~[m[K
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ -g -Wall -std=c++17 -c quadratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-std=c++17[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-std=c++17 [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-std=c++17 -[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-std=c++17 -c[1P quadratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-std=c++17 -c [1Pquadratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstd=c++17 -c q[1Puadratic.cc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ gcc fns-compare.o linear.o quadratic.o -o fns-compare
+/usr/bin/ld: fns-compare.o: in function `fnInfoStore()':
+/home/bklayma1/i240b/submit/lab1/2-separate-compilation/fns-compare.cc:7: undefined reference to `__cxa_guard_acquire'
+/usr/bin/ld: /home/bklayma1/i240b/submit/lab1/2-separate-compilation/fns-compare.cc:7: undefined reference to `__cxa_guard_release'
+/usr/bin/ld: fns-compare.o: in function `__static_initialization_and_destruction_0(int, int)':
+/usr/include/c++/8/iostream:74: undefined reference to `std::ios_base::Init::Init()'
+/usr/bin/ld: /usr/include/c++/8/iostream:74: undefined reference to `std::ios_base::Init::~Init()'
+/usr/bin/ld: fns-compare.o: in function `void std::vector<FnInfo, std::allocator<FnInfo> >::_M_realloc_insert<FnInfo const&>(__gnu_cxx::__normal_iterator<FnInfo*, std::vector<FnInfo, std::allocator<FnInfo> > >, FnInfo const&)':
+/usr/include/c++/8/bits/vector.tcc:457: undefined reference to `__cxa_begin_catch'
+/usr/bin/ld: /usr/include/c++/8/bits/vector.tcc:465: undefined reference to `__cxa_rethrow'
+/usr/bin/ld: /usr/include/c++/8/bits/vector.tcc:457: undefined reference to `__cxa_end_catch'
+/usr/bin/ld: fns-compare.o: in function `std::vector<FnInfo, std::allocator<FnInfo> >::_M_check_len(unsigned long, char const*) const':
+/usr/include/c++/8/bits/stl_vector.h:1643: undefined reference to `std::__throw_length_error(char const*)'
+/usr/bin/ld: fns-compare.o: in function `__gnu_cxx::new_allocator<FnInfo>::deallocate(FnInfo*, unsigned long)':
+/usr/include/c++/8/ext/new_allocator.h:125: undefined reference to `operator delete(void*)'
+/usr/bin/ld: fns-compare.o: in function `__gnu_cxx::new_allocator<FnInfo>::allocate(unsigned long, void const*)':
+/usr/include/c++/8/ext/new_allocator.h:102: undefined reference to `std::__throw_bad_alloc()'
+/usr/bin/ld: /usr/include/c++/8/ext/new_allocator.h:111: undefined reference to `operator new(unsigned long)'
+/usr/bin/ld: fns-compare.o: in function `FnInfo* std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<FnInfo*>, FnInfo*>(std::move_iterator<FnInfo*>, std::move_iterator<FnInfo*>, FnInfo*)':
+/usr/include/c++/8/bits/stl_uninitialized.h:86: undefined reference to `__cxa_begin_catch'
+/usr/bin/ld: /usr/include/c++/8/bits/stl_uninitialized.h:89: undefined reference to `__cxa_rethrow'
+/usr/bin/ld: /usr/include/c++/8/bits/stl_uninitialized.h:86: undefined reference to `__cxa_end_catch'
+/usr/bin/ld: fns-compare.o:(.data.rel.local.DW.ref.__gxx_personality_v0[DW.ref.__gxx_personality_v0]+0x0): undefined reference to `__gxx_personality_v0'
+/usr/bin/ld: quadratic.o: in function `__static_initialization_and_destruction_0(int, int)':
+/usr/include/c++/8/iostream:74: undefined reference to `std::ios_base::Init::Init()'
+/usr/bin/ld: /usr/include/c++/8/iostream:74: undefined reference to `std::ios_base::Init::~Init()'
+collect2: error: ld returned 1 exit status
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ ls
+fns-compare.cc	fns-compare.o  linear.o      quadratic.cc~
+fns-compare.hh	linear.cc      quadratic.cc  quadratic.o
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ g++ [2Plsgcc fns-compare.o linear.o quadratic.o -o fns-compare[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C fns-compare.o linea[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C fns-compare.o linear[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C+ fns-compare.o linea[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C+ fns-compare.o line[1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ ./fns-compare 
+         n    linear    linear
+         1     10000     10000
+        10    100000    100000
+       100     1e+06     1e+06
+      1000     1e+07     1e+07
+     10000     1e+08     1e+08
+    100000     1e+09     1e+09
+bklayma1@g7-10:~/i240b/submit/lab1/2-separate-compilation$ cd ../3-makefile/
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ ls
+constant.cc  exponential.cc  fns-compare.cc  lg.cc	Makefile  quadratic.cc
+cubic.cc     fact.cc	     fns-compare.hh  linear.cc	nlg.cc
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ emacs Makefile 
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ make
+g++ -g -Wall -std=c++17   -c -o fns-compare.o fns-compare.cc
+g++ -g -Wall -std=c++17   -c -o constant.o constant.cc
+g++ -g -Wall -std=c++17   -c -o lg.o lg.cc
+g++ -g -Wall -std=c++17   -c -o linear.o linear.cc
+g++ -g -Wall -std=c++17   -c -o nlg.o nlg.cc
+g++ -g -Wall -std=c++17   -c -o quadratic.o quadratic.cc
+g++ -g -Wall -std=c++17   -c -o cubic.o cubic.cc
+g++ -g -Wall -std=c++17   -c -o exponential.o exponential.cc
+g++ -g -Wall -std=c++17   -c -o fact.o fact.cc
+g++ fns-compare.o constant.o lg.o linear.o nlg.o quadratic.o cubic.o exponential.o fact.o -o fns-compare
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ ./[K[Kls
+constant.cc	exponential.o	fns-compare.hh	linear.o      quadratic.o
+constant.o	fact.cc		fns-compare.o	Makefile
+cubic.cc	fact.o		lg.cc		nlg.cc
+cubic.o		fns-compare	lg.o		nlg.o
+exponential.cc	fns-compare.cc	linear.cc	quadratic.cc
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ ./fns-compare 
+    n constant     log2   linear     n lg    quadr    cubic     expn     fact
+    1    1e+07        0    1e+05        0    1e+03    1e+02       20        1
+   10    1e+07  3.3e+06    1e+06  3.3e+05    1e+05    1e+05    1e+04  3.6e+06
+  100    1e+07  6.6e+06    1e+07  6.6e+06    1e+07    1e+08  1.3e+31 9.3e+157
+ 1000    1e+07    1e+07    1e+08    1e+08    1e+09    1e+11 1.1e+302      inf
+10000    1e+07  1.3e+07    1e+09  1.3e+09    1e+11    1e+14      inf      inf
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ emacs fns-compare.hh
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ make
+make: Nothing to be done for 'all'.
+bklayma1@g7-10:~/i240b/submit/lab1/3-makefile$ cd ../4-dependencies/
+bklayma1@g7-10:~/i240b/submit/lab1/4-dependencies$ make
+Makefile:20: *** missing separator.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/4-dependencies$ emacs Makefile 
+bklayma1@g7-10:~/i240b/submit/lab1/4-dependencies$ make
+g++ -g -Wall -std=c++17   -c -o fns-compare.o fns-compare.cc
+g++ -g -Wall -std=c++17   -c -o constant.o constant.cc
+g++ -g -Wall -std=c++17   -c -o lg.o lg.cc
+g++ -g -Wall -std=c++17   -c -o linear.o linear.cc
+g++ -g -Wall -std=c++17   -c -o nlg.o nlg.cc
+g++ -g -Wall -std=c++17   -c -o quadratic.o quadratic.cc
+g++ -g -Wall -std=c++17   -c -o cubic.o cubic.cc
+g++ -g -Wall -std=c++17   -c -o exponential.o exponential.cc
+g++ -g -Wall -std=c++17   -c -o fact.o fact.cc
+g++ fns-compare.o constant.o lg.o linear.o nlg.o quadratic.o cubic.o exponential.o fact.o -o fns-compare
+bklayma1@g7-10:~/i240b/submit/lab1/4-dependencies$ ./fns-compare 
+    n constant     log2   linear     n lg    quadr    cubic     expn     fact
+    1    1e+07        0    1e+05        0    1e+03    1e+02       20        1
+   10    1e+07  3.3e+06    1e+06  3.3e+05    1e+05    1e+05    1e+04  3.6e+06
+  100    1e+07  6.6e+06    1e+07  6.6e+06    1e+07    1e+08  1.3e+31 9.3e+157
+ 1000    1e+07    1e+07    1e+08    1e+08    1e+09    1e+11 1.1e+302      inf
+10000    1e+07  1.3e+07    1e+09  1.3e+09    1e+11    1e+14      inf      inf
+bklayma1@g7-10:~/i240b/submit/lab1/4-dependencies$ cd ../5-auto-dependencies/
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ ls
+constant.cc  exponential.cc  fns-compare.cc  lg.cc	Makefile  quadratic.cc
+cubic.cc     fact.cc	     fns-compare.hh  linear.cc	nlg.cc
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make
+g++ -MT linear.o -MMD -MP -MF .deps/linear.d -g -Wall -std=c++17 -c linear.cc
+g++ -MT nlg.o -MMD -MP -MF .deps/nlg.d -g -Wall -std=c++17 -c nlg.cc
+g++ -MT fact.o -MMD -MP -MF .deps/fact.d -g -Wall -std=c++17 -c fact.cc
+g++ -MT lg.o -MMD -MP -MF .deps/lg.d -g -Wall -std=c++17 -c lg.cc
+g++ -MT cubic.o -MMD -MP -MF .deps/cubic.d -g -Wall -std=c++17 -c cubic.cc
+g++ -MT exponential.o -MMD -MP -MF .deps/exponential.d -g -Wall -std=c++17 -c exponential.cc
+g++ -MT fns-compare.o -MMD -MP -MF .deps/fns-compare.d -g -Wall -std=c++17 -c fns-compare.cc
+g++ -MT constant.o -MMD -MP -MF .deps/constant.d -g -Wall -std=c++17 -c constant.cc
+g++ -MT quadratic.o -MMD -MP -MF .deps/quadratic.d -g -Wall -std=c++17 -c quadratic.cc
+g++ linear.o nlg.o fact.o lg.o cubic.o exponential.o fns-compare.o constant.o quadratic.o -o fns-compare
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ ./fns-compare 
+    n   linear     n lg     fact     log2    cubic     expn constant    quadr
+    1    1e+05        0        1        0    1e+02       20    1e+07    1e+03
+   10    1e+06  3.3e+05  3.6e+06  3.3e+06    1e+05    1e+04    1e+07    1e+05
+  100    1e+07  6.6e+06 9.3e+157  6.6e+06    1e+08  1.3e+31    1e+07    1e+07
+ 1000    1e+08    1e+08      inf    1e+07    1e+11 1.1e+302    1e+07    1e+09
+10000    1e+09  1.3e+09      inf  1.3e+07    1e+14      inf    1e+07    1e+11
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ ls
+constant.cc	exponential.o	fns-compare.hh	linear.o      quadratic.o
+constant.o	fact.cc		fns-compare.o	Makefile
+cubic.cc	fact.o		lg.cc		nlg.cc
+cubic.o		fns-compare	lg.o		nlg.o
+exponential.cc	fns-compare.cc	linear.cc	quadratic.cc
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ emacs Makefile 
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make dist
+make: *** No rule to make target 'tar', needed by 'dist'.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make distemacs Makefile 
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make
+dist
+make: dist: Command not found
+make: *** [Makefile:21: all] Error 127
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make dist
+make: *** No rule to make target 'tar', needed by 'dist'.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ emacs Makefile
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make
+Makefile:18: *** recipe commences before first target.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ makeemacs Makefile
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ emacs Makefilemake[K
+Makefile:18: *** recipe commences before first target.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ makeemacs Makefile
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ emacs Makefilemake[K
+Makefile:18: *** recipe commences before first target.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ makeemacs Makefile
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make dist
+make: *** No rule to make target 'CXX_FILES', needed by 'dist'.  Stop.
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ make distemacs Makefile
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ emacs Makefile[5Pmake dist
+tar -cf fns-compare.tar linear.cc nlg.cc fact.cc lg.cc cubic.cc exponential.cc fns-compare.cc constant.cc quadratic.cc fns-compare.hh Makefile
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ mkdir -p ~/tmp/fns-compa re
+bklayma1@g7-10:~/i240b/submit/lab1/5-auto-dependencies$ cd ~/tmp/fns-compare/
+bklayma1@g7-10:~/tmp/fns-compare$ tar -xvf ~/i240b?[K/submit/lab1/5-auto-dependencies/fnsc[K-compare.,[Ktar 
+linear.cc
+nlg.cc
+fact.cc
+lg.cc
+cubic.cc
+exponential.cc
+fns-compare.cc
+constant.cc
+quadratic.cc
+fns-compare.hh
+Makefile
+bklayma1@g7-10:~/tmp/fns-compare$ make
+g++ -MT linear.o -MMD -MP -MF .deps/linear.d -g -Wall -std=c++17 -c linear.cc
+g
