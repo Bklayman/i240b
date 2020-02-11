@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <fstream>
 
 //Returns an int corresponding to the error the inputs have
 //0 - No errors
@@ -38,9 +39,29 @@ int checkInputs(std::vector<std::string> args, int numArgs){
   return 0;
 }
 
-//std::unordered_map<std::string, int> getWordCounts(std::vector<std::string> args){
-
-//}
+std::unordered_map<std::string, int> getWordCounts(std::vector<std::string> args){
+  std::unordered_map<std::string, int> wordCounts;
+  for(int i = 3; i < args.size(); i++){
+    std::ifstream in(args[i]);
+    while(in.good()){
+      std::string word;
+      in >> word;
+      for(int j = 0; j < word.length(); j++){
+        if(word.at(j) > 64 && word.at(j) < 91){
+          word = word.substr(0, j) + (char)(word.at(j) + 32) + word.substr(j + 1, word.length() - j - 1);
+        } else if (word.at(j) < 97 || word.at(j) > 122){
+          word = word.substr(0, j) + word.substr(j + 1, word.length() - j - 1);
+          j--;
+        }
+      }
+      wordCounts[word]++;
+    }
+    if(!in.eof()){
+      std::cout << "error reading file " << args[i] << "\n";
+    }
+  }
+  return wordCounts;
+}
 
 int main(int argc, char* argv[]){
   std::vector<std::string> args;
