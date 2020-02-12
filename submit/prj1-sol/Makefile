@@ -8,7 +8,7 @@ TARGET = wordcounts
 all:		clean $(TARGET)
 
 $(TARGET):	$(OFILE)
-		$(CXX) $(OFILE) -o $@
+		$(CXX) $(CXXFLAGS) $(OFILE) -o $@
 
 clean:
 		rm -f *~ *.o $(TARGET)

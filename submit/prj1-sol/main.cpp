@@ -39,6 +39,8 @@ int checkInputs(std::vector<std::string> args, int numArgs){
   return 0;
 }
 
+
+//Returns and unordered_map with the words within the word lengths as keys and the frequencies as values
 std::unordered_map<std::string, int> getWordCounts(std::vector<std::string> args){
   std::unordered_map<std::string, int> wordCounts;
   for(int i = 3; i < args.size(); i++){
@@ -54,13 +56,50 @@ std::unordered_map<std::string, int> getWordCounts(std::vector<std::string> args
           j--;
         }
       }
-      wordCounts[word]++;
+      if(word.length() >= std::stoi(args[1]) && word.length() <= std::stoi(args[2])){
+        wordCounts[word]++;
+      }
     }
     if(!in.eof()){
       std::cout << "error reading file " << args[i] << "\n";
     }
   }
   return wordCounts;
+}
+
+std::vector<std::string> getKeys(std::unordered_map<std::string, int> wordCounts){
+  std::vector<std::string> keys(wordCounts.size());
+  for(auto key : wordCounts){
+    keys.push_back(key.first);
+  }
+  return keys;
+}
+
+std::vector<std::string> sortKeys(std::unordered_map<std::string, int> wordCounts, std::vector<std::string> keys){
+  for(int i = 0; i < keys.size() - 1; i++){
+    for(int j = i; j < keys.size(); j++){
+      if(wordCounts[keys[i]] < wordCounts[keys[j]]){
+        std::string temp = keys[i];
+        keys[i] = keys[j];
+        keys[j] = temp;
+      }
+    }
+  }
+  return keys;
+}
+
+void printFinalValues(int MAX_N_OUT, std::vector<std::string> keys, std::unordered_map<std::string, int> wordCounts, int numKeys){
+  for(int i = 0; i < MAX_N_OUT && i < numKeys; i++){
+    std::cout << keys[i] << ": " << wordCounts[keys[i]] << "\n";
+  }
+}
+
+int getNumKeys(std::unordered_map<std::string, int> wordCounts){
+  int counter = 0;
+  for(auto key : wordCounts){
+    counter++;
+  }
+  return counter;
 }
 
 int main(int argc, char* argv[]){
@@ -73,4 +112,8 @@ int main(int argc, char* argv[]){
     return 1;
   }
   std::unordered_map<std::string, int> wordCounts = getWordCounts(args);
+  std::vector<std::string> keys = getKeys(wordCounts);
+  keys = sortKeys(wordCounts, keys);
+  int numKeys = getNumKeys(wordCounts);
+  printFinalValues(std::stoi(args[0]), keys, wordCounts, numKeys);
 }
