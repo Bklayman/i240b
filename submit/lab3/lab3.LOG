@@ -1,0 +1,771 @@
+Script started on 2020-02-13 16:19:26-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+bash: /home/umrigar/cs240/bin/student.rc: Permission denied
+bklayma1@g7-37:~/i240b/submit/lab3$ cd 1-greet/
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ ls
+greet.cc  README
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ emacs README 
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ make
+make: *** No targets specified and no makefile found.  Stop.
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ ./greet 
+usage: ./greet NAME...
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ ./greet Bart Lisa
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ emacs greet,[K.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/1-greet$ cd ../2-greet/
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ make
+make: *** No targets specified and no makefile found.  Stop.
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ ls
+greet  greet.cc  README
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ ./greet 
+usage: ./greet NAME...
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ ./greet Bart Lisa
+hello Bart
+hello Lisa
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ valgrind ./greet Bart Lisa
+==3409882== Memcheck, a memory error detector
+==3409882== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3409882== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3409882== Command: ./greet Bart Lisa
+==3409882== 
+hello Bart
+hello Lisa
+==3409882== 
+==3409882== HEAP SUMMARY:
+==3409882==     in use at exit: 22 bytes in 2 blocks
+==3409882==   total heap usage: 4 allocs, 2 frees, 73,750 bytes allocated
+==3409882== 
+==3409882== LEAK SUMMARY:
+==3409882==    definitely lost: 22 bytes in 2 blocks
+==3409882==    indirectly lost: 0 bytes in 0 blocks
+==3409882==      possibly lost: 0 bytes in 0 blocks
+==3409882==    still reachable: 0 bytes in 0 blocks
+==3409882==         suppressed: 0 bytes in 0 blocks
+==3409882== Rerun with --leak-check=full to see details of leaked memory
+==3409882== 
+==3409882== For counts of detected and suppressed errors, rerun with: -v
+==3409882== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ emacs greet.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ emacs greet.cc valgrind ./greet Bart Lisa[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kls[Kmake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ make -f ../Makefile [5Pemacs greet.cc[Cvalgrind ./greet Bart Lisa
+==3410127== Memcheck, a memory error detector
+==3410127== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3410127== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3410127== Command: ./greet Bart Lisa
+==3410127== 
+hello hello Bart
+==3410127== Mismatched free() / delete / delete []
+==3410127==    at 0x483708B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==3410127==    by 0x10931D: main (greet.cc:27)
+==3410127==  Address 0x4d74c80 is 0 bytes inside a block of size 11 alloc'd
+==3410127==    at 0x483650F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==3410127==    by 0x1091E4: greetMsg(char const*) (greet.cc:11)
+==3410127==    by 0x1092D8: main (greet.cc:25)
+==3410127== 
+hello hello Lisa
+==3410127== 
+==3410127== HEAP SUMMARY:
+==3410127==     in use at exit: 34 bytes in 2 blocks
+==3410127==   total heap usage: 6 allocs, 4 frees, 73,784 bytes allocated
+==3410127== 
+==3410127== LEAK SUMMARY:
+==3410127==    definitely lost: 34 bytes in 2 blocks
+==3410127==    indirectly lost: 0 bytes in 0 blocks
+==3410127==      possibly lost: 0 bytes in 0 blocks
+==3410127==    still reachable: 0 bytes in 0 blocks
+==3410127==         suppressed: 0 bytes in 0 blocks
+==3410127== Rerun with --leak-check=full to see details of leaked memory
+==3410127== 
+==3410127== For counts of detected and suppressed errors, rerun with: -v
+==3410127== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ valgrind ./greet Bart Lisa[6Pmake -f ../Makefile [5Pemacs greet.cc[C
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ emacs greet.cc valgrind ./greet Bart Lisa
+==3410408== Memcheck, a memory error detector
+==3410408== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3410408== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3410408== Command: ./greet Bart Lisa
+==3410408== 
+hello hello Bart
+==3410408== Mismatched free() / delete / delete []
+==3410408==    at 0x483708B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==3410408==    by 0x10931D: main (greet.cc:27)
+==3410408==  Address 0x4d74c80 is 0 bytes inside a block of size 11 alloc'd
+==3410408==    at 0x483650F: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==3410408==    by 0x1091E4: greetMsg(char const*) (greet.cc:11)
+==3410408==    by 0x1092D8: main (greet.cc:25)
+==3410408== 
+hello hello Lisa
+==3410408== 
+==3410408== HEAP SUMMARY:
+==3410408==     in use at exit: 34 bytes in 2 blocks
+==3410408==   total heap usage: 6 allocs, 4 frees, 73,784 bytes allocated
+==3410408== 
+==3410408== LEAK SUMMARY:
+==3410408==    definitely lost: 34 bytes in 2 blocks
+==3410408==    indirectly lost: 0 bytes in 0 blocks
+==3410408==      possibly lost: 0 bytes in 0 blocks
+==3410408==    still reachable: 0 bytes in 0 blocks
+==3410408==         suppressed: 0 bytes in 0 blocks
+==3410408== Rerun with --leak-check=full to see details of leaked memory
+==3410408== 
+==3410408== For counts of detected and suppressed errors, rerun with: -v
+==3410408== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ valgrind ./greet Bart Lisa[11Pemacs greet.cc valgrind ./greet Bart Lisa[6Pmake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ make -f ../Makefile valgrind ./greet Bart Lisa
+==3410430== Memcheck, a memory error detector
+==3410430== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3410430== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3410430== Command: ./greet Bart Lisa
+==3410430== 
+hello hello Bart
+hello hello Lisa
+==3410430== 
+==3410430== HEAP SUMMARY:
+==3410430==     in use at exit: 34 bytes in 2 blocks
+==3410430==   total heap usage: 6 allocs, 4 frees, 73,784 bytes allocated
+==3410430== 
+==3410430== LEAK SUMMARY:
+==3410430==    definitely lost: 34 bytes in 2 blocks
+==3410430==    indirectly lost: 0 bytes in 0 blocks
+==3410430==      possibly lost: 0 bytes in 0 blocks
+==3410430==    still reachable: 0 bytes in 0 blocks
+==3410430==         suppressed: 0 bytes in 0 blocks
+==3410430== Rerun with --leak-check=full to see details of leaked memory
+==3410430== 
+==3410430== For counts of detected and suppressed errors, rerun with: -v
+==3410430== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ valgrind ./greet Bart Lisa[6Pmake -f ../Makefile valgrind ./greet Bart Lisa[11Pemacs greet.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ emacs greet.cc valgrind ./greet Bart Lisa[6Pmake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ make -f ../Makefile [5Pemacs greet.cc[Cvalgrind ./greet Bart Lisa
+==3410532== Memcheck, a memory error detector
+==3410532== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3410532== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3410532== Command: ./greet Bart Lisa
+==3410532== 
+hello Bart
+hello Lisa
+==3410532== 
+==3410532== HEAP SUMMARY:
+==3410532==     in use at exit: 0 bytes in 0 blocks
+==3410532==   total heap usage: 4 allocs, 4 frees, 73,750 bytes allocated
+==3410532== 
+==3410532== All heap blocks were freed -- no leaks are possible
+==3410532== 
+==3410532== For counts of detected and suppressed errors, rerun with: -v
+==3410532== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+bklayma1@g7-37:~/i240b/submit/lab3/2-greet$ cd ../3-greet/
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc [1Pcd ../3-greet/valgrind ./greet Bart Lisa[6Pmake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ ./greet Bart Lisa
+ing::replaceBart
+ing::replaceLisa
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ ./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc ./greet Bart Lisamake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ make -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisa
+ing::replaceBart
+ing::replaceLisa
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ ./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc ./greet Bart Lisamake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ make -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisa
+GREET Bart
+GREET Lisa
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ ./greet Bart Lisamake -f ../Makefile [3P./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc ./greet Bart Lisamake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ make -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisa
+hello Bart
+hello Lisa
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ ./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C[1Pcd ../3-greet/valgrind ./greet Bart Lisa
+==3411050== Memcheck, a memory error detector
+==3411050== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3411050== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3411050== Command: ./greet Bart Lisa
+==3411050== 
+hello Bart
+hello Lisa
+==3411050== 
+==3411050== HEAP SUMMARY:
+==3411050==     in use at exit: 0 bytes in 0 blocks
+==3411050==   total heap usage: 2 allocs, 2 frees, 73,728 bytes allocated
+==3411050== 
+==3411050== All heap blocks were freed -- no leaks are possible
+==3411050== 
+==3411050== For counts of detected and suppressed errors, rerun with: -v
+==3411050== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ valgrind ./greet Bart Lisa[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -f ../Makefile [5Pemacs greet.cc[C
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc valgrind ./greet Bart Lisa[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ make -f ../Makefile [5Pemacs greet.cc[Cvalgrind ./greet Bart Lisa[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+hello Bart
+hello Lisa
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ ./greet Bart Lisamake -f ../Makefile [5Pemacs greet.cc[C
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ emacs greet.cc ./greet Bart Lisamake -f ../Makefile 
+g++ -g -Wall -std=c++17    greet.cc   -o greet
+cat </dev/null >.gitignore
+for t in greet; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ make -f ../Makefile [5Pemacs greet.cc[C./greet Bart Lisa
+Greeting's size: 32
+hello Bart
+Greeting's size: 32
+hello Lisa
+bklayma1@g7-37:~/i240b/submit/lab3/3-greet$ cd ../4-sortnums/
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ emacs sortnums.cc 
+Fatal error 11: Segmentation fault
+Backtrace:
+emacs[0x51159e]
+emacs[0x4f6f6a]
+emacs[0x50fa6e]
+emacs[0x50fc98]
+emacs[0x50fd19]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x12730)[0x7ff63af96730]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x1f2204)[0x7ff63dada204]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x378a53)[0x7ff63dc60a53]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x378b11)[0x7ff63dc60b11]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x378ff1)[0x7ff63dc60ff1]
+/usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c)[0x7ff639cb78ee]
+/usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f)[0x7ff639cb72bf]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_cclosure_marshal_generic+0x202)[0x7ff63d410482]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_closure_invoke+0x19d)[0x7ff63d40fc8d]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x24365)[0x7ff63d423365]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_signal_emit_valist+0xd8e)[0x7ff63d42c2be]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_signal_emit+0x8f)[0x7ff63d42c97f]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(gtk_gesture_set_sequence_state+0xe1)[0x7ff63dad8811]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x1f1609)[0x7ff63dad9609]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x1f18f0)[0x7ff63dad98f0]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x1f4886)[0x7ff63dadc886]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(gtk_event_controller_handle_event+0x6c)[0x7ff63daa544c]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x37707b)[0x7ff63dc5f07b]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x3cb274)[0x7ff63dcb3274]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x10ec6)[0x7ff63d40fec6]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_signal_emit_valist+0x844)[0x7ff63d42bd74]
+/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_signal_emit+0x8f)[0x7ff63d42c97f]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x379324)[0x7ff63dc61324]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(+0x239976)[0x7ff63db21976]
+/usr/lib/x86_64-linux-gnu/libgtk-3.so.0(gtk_main_do_event+0x833)[0x7ff63db23a83]
+/usr/lib/x86_64-linux-gnu/libgdk-3.so.0(+0x39465)[0x7ff63d823465]
+/usr/lib/x86_64-linux-gnu/libgdk-3.so.0(+0x6a112)[0x7ff63d854112]
+/u
+
+HERE THE SCIPTING STOPPED RANDOMLY. THE REST WILL BE COPY-PASTED BELOW
+
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ emacs sortnums.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ make
+make: *** No targets specified and no makefile found.  Stop.
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    sortnums.cc   -o sortnums
+cat </dev/null >.gitignore
+for t in sortnums; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ ./sortnums 
+usage: ./sortnums FILE...
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ ./sortnums *.dat
+10
+10
+10
+20
+20
+20
+30
+30
+30
+40
+40
+40
+50
+50
+50
+60
+60
+60
+70
+70
+70
+80
+80
+80
+90
+90
+90
+100
+100
+100
+200
+200
+200
+300
+300
+300
+400
+400
+400
+500
+500
+500
+600
+600
+600
+700
+700
+700
+800
+800
+800
+900
+900
+900
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ emacs sortnums.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    sortnums.cc   -o sortnums
+sortnums.cc: In function ‘bool cmp(const int&, const int&)’:
+sortnums.cc:32:7: error: invalid type argument of unary ‘*’ (have ‘int’)
+   if(*a < *b){
+       ^
+sortnums.cc:32:12: error: invalid type argument of unary ‘*’ (have ‘int’)
+   if(*a < *b){
+            ^
+make: *** [<builtin>: sortnums] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ emacs sortnums.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    sortnums.cc   -o sortnums
+cat </dev/null >.gitignore
+for t in sortnums; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ ./sortnums *.dat
+10
+10
+10
+20
+20
+20
+30
+30
+30
+40
+40
+40
+50
+50
+50
+60
+60
+60
+70
+70
+70
+80
+80
+80
+90
+90
+90
+100
+100
+100
+200
+200
+200
+300
+300
+300
+400
+400
+400
+500
+500
+500
+600
+600
+600
+700
+700
+700
+800
+800
+800
+900
+900
+900
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ emacs sortnums.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    sortnums.cc   -o sortnums
+cat </dev/null >.gitignore
+for t in sortnums; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ ./sortnums *.dat
+900
+900
+900
+800
+800
+800
+700
+700
+700
+600
+600
+600
+500
+500
+500
+400
+400
+400
+300
+300
+300
+200
+200
+200
+100
+100
+100
+90
+90
+90
+80
+80
+80
+70
+70
+70
+60
+60
+60
+50
+50
+50
+40
+40
+40
+30
+30
+30
+20
+20
+20
+10
+10
+10
+bklayma1@g7-37:~/i240b/submit/lab3/4-sortnums$ cd ../5-numpaths/
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ ./numpaths ../data/*.dat
+>> 342
+342: ../data/4.dat ../data/8.dat 
+>> 324
+324: ../data/1.dat ../data/3.dat ../data/8.dat 
+>> 45
+45: NOT FOUND
+>> 234
+234: ../data/6.dat ../data/8.dat 
+>> ^Z
+[1]+  Stopped                 ./numpaths ../data/*.dat
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+make: Nothing to be done for 'all'.
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+make: Nothing to be done for 'all'.
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ ./numpaths ../data/*.dat
+>> 21
+21: ../data/10.dat ../data/4.dat ../data/7.dat 
+>> ^Z
+[2]+  Stopped                 ./numpaths ../data/*.dat
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ enacs numpaths.cc 
+bash: enacs: command not found
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+^[[A^[[B^Z
+[3]+  Stopped                 emacs numpaths.cc
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+^Z
+[4]+  Stopped                 emacs numpaths.cc
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+make: Nothing to be done for 'all'.
+[3]-  Killed                  emacs numpaths.cc
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+make: Nothing to be done for 'all'.
+[4]+  Killed                  emacs numpaths.cc
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘std::map<int, std::set<std::__cxx11::basic_string<char> > > readNums(std::vector<std::__cxx11::basic_string<char> >)’:
+numpaths.cc:25:10: error: no match for ‘operator[]’ (operand types are ‘std::map<std::set<std::__cxx11::basic_string<char> >, int>’ and ‘std::__cxx11::basic_string<char>’)
+       map[fileName] += i;
+          ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::set<std::__cxx11::basic_string<char> >; _Tp = int; _Compare = std::less<std::set<std::__cxx11::basic_string<char> > >; _Alloc = std::allocator<std::pair<const std::set<std::__cxx11::basic_string<char> >, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::set<std::__cxx11::basic_string<char> >]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   no known conversion for argument 1 from ‘std::__cxx11::basic_string<char>’ to ‘const key_type&’ {aka ‘const std::set<std::__cxx11::basic_string<char> >&’}
+/usr/include/c++/8/bits/stl_map.h:510:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = std::set<std::__cxx11::basic_string<char> >; _Tp = int; _Compare = std::less<std::set<std::__cxx11::basic_string<char> > >; _Alloc = std::allocator<std::pair<const std::set<std::__cxx11::basic_string<char> >, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::set<std::__cxx11::basic_string<char> >]’
+       operator[](key_type&& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:510:7: note:   no known conversion for argument 1 from ‘std::__cxx11::basic_string<char>’ to ‘std::map<std::set<std::__cxx11::basic_string<char> >, int>::key_type&&’ {aka ‘std::set<std::__cxx11::basic_string<char> >&&’}
+numpaths.cc:32:10: error: could not convert ‘map’ from ‘map<std::set<std::__cxx11::basic_string<char> >,int>’ to ‘map<int,std::set<std::__cxx11::basic_string<char> >>’
+   return map;
+          ^~~
+numpaths.cc: In function ‘void interact(const std::map<int, std::set<std::__cxx11::basic_string<char> > >&)’:
+numpaths.cc:49:27: error: passing ‘const std::map<int, std::set<std::__cxx11::basic_string<char> > >’ as ‘this’ argument discards qualifiers [-fpermissive]
+       int intTotal = map[i];
+                           ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   in call to ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = int; _Tp = std::set<std::__cxx11::basic_string<char> >; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, std::set<std::__cxx11::basic_string<char> > > >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = std::set<std::__cxx11::basic_string<char> >; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = int]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+numpaths.cc:49:27: error: cannot convert ‘std::map<int, std::set<std::__cxx11::basic_string<char> > >::mapped_type’ {aka ‘std::set<std::__cxx11::basic_string<char> >’} to ‘int’ in initialization
+       int intTotal = map[i];
+                           ^
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘std::map<std::set<std::__cxx11::basic_string<char> >, int> readNums(std::vector<std::__cxx11::basic_string<char> >)’:
+numpaths.cc:25:10: error: no match for ‘operator[]’ (operand types are ‘std::map<std::set<std::__cxx11::basic_string<char> >, int>’ and ‘std::__cxx11::basic_string<char>’)
+       map[fileName] += i;
+          ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::set<std::__cxx11::basic_string<char> >; _Tp = int; _Compare = std::less<std::set<std::__cxx11::basic_string<char> > >; _Alloc = std::allocator<std::pair<const std::set<std::__cxx11::basic_string<char> >, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::set<std::__cxx11::basic_string<char> >]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   no known conversion for argument 1 from ‘std::__cxx11::basic_string<char>’ to ‘const key_type&’ {aka ‘const std::set<std::__cxx11::basic_string<char> >&’}
+/usr/include/c++/8/bits/stl_map.h:510:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = std::set<std::__cxx11::basic_string<char> >; _Tp = int; _Compare = std::less<std::set<std::__cxx11::basic_string<char> > >; _Alloc = std::allocator<std::pair<const std::set<std::__cxx11::basic_string<char> >, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::set<std::__cxx11::basic_string<char> >]’
+       operator[](key_type&& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:510:7: note:   no known conversion for argument 1 from ‘std::__cxx11::basic_string<char>’ to ‘std::map<std::set<std::__cxx11::basic_string<char> >, int>::key_type&&’ {aka ‘std::set<std::__cxx11::basic_string<char> >&&’}
+numpaths.cc: In function ‘void interact(const std::map<int, std::set<std::__cxx11::basic_string<char> > >&)’:
+numpaths.cc:49:27: error: passing ‘const std::map<int, std::set<std::__cxx11::basic_string<char> > >’ as ‘this’ argument discards qualifiers [-fpermissive]
+       int intTotal = map[i];
+                           ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   in call to ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = int; _Tp = std::set<std::__cxx11::basic_string<char> >; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, std::set<std::__cxx11::basic_string<char> > > >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = std::set<std::__cxx11::basic_string<char> >; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = int]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+numpaths.cc:49:27: error: cannot convert ‘std::map<int, std::set<std::__cxx11::basic_string<char> > >::mapped_type’ {aka ‘std::set<std::__cxx11::basic_string<char> >’} to ‘int’ in initialization
+       int intTotal = map[i];
+                           ^
+numpaths.cc: In function ‘int main(int, char**)’:
+numpaths.cc:67:12: error: invalid initialization of reference of type ‘const std::map<int, std::set<std::__cxx11::basic_string<char> > >&’ from expression of type ‘std::map<std::set<std::__cxx11::basic_string<char> >, int>’
+   interact(map);
+            ^~~
+numpaths.cc:43:1: note: in passing argument 1 of ‘void interact(const std::map<int, std::set<std::__cxx11::basic_string<char> > >&)’
+ interact(const std::map<int, FileNames>& map)
+ ^~~~~~~~
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<int, std::set<std::__cxx11::basic_string<char> > >&)’:
+numpaths.cc:49:27: error: passing ‘const std::map<int, std::set<std::__cxx11::basic_string<char> > >’ as ‘this’ argument discards qualifiers [-fpermissive]
+       int intTotal = map[i];
+                           ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   in call to ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = int; _Tp = std::set<std::__cxx11::basic_string<char> >; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, std::set<std::__cxx11::basic_string<char> > > >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = std::set<std::__cxx11::basic_string<char> >; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = int]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+numpaths.cc:49:27: error: cannot convert ‘std::map<int, std::set<std::__cxx11::basic_string<char> > >::mapped_type’ {aka ‘std::set<std::__cxx11::basic_string<char> >’} to ‘int’ in initialization
+       int intTotal = map[i];
+                           ^
+numpaths.cc: In function ‘int main(int, char**)’:
+numpaths.cc:67:12: error: invalid initialization of reference of type ‘const std::map<int, std::set<std::__cxx11::basic_string<char> > >&’ from expression of type ‘std::map<std::__cxx11::basic_string<char>, int>’
+   interact(map);
+            ^~~
+numpaths.cc:43:1: note: in passing argument 1 of ‘void interact(const std::map<int, std::set<std::__cxx11::basic_string<char> > >&)’
+ interact(const std::map<int, FileNames>& map)
+ ^~~~~~~~
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<int, std::__cxx11::basic_string<char> >&)’:
+numpaths.cc:49:27: error: passing ‘const std::map<int, std::__cxx11::basic_string<char> >’ as ‘this’ argument discards qualifiers [-fpermissive]
+       int intTotal = map[i];
+                           ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   in call to ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = int; _Tp = std::__cxx11::basic_string<char>; _Compare = std::less<int>; _Alloc = std::allocator<std::pair<const int, std::__cxx11::basic_string<char> > >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = std::__cxx11::basic_string<char>; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = int]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+numpaths.cc:49:27: error: cannot convert ‘std::map<int, std::__cxx11::basic_string<char> >::mapped_type’ {aka ‘std::__cxx11::basic_string<char>’} to ‘int’ in initialization
+       int intTotal = map[i];
+                           ^
+numpaths.cc: In function ‘int main(int, char**)’:
+numpaths.cc:67:12: error: invalid initialization of reference of type ‘const std::map<int, std::__cxx11::basic_string<char> >&’ from expression of type ‘std::map<std::__cxx11::basic_string<char>, int>’
+   interact(map);
+            ^~~
+numpaths.cc:43:1: note: in passing argument 1 of ‘void interact(const std::map<int, std::__cxx11::basic_string<char> >&)’
+ interact(const std::map<int, std::string>& map)
+ ^~~~~~~~
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<std::__cxx11::basic_string<char>, int>&)’:
+numpaths.cc:49:25: error: no match for ‘operator[]’ (operand types are ‘const std::map<std::__cxx11::basic_string<char>, int>’ and ‘int’)
+       int intTotal = map[i];
+                         ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   no known conversion for argument 1 from ‘int’ to ‘const key_type&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+/usr/include/c++/8/bits/stl_map.h:510:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       operator[](key_type&& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:510:7: note:   no known conversion for argument 1 from ‘int’ to ‘std::map<std::__cxx11::basic_string<char>, int>::key_type&&’ {aka ‘std::__cxx11::basic_string<char>&&’}
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<std::__cxx11::basic_string<char>, int>&)’:
+numpaths.cc:49:30: error: no matching function for call to ‘std::map<std::__cxx11::basic_string<char>, int>::at(int&) const’
+       int intTotal = map.at(i);
+                              ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:535:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::at(const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       at(const key_type& __k)
+       ^~
+/usr/include/c++/8/bits/stl_map.h:535:7: note:   no known conversion for argument 1 from ‘int’ to ‘const key_type&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+/usr/include/c++/8/bits/stl_map.h:544:7: note: candidate: ‘const mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::at(const key_type&) const [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       at(const key_type& __k) const
+       ^~
+/usr/include/c++/8/bits/stl_map.h:544:7: note:   no known conversion for argument 1 from ‘int’ to ‘const key_type&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<std::__cxx11::basic_string<char>, int>&)’:
+numpaths.cc:49:30: error: no matching function for call to ‘std::map<std::__cxx11::basic_string<char>, int>::at(int&) const’
+       int intTotal = map.at(i);
+                              ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:535:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::at(const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       at(const key_type& __k)
+       ^~
+/usr/include/c++/8/bits/stl_map.h:535:7: note:   no known conversion for argument 1 from ‘int’ to ‘const key_type&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+/usr/include/c++/8/bits/stl_map.h:544:7: note: candidate: ‘const mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::at(const key_type&) const [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       at(const key_type& __k) const
+       ^~
+/usr/include/c++/8/bits/stl_map.h:544:7: note:   no known conversion for argument 1 from ‘int’ to ‘const key_type&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<std::__cxx11::basic_string<char>, int>&)’:
+numpaths.cc:49:25: error: no match for ‘operator[]’ (operand types are ‘const std::map<std::__cxx11::basic_string<char>, int>’ and ‘int’)
+       int intTotal = map[i];
+                         ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   no known conversion for argument 1 from ‘int’ to ‘const key_type&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+/usr/include/c++/8/bits/stl_map.h:510:7: note: candidate: ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       operator[](key_type&& __k)
+       ^~~~~~~~
+/usr/include/c++/8/bits/stl_map.h:510:7: note:   no known conversion for argument 1 from ‘int’ to ‘std::map<std::__cxx11::basic_string<char>, int>::key_type&&’ {aka ‘std::__cxx11::basic_string<char>&&’}
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc: In function ‘void interact(const std::map<std::__cxx11::basic_string<char>, int>&)’:
+numpaths.cc:49:27: error: passing ‘const std::map<std::__cxx11::basic_string<char>, int>’ as ‘this’ argument discards qualifiers [-fpermissive]
+       int intTotal = map[i];
+                           ^
+In file included from /usr/include/c++/8/map:61,
+                 from numpaths.cc:7:
+/usr/include/c++/8/bits/stl_map.h:490:7: note:   in call to ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = int; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+       operator[](const key_type& __k)
+       ^~~~~~~~
+numpaths.cc: At global scope:
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+make: *** [<builtin>: numpaths] Error 1
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+^[[A^[[A^Z
+[3]+  Stopped                 emacs numpaths.cc
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ make -f ../Makefile 
+g++ -g -Wall -std=c++17    numpaths.cc   -o numpaths
+numpaths.cc:36:1: warning: ‘std::ostream& operator<<(std::ostream&, const std::set<std::__cxx11::basic_string<char> >&)’ defined but not used [-Wunused-function]
+ operator<<(std::ostream& out, const std::set<std::string>& set)
+ ^~~~~~~~
+cat </dev/null >.gitignore
+for t in numpaths; do echo $t >>.gitignore; done
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ ./numpaths ../data/*.dat
+>> 1.dat
+1.dat: NOT FOUND
+>> 2.dat
+2.dat: NOT FOUND
+>> ../data/1.dat
+../data/1.dat: 47684
+>> ^Z
+[4]+  Stopped                 ./numpaths ../data/*.dat
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ emacs numpaths.cc 
+bklayma1@g7-37:~/i240b/submit/lab3/5-numpaths$ 
