@@ -32,12 +32,12 @@ readNums(std::vector<std::string> fileNames)
   return map;
 }
 
-static std::ostream&
-operator<<(std::ostream& out, const std::set<std::string>& set)
-{
-  for (auto element : set) { out << element << " "; }
-  return out;
-}
+//static std::ostream&
+//operator<<(std::ostream& out, const std::set<std::string>& set)
+//{
+//for (auto element : set) { out << element << " "; }
+//return out;
+//}
 
 static void
 interact(const std::map<std::string, int>& map)
