@@ -75,10 +75,13 @@ std::vector<std::string> getKeys(std::unordered_map<std::string, int> wordCounts
   return keys;
 }
 
-std::vector<std::string> sortKeys(std::unordered_map<std::string, int> wordCounts, std::vector<std::string> keys){
+std::vector<std::string> sortKeysByName(std::unordered_map<std::string, int> wordCounts, std::vector<std::string> keys){
   for(int i = 0; i < keys.size() - 1; i++){
-    for(int j = i; j < keys.size(); j++){
-      if(wordCounts[keys[i]] < wordCounts[keys[j]]){
+    for(int j = i + 1; j < keys.size(); j++){
+      if(wordCounts[keys[i]] != wordCounts[keys[j]]){
+        break;
+      }
+      if(keys[i].compare(keys[j]) > 0){
         std::string temp = keys[i];
         keys[i] = keys[j];
         keys[j] = temp;
@@ -86,6 +89,19 @@ std::vector<std::string> sortKeys(std::unordered_map<std::string, int> wordCount
     }
   }
   return keys;
+}
+
+std::vector<std::string> sortKeys(std::unordered_map<std::string, int> wordCounts, std::vector<std::string> keys){
+  for(int i = 0; i < keys.size() - 1; i++){
+    for(int j = i + 1; j < keys.size(); j++){
+      if(wordCounts[keys[i]] < wordCounts[keys[j]]){
+        std::string temp = keys[i];
+        keys[i] = keys[j];
+        keys[j] = temp;
+      }
+    }
+  }
+  return sortKeysByName(wordCounts, keys);
 }
 
 void printFinalValues(int MAX_N_OUT, std::vector<std::string> keys, std::unordered_map<std::string, int> wordCounts, int numKeys){
