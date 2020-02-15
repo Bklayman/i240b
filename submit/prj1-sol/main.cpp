@@ -15,7 +15,20 @@ int checkInputs(std::vector<std::string> args, int numArgs){
     return 1;
   }
   for(int i = 0; i < 3; i++){
-    int input = std::stoi(args[i]);
+    int input;
+    try{
+      input = std::stoi(args[i]);
+    }
+    catch(std::invalid_argument& error){
+      if(i == 0){
+        std::cout << "bad integer value \"" << args[i] << "\" for MAX_N_OUT\n";
+      } else if(i == 1) {
+        std::cout << "bad integer value \"" << args[i] << "\" for MIN_WORD_LEN\n";
+      } else {
+        std::cout << "bad integer value \"" << args[i] << "\" for MAX_WORD_LEN\n";
+      }
+      return 2;
+    }
     int intLength = 0;
     while(input != 0){
       intLength++;
