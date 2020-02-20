@@ -1,0 +1,777 @@
+Script started on 2020-02-20 16:20:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+bash: /home/umrigar/cs240/bin/student.rc: Permission denied
+bklayma1@g7-02:~/i240b/submit/lab4$ cd 1-point/
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ls -l
+total 12
+-rw-r--r-- 1 bklayma1 bklayma1 1174 Feb 20 16:19 main.cc
+-rw-r--r-- 1 bklayma1 bklayma1  533 Feb 20 16:19 point.cc
+-rw-r--r-- 1 bklayma1 bklayma1  654 Feb 20 16:19 point.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../m[KM<[Kakefile 
+g++ -MT point.o -MMD -MP -MF .deps/point.d -g -Wall -std=c++17 -c point.cc
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ point.o main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main point.o main.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ls
+main  main.cc  main.o  point.cc  point.hh  point.o
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ./main 
+distance from (0, 0) to (3, 4) is 5
+distance from (0, 0) to (1, 1) is 1.41421
+distance from (0, 0) to (4, 5) is 6.40312
+distance from (3, 4) to (1, 1) is 3.60555
+distance from (3, 4) to (4, 5) is 1.41421
+distance from (1, 1) to (4, 5) is 5
+
+sizeof(double) = 8
+sizeof(Point) = 16
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ls
+main  main.cc  main.o  point.cc  point.hh  point.o
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs point.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.cchh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhcc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.cchhcchhpoint.ccls[Kemacs main.cc[6P./main ls[Kmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:15:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after struct definition
+ }
+  [01;31m[K^[m[K
+  [32m[K;[m[K
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(Point (*&)())[m[K’
+   Line(Point p1(), Point p2()) : p1(p1), p2(p2[01;31m[K)[m[K { }
+                                               [01;31m[K^[m[K
+In file included from [01m[Kline.hh:5[m[K,
+                 from [01m[Kline.cc:1[m[K:
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(double, double)[m[K’
+   [01;36m[KPoint[m[K(double x=0, double y=0) : x(x), y(y) { }
+   [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kdouble[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+ struct [01;36m[KPoint[m[K {
+        [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kconst Point&[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[KPoint&&[m[K’
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:10:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(Point (*&)())[m[K’
+   Line(Point p1(), Point p2()) : p1(p1), p2(p2[01;31m[K)[m[K { }
+                                               [01;31m[K^[m[K
+In file included from [01m[Kline.hh:5[m[K,
+                 from [01m[Kline.cc:1[m[K:
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(double, double)[m[K’
+   [01;36m[KPoint[m[K(double x=0, double y=0) : x(x), y(y) { }
+   [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kdouble[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+ struct [01;36m[KPoint[m[K {
+        [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kconst Point&[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[KPoint&&[m[K’
+[01m[Kline.cc:[m[K In member function ‘[01m[Kstd::__cxx11::string Line::toString() const[m[K’:
+[01m[Kline.cc:14:97:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Klength[m[K’ in ‘[01m[K(const Line*)this[m[K’, which is of pointer type ‘[01m[Kconst Line*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  << p1.y << ") -- (" << p2.x << ", " << p2.y << ") length = " << this.[01;31m[Klength[m[K();
+                                                                       [01;31m[K^~~~~~[m[K
+
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.cchh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(Point (*&)())[m[K’
+   Line(Point p1(), Point p2()) : p1(p1), p2(p2[01;31m[K)[m[K { }
+                                               [01;31m[K^[m[K
+In file included from [01m[Kline.hh:5[m[K,
+                 from [01m[Kline.cc:1[m[K:
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(double, double)[m[K’
+   [01;36m[KPoint[m[K(double x=0, double y=0) : x(x), y(y) { }
+   [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kdouble[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+ struct [01;36m[KPoint[m[K {
+        [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kconst Point&[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[KPoint&&[m[K’
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:10:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(Point (*&)())[m[K’
+   Line(Point p1(), Point p2()) : p1(p1), p2(p2[01;31m[K)[m[K { }
+                                               [01;31m[K^[m[K
+In file included from [01m[Kline.hh:5[m[K,
+                 from [01m[Kline.cc:1[m[K:
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(double, double)[m[K’
+   [01;36m[KPoint[m[K(double x=0, double y=0) : x(x), y(y) { }
+   [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kdouble[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+ struct [01;36m[KPoint[m[K {
+        [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kconst Point&[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[KPoint&&[m[K’
+[01m[Kline.cc:[m[K In member function ‘[01m[Kstd::__cxx11::string Line::toString() const[m[K’:
+[01m[Kline.cc:14:97:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Klength[m[K’ in ‘[01m[K(const Line*)this[m[K’, which is of pointer type ‘[01m[Kconst Line*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  << p1.y << ") -- (" << p2.x << ", " << p2.y << ") length = " << this.[01;31m[Klength[m[K();
+                                                                       [01;31m[K^~~~~~[m[K
+
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.[01;31m[Kx[m[K, p1.y), p2(p2.x, p2.y) { }
+                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.[01;31m[Ky[m[K), p2(p2.x, p2.y) { }
+                                              [01;31m[K^[m[K
+[01m[Kline.hh:10:56:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.[01;31m[Kx[m[K, p2.y) { }
+                                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:62:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.x, p2.[01;31m[Ky[m[K) { }
+                                                              [01;31m[K^[m[K
+[01m[Kline.cc:[m[K In member function ‘[01m[Kstd::__cxx11::string Line::toString() const[m[K’:
+[01m[Kline.cc:14:97:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Klength[m[K’ in ‘[01m[K(const Line*)this[m[K’, which is of pointer type ‘[01m[Kconst Line*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  << p1.y << ") -- (" << p2.x << ", " << p2.y << ") length = " << this.[01;31m[Klength[m[K();
+                                                                       [01;31m[K^~~~~~[m[K
+
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hhmake -f ../Makefile [7Pemacs line.hhmake -f ../Makefile [7Pemacs line.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.ccmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.[01;31m[Kx[m[K, p1.y), p2(p2.x, p2.y) { }
+                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.[01;31m[Ky[m[K), p2(p2.x, p2.y) { }
+                                              [01;31m[K^[m[K
+[01m[Kline.hh:10:56:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.[01;31m[Kx[m[K, p2.y) { }
+                                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:62:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.x, p2.[01;31m[Ky[m[K) { }
+                                                              [01;31m[K^[m[K
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.ccmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.[01;31m[Kx[m[K, p1.y), p2(p2.x, p2.y) { }
+                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.[01;31m[Ky[m[K), p2(p2.x, p2.y) { }
+                                              [01;31m[K^[m[K
+[01m[Kline.hh:10:56:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.[01;31m[Kx[m[K, p2.y) { }
+                                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:62:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.x, p2.[01;31m[Ky[m[K) { }
+                                                              [01;31m[K^[m[K
+[01m[Kline.cc:[m[K In member function ‘[01m[Kstd::__cxx11::string Line::toString() const[m[K’:
+[01m[Kline.cc:14:17:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Kconst Point[m[K’
+   s << "(" << p1[01;31m[K->[m[Kx << ", " << p1.y << ") -- (" << p2.x << ", " << p2.y << ") length = " << this->length();
+                 [01;31m[K^~[m[K
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.ccmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.[01;31m[Kx[m[K, p1.y), p2(p2.x, p2.y) { }
+                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.[01;31m[Ky[m[K), p2(p2.x, p2.y) { }
+                                              [01;31m[K^[m[K
+[01m[Kline.hh:10:56:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.[01;31m[Kx[m[K, p2.y) { }
+                                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:62:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.x, p2.[01;31m[Ky[m[K) { }
+                                                              [01;31m[K^[m[K
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.ccmake -f ../Makefile [7Pemacs line.ccmake -f ../Makefile [7Pemacs line.ccmake -f ../Makefile [7Pemacs line.hh
+
+(emacs:3540165): Gtk-[1;33mWARNING[0m **: [34m16:40:03.754[0m: no trigger event for menu popup
+
+(emacs:3540165): Gtk-[1;33mWARNING[0m **: [34m16:40:03.763[0m: no trigger event for menu popup
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(Point (*&)())[m[K’
+   Line(Point p1(), Point p2()) : p1(p1), p2(p2[01;31m[K)[m[K { }
+                                               [01;31m[K^[m[K
+In file included from [01m[Kline.hh:5[m[K,
+                 from [01m[Kline.cc:1[m[K:
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(double, double)[m[K’
+   [01;36m[KPoint[m[K(double x=0, double y=0) : x(x), y(y) { }
+   [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kdouble[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+ struct [01;36m[KPoint[m[K {
+        [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kconst Point&[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[KPoint&&[m[K’
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:10:47:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPoint::Point(Point (*&)())[m[K’
+   Line(Point p1(), Point p2()) : p1(p1), p2(p2[01;31m[K)[m[K { }
+                                               [01;31m[K^[m[K
+In file included from [01m[Kline.hh:5[m[K,
+                 from [01m[Kline.cc:1[m[K:
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPoint::Point(double, double)[m[K’
+   [01;36m[KPoint[m[K(double x=0, double y=0) : x(x), y(y) { }
+   [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:13:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kdouble[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(const Point&)[m[K’
+ struct [01;36m[KPoint[m[K {
+        [01;36m[K^~~~~[m[K
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[Kconst Point&[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Point::Point(Point&&)[m[K’
+[01m[Kpoint.hh:6:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPoint (*)()[m[K’ to ‘[01m[KPoint&&[m[K’
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.[01;31m[Kx[m[K, p1.y), p2(p2.x, p2.y) { }
+                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.[01;31m[Ky[m[K), p2(p2.x, p2.y) { }
+                                              [01;31m[K^[m[K
+[01m[Kline.hh:10:56:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.[01;31m[Kx[m[K, p2.y) { }
+                                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:62:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.x, p2.[01;31m[Ky[m[K) { }
+                                                              [01;31m[K^[m[K
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.[01;31m[Kx[m[K, p1.y), p2(p2.x, p2.y) { }
+                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp1[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.[01;31m[Ky[m[K), p2(p2.x, p2.y) { }
+                                              [01;31m[K^[m[K
+[01m[Kline.hh:10:56:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.[01;31m[Kx[m[K, p2.y) { }
+                                                        [01;31m[K^[m[K
+[01m[Kline.hh:10:62:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp2[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p1(), Point p2()) : p1(p1.x, p1.y), p2(p2.x, p2.[01;31m[Ky[m[K) { }
+                                                              [01;31m[K^[m[K
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+In file included from [01m[Kline.cc:1[m[K:
+[01m[Kline.hh:[m[K In constructor ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’:
+[01m[Kline.hh:10:43:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp11[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p11(), Point p22()) : p1(p11.[01;31m[Kx[m[K, p11.y), p2(p22.x, p22.y) { }
+                                           [01;31m[K^[m[K
+[01m[Kline.hh:10:50:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp11[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p11(), Point p22()) : p1(p11.x, p11.[01;31m[Ky[m[K), p2(p22.x, p22.y) { }
+                                                  [01;31m[K^[m[K
+[01m[Kline.hh:10:61:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kx[m[K’ in ‘[01m[Kp22[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p11(), Point p22()) : p1(p11.x, p11.y), p2(p22.[01;31m[Kx[m[K, p22.y) { }
+                                                             [01;31m[K^[m[K
+[01m[Kline.hh:10:68:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ky[m[K’ in ‘[01m[Kp22[m[K’, which is of non-class type ‘[01m[KPoint (*)()[m[K’
+   Line(Point p11(), Point p22()) : p1(p11.x, p11.y), p2(p22.x, p22.[01;31m[Ky[m[K) { }
+                                                                    [01;31m[K^[m[K
+make: *** [../Makefile:48: line.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmake -f ../Makefile 
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+g++ point.o main.o line.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main point.o main.o line.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hhmake -f ../Makefile [Kmake -f ../Makefile [7Pemacs line.hhmake -f ../Makefile [7Pemacs line.hhmake -f ../Makefile [Kls
+line.cc   line.hh   line.o  main.cc  point.cc  point.o
+line.cc~  line.hh~  main    main.o   point.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ./main
+distance from (0, 0) to (3, 4) is 5
+distance from (0, 0) to (1, 1) is 1.41421
+distance from (0, 0) to (4, 5) is 6.40312
+distance from (3, 4) to (1, 1) is 3.60555
+distance from (3, 4) to (4, 5) is 1.41421
+distance from (1, 1) to (4, 5) is 5
+
+sizeof(double) = 8
+sizeof(Point) = 16
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.cc[7P./main[4Plsmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’:
+[01m[Kmain.cc:36:29:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Klength[m[K’ in ‘[01m[Kpoints[m[K’, which is of non-class type ‘[01m[Kconst Point [4][m[K’
+   for(int i = 0; i < points.[01;31m[Klength[m[K; i+=2){
+                             [01;31m[K^~~~~~[m[K
+[01m[Kmain.cc:37:49:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLine::Line(const Point&, const Point&)[m[K’
+     Line curLine = Line(points[i], points[i + 1][01;31m[K)[m[K;
+                                                 [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:2[m[K:
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’
+   [01;36m[KLine[m[K(Point p11(), Point p22()) : p1(p1.x, p1.y), p2(p2.x, p2.y) { }
+   [01;36m[K^~~~[m[K
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst Point[m[K’ to ‘[01m[KPoint (*)()[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(const Line&)[m[K’
+ struct [01;36m[KLine[m[K{
+        [01;36m[K^~~~[m[K
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(Line&&)[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kmain.cc:[m[K At global scope:
+[01m[Kmain.cc:35:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ static void [01;35m[KoutLineLengths[m[K(std::ostream& out){
+             [01;35m[K^~~~~~~~~~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’:
+[01m[Kmain.cc:36:29:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksize[m[K’ in ‘[01m[Kpoints[m[K’, which is of non-class type ‘[01m[Kconst Point [4][m[K’
+   for(int i = 0; i < points.[01;31m[Ksize[m[K; i+=2){
+                             [01;31m[K^~~~[m[K
+[01m[Kmain.cc:37:49:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLine::Line(const Point&, const Point&)[m[K’
+     Line curLine = Line(points[i], points[i + 1][01;31m[K)[m[K;
+                                                 [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:2[m[K:
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’
+   [01;36m[KLine[m[K(Point p11(), Point p22()) : p1(p1.x, p1.y), p2(p2.x, p2.y) { }
+   [01;36m[K^~~~[m[K
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst Point[m[K’ to ‘[01m[KPoint (*)()[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(const Line&)[m[K’
+ struct [01;36m[KLine[m[K{
+        [01;36m[K^~~~[m[K
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(Line&&)[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kmain.cc:[m[K At global scope:
+[01m[Kmain.cc:35:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ static void [01;35m[KoutLineLengths[m[K(std::ostream& out){
+             [01;35m[K^~~~~~~~~~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’:
+[01m[Kmain.cc:36:29:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksize[m[K’ in ‘[01m[Kpoints[m[K’, which is of non-class type ‘[01m[Kconst Point [4][m[K’
+   for(int i = 0; i < points.[01;31m[Ksize[m[K(); i+=2){
+                             [01;31m[K^~~~[m[K
+[01m[Kmain.cc:37:49:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLine::Line(const Point&, const Point&)[m[K’
+     Line curLine = Line(points[i], points[i + 1][01;31m[K)[m[K;
+                                                 [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:2[m[K:
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’
+   [01;36m[KLine[m[K(Point p11(), Point p22()) : p1(p1.x, p1.y), p2(p2.x, p2.y) { }
+   [01;36m[K^~~~[m[K
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst Point[m[K’ to ‘[01m[KPoint (*)()[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(const Line&)[m[K’
+ struct [01;36m[KLine[m[K{
+        [01;36m[K^~~~[m[K
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(Line&&)[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kmain.cc:[m[K At global scope:
+[01m[Kmain.cc:35:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ static void [01;35m[KoutLineLengths[m[K(std::ostream& out){
+             [01;35m[K^~~~~~~~~~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’:
+[01m[Kmain.cc:36:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0; [01;35m[Ki < sizeof(points)/sizeof(points[0])[m[K; i+=2){
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kmain.cc:37:49:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLine::Line(const Point&, const Point&)[m[K’
+     Line curLine = Line(points[i], points[i + 1][01;31m[K)[m[K;
+                                                 [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:2[m[K:
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’
+   [01;36m[KLine[m[K(Point p11(), Point p22()) : p1(p1.x, p1.y), p2(p2.x, p2.y) { }
+   [01;36m[K^~~~[m[K
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst Point[m[K’ to ‘[01m[KPoint (*)()[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(const Line&)[m[K’
+ struct [01;36m[KLine[m[K{
+        [01;36m[K^~~~[m[K
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(Line&&)[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kmain.cc:[m[K At global scope:
+[01m[Kmain.cc:35:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ static void [01;35m[KoutLineLengths[m[K(std::ostream& out){
+             [01;35m[K^~~~~~~~~~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [Kmake -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’:
+[01m[Kmain.cc:36:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0; [01;35m[Ki < (int) sizeof(points)/sizeof(points[0])[m[K; i+=2){
+                  [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kmain.cc:37:49:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLine::Line(const Point&, const Point&)[m[K’
+     Line curLine = Line(points[i], points[i + 1][01;31m[K)[m[K;
+                                                 [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:2[m[K:
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLine::Line(Point (*)(), Point (*)())[m[K’
+   [01;36m[KLine[m[K(Point p11(), Point p22()) : p1(p1.x, p1.y), p2(p2.x, p2.y) { }
+   [01;36m[K^~~~[m[K
+[01m[Kline.hh:10:3:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst Point[m[K’ to ‘[01m[KPoint (*)()[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(const Line&)[m[K’
+ struct [01;36m[KLine[m[K{
+        [01;36m[K^~~~[m[K
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Line::Line(Line&&)[m[K’
+[01m[Kline.hh:7:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[Kmain.cc:[m[K At global scope:
+[01m[Kmain.cc:35:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ static void [01;35m[KoutLineLengths[m[K(std::ostream& out){
+             [01;35m[K^~~~~~~~~~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hhmain.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:35:13:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid outLineLengths(std::ostream&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+ static void [01;35m[KoutLineLengths[m[K(std::ostream& out){
+             [01;35m[K^~~~~~~~~~~~~~[m[K
+g++ -MT line.o -MMD -MP -MF .deps/line.d -g -Wall -std=c++17 -c line.cc
+g++ point.o main.o line.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main point.o main.o line.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs line.hhmain.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ point.o main.o line.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main point.o main.o line.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [7Pemacs line.hhmain.ccmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [7Pemacs main.cc[7P./main[4Plsmake -f ../Makefile ls[K./main
+distance from (0, 0) to (3, 4) is 5
+distance from (0, 0) to (1, 1) is 1.41421
+distance from (0, 0) to (4, 5) is 6.40312
+distance from (3, 4) to (1, 1) is 3.60555
+distance from (3, 4) to (4, 5) is 1.41421
+distance from (1, 1) to (4, 5) is 5
+
+sizeof(double) = 8
+sizeof(Point) = 16
+(0, 0)--(3, 4)length = 5(1, 1)--(4, 5)length = 5bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ./mainmake -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs main.cc[7P./mainmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ point.o main.o line.o -o main
+^[[Acat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main point.o main.o line.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ make -f ../Makefile [7Pemacs main.cc[7P./main
+distance from (0, 0) to (3, 4) is 5
+distance from (0, 0) to (1, 1) is 1.41421
+distance from (0, 0) to (4, 5) is 6.40312
+distance from (3, 4) to (1, 1) is 3.60555
+distance from (3, 4) to (4, 5) is 1.41421
+distance from (1, 1) to (4, 5) is 5
+
+sizeof(double) = 8
+sizeof(Point) = 16
+(0, 0)--(3, 4)length = 5
+(1, 1)--(4, 5)length = 5
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ ./mainmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile ./main[K[Kemacs line.hh
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ emacs line.hh[K[Kcc
+bklayma1@g7-02:~/i240b/submit/lab4/1-point$ cd ../2-shape/
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ ls
+main.cc  point.cc  point.hh  shapes.hh	tostring.cc  tostring.hh
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ lscd ../2-shape/[1Pemacs line.cchh[7P./mainmake -f ../Makefile 
+g++ -MT tostring.o -MMD -MP -MF .deps/tostring.d -g -Wall -std=c++17 -c tostring.cc
+g++ -MT point.o -MMD -MP -MF .deps/point.d -g -Wall -std=c++17 -c point.cc
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o point.o main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o point.o main.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ ls
+main	 main.o    point.hh  shapes.hh	  tostring.hh
+main.cc  point.cc  point.o   tostring.cc  tostring.o
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ ./main
+Circle[(0, 0), 1] perimeter: 6.28319
+Rectangle[(1, 1), (4, 5)] perimeter: 14
+Circle[(1, 1), 2] perimeter: 12.5664
+Rectangle[(0, 0), (5, 4)] perimeter: 18
+
+sizeof(double) = 8
+sizeof(Point) = 24
+
+sizeof(ToString) = 8
+sizeof(Shape) = 8
+sizeof(Circle) = 40
+sizeof(Rectangle) = 56
+
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ ls
+main	 main.o    point.hh  shapes.hh	  tostring.hh
+main.cc  point.cc  point.o   tostring.cc  tostring.o
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs ls
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ ls
+main	 main.o    point.hh  shapes.hh	  tostring.hh
+main.cc  point.cc  point.o   tostring.cc  tostring.o
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs shapes.hh
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs shapes.hh
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs shapes.hhls[Kemacs lsls[Kemacs main.cc[7P./main[4Plsmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:2[m[K:
+[01m[Kshapes.hh:[m[K In member function ‘[01m[Kdouble Rectangle::area() const[m[K’:
+[01m[Kshapes.hh:68:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct Point[m[K’ has no member named ‘[01m[Klength[m[K’
+   double area() const{ return (topLeft.[01;31m[Klength[m[K(Point(topLeft.x, bottomRight.y))) * (bottomRight.length(Point(bottomRight.x, topLeft.y))); }
+                                        [01;31m[K^~~~~~[m[K
+[01m[Kshapes.hh:68:96:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst struct Point[m[K’ has no member named ‘[01m[Klength[m[K’
+ rn (topLeft.length(Point(topLeft.x, bottomRight.y))) * (bottomRight.[01;31m[Klength[m[K(Point(bottomRight.x, topLeft.y))); }
+                                                                     [01;31m[K^~~~~~[m[K
+
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ make -f ../Makefile [5Pemacs shapes.hh
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs shapes.hhmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o point.o main.o -o main
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacss[K main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kvoid outShapes(std::ostream&)[m[K’:
+[01m[Kmain.cc:47:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class Shape[m[K’ has no member named ‘[01m[Karea[m[K’
+     auto area = shapeP->[01;31m[Karea[m[K();
+                         [01;31m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ make -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [5Pemacs shapes.hh
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs shapes.hhmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o point.o main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o point.o main.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ make -f ../Makefile [5Pemacs shapes.hhmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [5Pemacs shapes.hhmake -f ../Makefile [5Pemacs shapes.hhls[Kemacs lsls[Kemacs main.cc[7P./main
+Circle[(0, 0), 1] perimeter: 6.28319 area: 3.14159
+Rectangle[(1, 1), (4, 5)] perimeter: 14 area: 16
+Circle[(1, 1), 2] perimeter: 12.5664 area: 12.5664
+Rectangle[(0, 0), (5, 4)] perimeter: 18 area: 16
+
+sizeof(double) = 8
+sizeof(Point) = 24
+
+sizeof(ToString) = 8
+sizeof(Shape) = 8
+sizeof(Circle) = 40
+sizeof(Rectangle) = 56
+
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ ./mainmake -f ../Makefile [5Pemacs shapes.hhmake -f ../Makefile [5Pemacs shapes.hh
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ emacs shapes.hh[9P./mainmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o point.o main.o -o main
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ make -f ../Makefile [5Pemacs shapes.hh[9P./main
+Circle[(0, 0), 1] perimeter: 6.28319 area: 3.14159
+Rectangle[(1, 1), (4, 5)] perimeter: 14 area: 12
+Circle[(1, 1), 2] perimeter: 12.5664 area: 12.5664
+Rectangle[(0, 0), (5, 4)] perimeter: 18 area: 20
+
+sizeof(double) = 8
+sizeof(Point) = 24
+
+sizeof(ToString) = 8
+sizeof(Shape) = 8
+sizeof(Circle) = 40
+sizeof(Rectangle) = 56
+
+bklayma1@g7-02:~/i240b/submit/lab4/2-shape$ cd ../3-expr/
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ls
+expr.cc  expr.hh  main.cc  parse.cc  parse.hh  tostring.cc  tostring.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ lscd ../3-expr/[7P./mainmake -f ../Makefile 
+g++ -MT tostring.o -MMD -MP -MF .deps/tostring.d -g -Wall -std=c++17 -c tostring.cc
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ./main
+usage: ./main PREFIX_EXPR...
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ./main '+ 1 * 2 3' '* + 1 2 3' "[K'+ / 4 0 5 - 3 2'
+(1) + ((2) * (3))
+((1) + (2)) * (3)
+((40) / (5)) + ((3) - (2))
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ls
+expr.cc  expr.o  main.cc  parse.cc  parse.o	 tostring.hh
+expr.hh  main	 main.o   parse.hh  tostring.cc  tostring.o
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs parse.cc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs parse.cc[K[Khh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs parse.hhcc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs parse.cchhccls[Kemacs expr.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.hh[K[Kcc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.cc[K[Khh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs tostring.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs tostring.hh[4Pexpr.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.hhtostring.hh[4Pexpr.hhtostring.hh[4Pexpr.hh[Kemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs main.ccexpr.hhtostring.hh[4Pexpr.hhcchhparse.cchhccls[Kemacs expr.hh./main '+ 1 * 2 3' '* + 1 2 3' '+ / 40 5 - 3 2'[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual int SubExpr::eval() const[m[K’:
+[01m[Kexpr.hh:81:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.[01;31m[Keval[m[K() - right.eval());
+                 [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:81:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.eval() - right.[01;31m[Keval[m[K());
+                                [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual int MulExpr::eval() const[m[K’:
+[01m[Kexpr.hh:112:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.[01;31m[Keval[m[K() * right.eval());
+                 [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:112:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.eval() * right.[01;31m[Keval[m[K());
+                                [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual int DivExpr::eval() const[m[K’:
+[01m[Kexpr.hh:137:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.[01;31m[Keval[m[K() / right.eval());
+                 [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:137:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.eval() / right.[01;31m[Keval[m[K());
+                                [01;31m[K^~~~[m[K
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:15:46:[m[K [01;31m[Kerror: [m[K‘[01m[Keval[m[K’ was not declared in this scope
+     std::cout << *parse(argv[i]) << " = " << [01;31m[Keval[m[K(argv[i])  << std::endl;
+                                              [01;31m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ make -f ../Makefile [7Pemacs main.ccexpr.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.hhmake -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs main.ccexpr.hh
+^[[A^[[A        bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ nano Ma[K[Kmain[K[K[K[Kmak[K[K[K../m[K[K[K[K../
+1-point/  2-shape/  3-expr/   lab4.LOG  Makefile  
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ nano ../
+1-point/  2-shape/  3-expr/   lab4.LOG  Makefile  
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ nano ../Makefile 
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;33H(B[0;7m[ Reading File ](B[m[22;32H(B[0;7m[ Read 56 lines ](B[m[H(B[0;7m  GNU nano 3.2                      ../Makefile                                 [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Uncut Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[3d[39;49m(B[mCXX[31m = [39m(B[mg++[4dCXXFLAGS[31m = [39m(B[m-g -Wall -std=c++17[6d[32m#produce a list of all cc files[7d[39m(B[mCXX_FILES[31m = [39m(B[m$(wildcard *.cc)[9d[32m#produce a list of all *.o files by substituting cc in CXX_FILES with o.[10d[39m(B[mOFILES[31m = [39m(B[m$(CXX_FILES:cc=o)[12d[32m#dir in which to generate dependences[13d[39m(B[mDEPDIR[31m = [39m(B[m.deps[15dTARGETS[31m = [39m(B[mmain[17d(B[0;1m[34mall:[17;17H(B[0m[34m$(TARGETS)[39m(B[m .gitignore[19d(B[0;1m[34mmain:[19;17H(B[0m[34m$(OFILES)[20;17H$(CXX)[39m(B[m [34m$(OFILES)[39m(B[m -o $@[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[4;31H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[22d[K[4;10H[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l-[?12l[?25h[?25lg[?12l[?25h[?25l[?12l[?25h[?25lg[?12l[?25h[?25l [?12l[?25h[?25l-[?12l[?25h[?25lW[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25l[1;71H(B[0;7mModified(B[m[4;21H--std=c++17[4;22H[?12l[?25h[?25lW-std=c++17[4;23H[?12l[?25h[?25le-std=c++17[4;24H[?12l[?25h[?25lx-std=c++17[4;25H[?12l[?25h[?25lt-std=c++17[4;26H[?12l[?25h[?25le-std=c++17[4;27H[?12l[?25h[?25lr-std=c++17[4;28H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25lr-std=c++17[4;27H[?12l[?25h[?25la-std=c++17[4;28H[?12l[?25h[?25l -std=c++17[4;29H[?12l[?25h[?25l--std=c++17[4;30H[?12l[?25h[?25lp-std=c++17[4;31H[?12l[?25h[?25le-std=c++17[4;32H[?12l[?25h[?25ld-std=c++17[4;33H[?12l[?25h[?25la-std=c++17[4;34H[?12l[?25h[?25ln-std=c++17[4;35H[?12l[?25h[?25lt-std=c++17[4;36H[?12l[?25h[?25li-std=c++17[4;37H[?12l[?25h[?25lc-std=c++17[4;38H[?12l[?25h[?25l -std=c++17[4;39H[?12l[?25h[?25l[22d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                   [23;1H Y(B[m Yes[K[24d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[22;63H[?12l[?25h[?25l[23d(B[0;7m^G(B[m Get Help[23;21H(B[0;7mM-D(B[m DOS Format[41G(B[0;7mM-A(B[m Append[23;61H(B[0;7mM-B(B[m Backup File[24d(B[0;7m^C(B[m Cancel[17G    (B[0;7mM-M(B[m Mac Format[41G(B[0;7mM-P(B[m Prepend[24;61H(B[0;7m^T(B[m To Files[22d(B[0;7mFile Name to Write: ../Makefile                              (B[m[22;32H[?12l[?25h[?25l[K[1;79H[1;71H(B[0;7m        (B[m[22;32H(B[0;7m[ Wrote 56 lines ](B[m[J[24;80H[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ makenano ../Makefile [4Pemacs expr.hhmain.ccexpr.hhmake -f ../Makefile [7Pemacs main.ccexpr.hhmain.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -Wextra -pedantic -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In constructor ‘[01m[KIntExpr::IntExpr(int, IntExpr::Private)[m[K’:
+[01m[Kexpr.hh:39:28:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kx[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   IntExpr(int val, [01;35m[KPrivate x[m[K) : value(val) { }
+                    [01;35m[K~~~~~~~~^[m[K
+[01m[Kexpr.hh:[m[K In constructor ‘[01m[KAddExpr::AddExpr(ExprPtr&, ExprPtr&, AddExpr::Private)[m[K’:
+[01m[Kexpr.hh:67:50:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kx[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   AddExpr(ExprPtr& left, ExprPtr& right, [01;35m[KPrivate x[m[K) :
+                                          [01;35m[K~~~~~~~~^[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual int SubExpr::eval() const[m[K’:
+[01m[Kexpr.hh:81:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.[01;31m[Keval[m[K() - right.eval());
+                 [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:81:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.eval() - right.[01;31m[Keval[m[K());
+                                [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:[m[K In constructor ‘[01m[KSubExpr::SubExpr(ExprPtr&, ExprPtr&, SubExpr::Private)[m[K’:
+[01m[Kexpr.hh:93:50:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kx[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   SubExpr(ExprPtr& left, ExprPtr& right, [01;35m[KPrivate x[m[K) :
+                                          [01;35m[K~~~~~~~~^[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual int MulExpr::eval() const[m[K’:
+[01m[Kexpr.hh:112:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.[01;31m[Keval[m[K() * right.eval());
+                 [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:112:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.eval() * right.[01;31m[Keval[m[K());
+                                [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:[m[K In constructor ‘[01m[KMulExpr::MulExpr(ExprPtr&, ExprPtr&, MulExpr::Private)[m[K’:
+[01m[Kexpr.hh:119:50:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kx[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   MulExpr(ExprPtr& left, ExprPtr& right, [01;35m[KPrivate x[m[K) :
+                                          [01;35m[K~~~~~~~~^[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual int DivExpr::eval() const[m[K’:
+[01m[Kexpr.hh:137:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.[01;31m[Keval[m[K() / right.eval());
+                 [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:137:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst ExprPtr[m[K’ {aka ‘[01m[Kconst class std::shared_ptr<Expr>[m[K’} has no member named ‘[01m[Keval[m[K’
+     return(left.eval() / right.[01;31m[Keval[m[K());
+                                [01;31m[K^~~~[m[K
+[01m[Kexpr.hh:[m[K In constructor ‘[01m[KDivExpr::DivExpr(ExprPtr&, ExprPtr&, DivExpr::Private)[m[K’:
+[01m[Kexpr.hh:144:50:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kx[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   DivExpr(ExprPtr& left, ExprPtr& right, [01;35m[KPrivate x[m[K) :
+                                          [01;35m[K~~~~~~~~^[m[K
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:15:46:[m[K [01;31m[Kerror: [m[K‘[01m[Keval[m[K’ was not declared in this scope
+     std::cout << *parse(argv[i]) << " = " << [01;31m[Keval[m[K(argv[i])  << std::endl;
+                                              [01;31m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ls
+expr.cc  expr.hh~  main     main.cc~  parse.cc	parse.o      tostring.hh
+expr.hh  expr.o    main.cc  main.o    parse.hh	tostring.cc  tostring.o
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs expr.hhls[Kmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -Wextra -Wno-unused-parameter -pedantic -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:15:46:[m[K [01;31m[Kerror: [m[K‘[01m[Keval[m[K’ was not declared in this scope
+     std::cout << *parse(argv[i]) << " = " << [01;31m[Keval[m[K(argv[i])  << std::endl;
+                                              [01;31m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ make -f ../Makefile [7Pemacs expr.hh
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs main.ccexpr.hhmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -Wextra -Wno-unused-parameter -pedantic -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:15:54:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Keval[m[K’ in ‘[01m[K*(argv + ((sizetype)(((long unsigned int)i) * 8)))[m[K’, which is of non-class type ‘[01m[Kchar*[m[K’
+     std::cout << *parse(argv[i]) << " = " << argv[i].[01;31m[Keval[m[K()  << std::endl;
+                                                      [01;31m[K^~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -Wextra -Wno-unused-parameter -pedantic -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:15:17:[m[K [01;31m[Kerror: [m[Kconversion from ‘[01m[Kstd::__shared_ptr_access<Expr, (__gnu_cxx::_Lock_policy)2, false, false>::element_type[m[K’ {aka ‘[01m[KExpr[m[K’} to non-scalar type ‘[01m[KExprPtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<Expr>[m[K’} requested
+     ExprPtr p = [01;31m[K*parse(argv[i])[m[K;
+                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -Wextra -Wno-unused-parameter -pedantic -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -Wextra -Wno-unused-parameter -pedantic -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -Wextra -Wno-unused-parameter -pedantic -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ./main
+usage: ./main PREFIX_EXPR...
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ./main '+ 1 * 2 3'  '* + 1 2 3'  '+ / 40 5 - 3 2'
+(1) + ((2) * (3)) = 7
+((1) + (2)) * (3) = 9
+((40) / (5)) + ((3) - (2)) = 9
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ./main "+ 1 2" "- 3 4" "* 5 6" "/ 77 8"
+(1) + (2) = 3
+(3) - (4) = -1
+(5) * (6) = 30
+(77) / (8) = 9
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ ./main "* + 1 2 4" \
+>          "- * 3 4 5" \
+>          "/ * 5 6 10" \
+>          "/ 77 + 8 5"
+((1) + (2)) * (4) = 12
+((3) * (4)) - (5) = 7
+((5) * (6)) / (10) = 3
+(77) / ((8) + (5)) = 5
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ git add -A
+bklayma1@g7-02:~/i240b/submit/lab4/3-expr$ git commit -a -m "Fin[K[K[KSubmitted lab4[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kexit
+
+Script done on 2020-02-20 18:11:52-05:00 [COMMAND_EXIT_CODE="0"]
