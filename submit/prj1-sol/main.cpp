@@ -29,7 +29,7 @@ int checkInputs(std::vector<std::string> args, int numArgs){
       }
       return 2;
     }
-    int intLength = 0;
+    long unsigned int intLength = 0;
     while(input != 0){
       intLength++;
       input /= 10;
@@ -56,12 +56,12 @@ int checkInputs(std::vector<std::string> args, int numArgs){
 //Returns and unordered_map with the words within the word lengths as keys and the frequencies as values
 std::unordered_map<std::string, int> getWordCounts(std::vector<std::string> args){
   std::unordered_map<std::string, int> wordCounts;
-  for(int i = 3; i < args.size(); i++){
+  for(long unsigned int i = 3; i < args.size(); i++){
     std::ifstream in(args[i]);
     while(in.good()){
       std::string word;
       in >> word;
-      for(int j = 0; j < word.length(); j++){
+      for(long unsigned int j = 0; j < word.length(); j++){
         if(word.at(j) > 64 && word.at(j) < 91){
           word = word.substr(0, j) + (char)(word.at(j) + 32) + word.substr(j + 1, word.length() - j - 1);
         } else if (word.at(j) < 97 || word.at(j) > 122){
@@ -69,7 +69,7 @@ std::unordered_map<std::string, int> getWordCounts(std::vector<std::string> args
           j--;
         }
       }
-      if(word.length() >= std::stoi(args[1]) && word.length() <= std::stoi(args[2])){
+      if(word.length() >= (long unsigned int) std::stoi(args[1]) && word.length() <= (long unsigned int) std::stoi(args[2])){
         wordCounts[word]++;
       }
     }
@@ -89,8 +89,8 @@ std::vector<std::string> getKeys(std::unordered_map<std::string, int> wordCounts
 }
 
 std::vector<std::string> sortKeysByName(std::unordered_map<std::string, int> wordCounts, std::vector<std::string> keys){
-  for(int i = 0; i < keys.size() - 1; i++){
-    for(int j = i + 1; j < keys.size(); j++){
+  for(long unsigned int i = 0; i < keys.size() - 1; i++){
+    for(long unsigned int j = i + 1; j < keys.size(); j++){
       if(wordCounts[keys[i]] != wordCounts[keys[j]]){
         break;
       }
@@ -105,8 +105,8 @@ std::vector<std::string> sortKeysByName(std::unordered_map<std::string, int> wor
 }
 
 std::vector<std::string> sortKeys(std::unordered_map<std::string, int> wordCounts, std::vector<std::string> keys){
-  for(int i = 0; i < keys.size() - 1; i++){
-    for(int j = i + 1; j < keys.size(); j++){
+  for(long unsigned int i = 0; i < keys.size() - 1; i++){
+    for(long unsigned int j = i + 1; j < keys.size(); j++){
       if(wordCounts[keys[i]] < wordCounts[keys[j]]){
         std::string temp = keys[i];
         keys[i] = keys[j];
