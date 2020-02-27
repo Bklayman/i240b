@@ -1,0 +1,343 @@
+Script started on 2020-02-27 16:26:05-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+bash: /home/umrigar/cs240/bin/student.rc: Permission denied
+bklayma1@g7-03:~/i240b/submit/lab5$ ls
+1-animal  2-expr  lab5.LOG  Makefile
+bklayma1@g7-03:~/i240b/submit/lab5$ cd 1-animal/
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ ls -l
+total 8
+-rw-r--r-- 1 bklayma1 bklayma1 608 Feb 27 16:22 animal.hh
+-rw-r--r-- 1 bklayma1 bklayma1 489 Feb 27 16:22 main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ make -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:10:24:[m[K [01;31m[Kerror: [m[Kinvalid abstract type ‘[01m[KAnimal[m[K’ for ‘[01m[Kanimals[m[K’
+   const Animal animals[[01;31m[K][m[K = { fido, fluffy };
+                        [01;31m[K^[m[K
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kanimal.hh:3:7:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KAnimal[m[K’:
+ class [01;36m[KAnimal[m[K {
+       [01;36m[K^~~~~~[m[K
+[01m[Kanimal.hh:8:23:[m[K [01;36m[Knote: [m[K	‘[01m[Kvirtual std::__cxx11::string Animal::says() const[m[K’
+   virtual std::string [01;36m[Ksays[m[K()  const = 0;
+                       [01;36m[K^~~~[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   const Animal animals[] = { fido, fluffy [01;31m[K}[m[K;
+                                           [01;31m[K^[m[K
+[01m[Kmain.cc:10:43:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+[01m[Kmain.cc:11:25:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kconst Animal* animals [][m[K’
+   const Animal *animals[[01;31m[K][m[K = {
+                         [01;31m[K^[m[K
+[01m[Kmain.cc:10:16:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kconst Animal animals [2][m[K’
+   const Animal [01;36m[Kanimals[m[K[] = { fido, fluffy };
+                [01;36m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:23:[m[K [01;31m[Kerror: [m[Kcannot allocate an object of abstract type ‘[01m[KAnimal[m[K’
+   for (auto animalP : [01;31m[Kanimals[m[K) {
+                       [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:19:13:[m[K [01;31m[Kerror: [m[Kcannot declare variable ‘[01m[KanimalP[m[K’ to be of abstract type ‘[01m[KAnimal[m[K’
+   for (auto [01;31m[KanimalP[m[K : animals) {
+             [01;31m[K^~~~~~~[m[K
+[01m[Kmain.cc:20:19:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP[01;31m[K->[m[Kname << " says " << animalP->says() << std::endl;
+                   [01;31m[K^~[m[K
+[01m[Kmain.cc:20:48:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[KAnimal[m[K’
+     out << animalP->name << " says " << animalP[01;31m[K->[m[Ksays() << std::endl;
+                                                [01;31m[K^~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs animal.hh 
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs main.cc 
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ clear
+[H[2J[3Jbklayma1@g7-03:~/i240b/submit/lab5/1-animal$ clearemacs main.cc [2@animal.hh[C[4@make -f ../Makefile[C
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ ls
+animal.hh  main  main.cc  main.cc~  main.o
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ ./main
+bessie says moo
+bossy says moo
+fido says woof
+fluffy says meow
+rufus says woof
+simba says meow
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs qa[K[Kanimal.hh 
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs animal.hh [10P./main[4Plsmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+[01m[Kmain.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Kmain.cc:20:76:[m[K [01;31m[Kerror: [m[K‘[01m[KanimapP[m[K’ was not declared in this scope
+  << animalP->name << " says " << animalP->says() << " and eats " << [01;31m[KanimapP[m[K->eats() << std::endl;
+                                                                     [01;31m[K^~~~~~~[m[K
+
+[01m[Kmain.cc:20:76:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[KanimalP[m[K’
+  << animalP->name << " says " << animalP->says() << " and eats " << [01;36m[KanimapP[m[K->eats() << std::endl;
+                                                                     [01;36m[K^~~~~~~[m[K
+                                                                     [32m[KanimalP[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ make -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs main.ccmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ make -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [4Pemacs animal.hh[C[10P./main
+bessie says moo and eats grass
+bossy says moo and eats grass
+fido says woof and eats meat
+fluffy says meow and eats fish
+rufus says woof and eats meat
+simba says meow and eats fish
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ ./mainmake -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ emacs main.cc[7P./mainmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ main.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main main.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ make -f ../Makefile [7Pemacs main.cc[7P./main
+bessie eats grass
+bossy eats grass
+fido eats meat
+fluffy eats fish
+rufus eats meat
+simba eats fish
+bklayma1@g7-03:~/i240b/submit/lab5/1-animal$ cd ../2-expr/
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ cd ../2-expr/[7P./mainmake -f ../Makefile 
+g++ -MT tostring.o -MMD -MP -MF .deps/tostring.d -g -Wall -std=c++17 -c tostring.cc
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ls
+expr.cc  expr.o  main.cc  parse.cc  parse.o	 tostring.hh
+expr.hh  main	 main.o   parse.hh  tostring.cc  tostring.o
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.cc[K[Khh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hhls[Kmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual std::__cxx11::string IntExpr::dcCode() const[m[K’:
+[01m[Kexpr.hh:42:12:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[K((const IntExpr*)this)->IntExpr::value[m[K’ from ‘[01m[Kconst int[m[K’ to ‘[01m[Kstd::__cxx11::string[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’}
+     return [01;31m[Kvalue[m[K;
+            [01;31m[K^~~~~[m[K
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual std::__cxx11::string MulExpr::dcCode() const[m[K’:
+[01m[Kexpr.hh:132:25:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvirtual std::__cxx11::string Expr::dcCode() const[m[K’
+     return [01;31m[Kleft->dcCode + right->dcCode()[m[K + "*";
+            [01;31m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[Kexpr.hh:13:23:[m[K [01;36m[Knote: [m[Kdeclared here
+   virtual std::string [01;36m[KdcCode[m[K() const = 0;
+                       [01;36m[K^~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs expr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hhmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+In file included from [01m[Kmain.cc:1[m[K:
+[01m[Kexpr.hh:[m[K In member function ‘[01m[Kvirtual std::__cxx11::string MulExpr::dcCode() const[m[K’:
+[01m[Kexpr.hh:132:25:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvirtual std::__cxx11::string Expr::dcCode() const[m[K’
+     return [01;31m[Kleft->dcCode + right->dcCode()[m[K + "*";
+            [01;31m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[Kexpr.hh:13:23:[m[K [01;36m[Knote: [m[Kdeclared here
+   virtual std::string [01;36m[KdcCode[m[K() const = 0;
+                       [01;36m[K^~~~~~[m[K
+make: *** [../Makefile:48: main.o] Error 1
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs expr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hhmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs expr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs main.ccexpr.hhmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs main.ccmake -f ../Makefile [K./main
+usage: ./main PREFIX_EXPR...
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"
+((((22) / (6)) + ((5) * (3))) + ((2) - (5))) + ((3) * (5)) = 226/53*+25-+35*+
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -f ../Makefile [7Pemacs main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pemacs main.cc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"
+((((22) / (6)) + ((5) * (3))) + ((2) - (5))) + ((3) * (5)) = 226/53*+25-+35*+p c
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main "- 3 2" "* + 1 2 5" | dc
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+32
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+60
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main "- 3 2" "* + 1 2 5" | dc "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs main.ccmake -f ../Makefile ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"- 3 2" "* + 1 2 5" | dc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kemacs expr.cc 
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hhcc ./main "- 3 2" "* + 1 2 5" | dc "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs main.cc
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs main.ccexpr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hhmain.ccexpr.hhcc ./main "- 3 2" "* + 1 2 5" | dc "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs expr.hhmain.ccexpr.hhcc ./main "- 3 2" "* + 1 2 5" | dc "+ + + / 22  6 * 5 3 - 2 5 * 3 5"
+((((22) / (6)) + ((5) * (3))) + ((2) - (5))) + ((3) * (5)) = 22 6 /  5 3 *  +  2 5 -  +  3 5 *  +  p c
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hhmake -f ../Makefile [7Pemacs expr.hh
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs expr.hh./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ -MT parse.o -MMD -MP -MF .deps/parse.d -g -Wall -std=c++17 -c parse.cc
+g++ -MT expr.o -MMD -MP -MF .deps/expr.d -g -Wall -std=c++17 -c expr.cc
+g++ tostring.o main.o parse.o expr.o -o main
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs expr.hh./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"
+((((22) / (6)) + ((5) * (3))) + ((2) - (5))) + ((3) * (5)) = 22 6 / 5 3 * + 2 5 - + 3 5 * + p c
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hh./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hhmain.ccexpr.hhcc ./main "- 3 2" "* + 1 2 5" | dc
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+1
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+15
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+30
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: stack empty
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: '(' (050) unimplemented
+dc: ')' (051) unimplemented
+dc: ')' (051) unimplemented
+30
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"- 3 2" "* + 1 2 5" | dc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hh./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hhmain.cc
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ emacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"- 3 2" "* + 1 2 5" | dc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hhmake -f ../Makefile 
+g++ -MT main.o -MMD -MP -MF .deps/main.d -g -Wall -std=c++17 -c main.cc
+g++ tostring.o main.o parse.o expr.o -o main
+cat </dev/null >.gitignore
+echo .deps >.gitignore
+for t in main tostring.o main.o parse.o expr.o; do echo $t >>.gitignore; done
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ make -f ../Makefile [7Pemacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc
+30
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc
+30
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"- 3 2" "* + 1 2 5" | dc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"- 3 2" "* + 1 2 5" | dc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+1
+15
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ ./main "- 3 2" "* + 1 2 5" | dc "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs main.cc./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5" | dc[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"- 3 2" "* + 1 2 5" | dc
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hh./main  "+ + + / 22  6 * 5 3 - 2 5 * 3 5"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pmake -f ../Makefile
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pemacs expr.hhmain.ccexpr.hhcc ./main "- 3 2" "* + 1 2 5" | dc
+1
+15
+bklayma1@g7-03:~/i240b/submit/lab5/2-expr$ exit
+
+Script done on 2020-02-27 16:54:45-05:00 [COMMAND_EXIT_CODE="0"]
