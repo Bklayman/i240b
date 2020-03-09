@@ -26,30 +26,30 @@ public:
   Seq(const Seq&) = delete;
 
   //no assignment operator
-  void operator=(const Seq&) = delete; 
+  void operator=(const Seq&) = delete;
 
   /** base destructor */
-  virtual ~Seq() {} 
-  
+  virtual ~Seq() {}
+
   /** clear contents from this seq, making it empty. */
   virtual void clear() = 0;
-  
+
   /** add item to the start of this seq. */
   virtual void unshift(const E& item) = 0;
-  
-  /** remove and return first item from this seq. 
+
+  /** remove and return first item from this seq.
    *  fails if this seq is empty.
    */
   virtual E shift() = 0;
-  
+
   /** add item at the end of this seq. */
   virtual void push(const E& item) = 0;
-  
+
   /** remove and return last item from this seq.
    *  fails if this seq is empty.
    */
   virtual E pop() = 0;
-  
+
   /** return number of elements in this seq. */
   virtual int size() const = 0;
 
@@ -63,7 +63,7 @@ protected:
   /** constructor */
   //protected so that only sub-classes can call it
   Seq() {}
-  
+
 };
 
 /** const iterator: not possible to change underlying element E */
@@ -73,7 +73,7 @@ public:
 
   //destructor
   virtual ~ConstIter() {}
-  
+
   /** pre-increment */
   virtual ConstIter& operator++() = 0;
 
