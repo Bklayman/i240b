@@ -31,6 +31,7 @@ void outputData(Seq<TestType>* sequence){
 
 int main(int argc, char* argv[]){
   char* fileName;
+  bool aDash = false;
   if(argc < 2){
     std::cerr << "usage: " << argv[0] << " [-a] INTS_FILE_PATH" << std::endl;
     std::exit(1);
@@ -39,12 +40,17 @@ int main(int argc, char* argv[]){
       std::cerr << "usage: " << argv[0] << " [-a] INTS_FILE_PATH" << std::endl;
       std::exit(1);
     }
+    aDash = true;
     fileName = argv[2];
   } else {
     fileName = argv[1];
   }
-  SeqPtr<TestType> testerPointer = ArraySeq<TestType>::make();
-  Seq<TestType>* sequence = testerPointer.get();
-  readInts(fileName, sequence);
-  outputData(sequence);
+  if(aDash){
+    SeqPtr<TestType> testerPointer = ArraySeq<TestType>::make();
+    Seq<TestType>* sequence = testerPointer.get();
+    readInts(fileName, sequence);
+    outputData(sequence);
+  } else {
+
+  }
 }
