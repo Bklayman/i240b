@@ -3,6 +3,7 @@
 #include "seq.hh"
 
 #include <cstdlib>
+#include <cstring>
 #include <fstream>
 #include <string>
 
