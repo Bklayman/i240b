@@ -35,8 +35,8 @@ public:
   static SeqPtr<E> make(int size = static_cast<int>(Private::DEFAULT_SIZE)) {
     return std::make_unique<ArraySeq<E>>(size, Private::TAG);
   }
-  
-  //destructor  
+
+  //destructor
   ~ArraySeq() { delete[] seq; }
 
   /** empty out the list */
@@ -48,14 +48,14 @@ public:
     ++index;
     seq[0] = item;
   }
-  
+
   /** add item at the end of this seq. */
   void push(const E& item) {
     assert(index < maxSize && "arrayseq overflow");
     seq[index++] = item;
   }
-  
-  /** remove and return first item from this seq. 
+
+  /** remove and return first item from this seq.
    *  fails with failing assert() when this seq is empty.
    */
   E shift() {
@@ -67,8 +67,8 @@ public:
     --index;
     return it;
   }
-  
-  /** remove and return last item from this seq. 
+
+  /** remove and return last item from this seq.
    *  fails with failing assert() when this seq is empty.
    */
   E pop() {
@@ -90,7 +90,7 @@ public:
     const ArraySeq* constThis = static_cast<const ArraySeq*>(this);
     return std::make_unique<ArraySeqConstIter<E>>(constThis, false);
   }
-  
+
 };
 
 template <typename E>

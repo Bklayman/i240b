@@ -1,5 +1,6 @@
 #include "arrayseq.hh"
 #include "command.hh"
+#include "dlinkseq.hh"
 #include "seq.hh"
 
 #include <cstdlib>
@@ -46,12 +47,13 @@ int main(int argc, char* argv[]){
   } else {
     fileName = argv[1];
   }
+  SeqPtr<TestType> testerPointer;
   if(aDash){
-    SeqPtr<TestType> testerPointer = ArraySeq<TestType>::make();
-    Seq<TestType>* sequence = testerPointer.get();
-    readInts(fileName, sequence);
-    outputData(sequence);
+    testerPointer = ArraySeq<TestType>::make();
   } else {
-
+    testerPointer = DLinkSeq<TestType>::make();
   }
+  Seq<TestType>* sequence = testerPointer.get();
+  readInts(fileName, sequence);
+  outputData(sequence);
 }
