@@ -1,0 +1,704 @@
+Script started on 2020-03-12 16:33:13-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+bash: /home/umrigar/cs240/bin/student.rc: Permission denied
+bklayma1@g7-03:~/i240b/submit/lab6$ mkdir dir
+bklayma1@g7-03:~/i240b/submit/lab6$ touch t1.c
+bklayma1@g7-03:~/i240b/submit/lab6$ rm t1.c
+bklayma1@g7-03:~/i240b/submit/lab6$ touch t1.c T1.s v.c v1.s x.c dir/t2.c dir/T2.s1 dir/t3
+bklayma1@g7-03:~/i240b/submit/lab6$ ls
+4-quoting  dir	lab6.LOG  t1.c	T1.s  v1.s  v.c  x.c
+bklayma1@g7-03:~/i240b/submit/lab6$ ls -l
+total 0
+drwxr-x--- 2 bklayma1 bklayma1 135 Mar 12 16:32 4-quoting
+drwxr-x--- 2 bklayma1 bklayma1  54 Mar 12 16:35 dir
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:33 lab6.LOG
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 t1.c
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 T1.s
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 v1.s
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 v.c
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 x.c
+bklayma1@g7-03:~/i240b/submit/lab6$ ls -tl
+total 0
+drwxr-x--- 2 bklayma1 bklayma1  54 Mar 12 16:35 dir
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 x.c
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 v1.s
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 v.c
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 t1.c
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:35 T1.s
+-rw-r----- 1 bklayma1 bklayma1   0 Mar 12 16:33 lab6.LOG
+drwxr-x--- 2 bklayma1 bklayma1 135 Mar 12 16:32 4-quoting
+bklayma1@g7-03:~/i240b/submit/lab6$ cd dir/
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls
+t1.c  T1.s  t2.c  T2.s1  t3  v1.s  v.c	x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls -l
+total 0
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 t1.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 T1.s
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 t2.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 T2.s1
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 t3
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 v1.s
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 v.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls -tl
+total 0
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 T2.s1
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 t3
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 t2.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 x.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 v1.s
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 v.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 t1.c
+-rw-r----- 1 bklayma1 bklayma1 0 Mar 12 16:35 T1.s
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls -t
+T2.s1  t3  t2.c  x.c  v1.s  v.c  t1.c  T1.s
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ man touch
+[?1049h[22;0;0t[?1h=TOUCH(1)                         User Commands                        TOUCH(1)[m
+[m
+[1mNAME[0m[m
+       touch - change file timestamps[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mtouch[0m [[4mOPTION[24m]... [4mFILE[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       Update  the  access  and modification times of each FILE to the current[m
+       time.[m
+[m
+       A FILE argument that does not exist is created empty, unless [1m-c[0m  or  [1m-h[0m[m
+       is supplied.[m
+[m
+       A  FILE  argument  string of - is handled specially and causes touch to[m
+       change the times of the file associated with standard output.[m
+[m
+       Mandatory arguments to long options are  mandatory  for  short  options[m
+       too.[m
+[m
+       [1m-a[0m     change only the access time[m
+[m
+[7m Manual page touch(1) line 1 (press h for help or q to quit)[27m[K[K       [1m-c[0m, [1m--no-create[0m[m
+              do not create any files[m
+[m
+       [1m-d[0m, [1m--date[0m=[4mSTRING[24m[m
+              parse STRING and use it instead of current time[m
+[m
+       [1m-f[0m     (ignored)[m
+[m
+       [1m-h[0m, [1m--no-dereference[0m[m
+              affect each symbolic link instead of any referenced file (useful[m
+              only on systems that can change the timestamps of a symlink)[m
+[m
+       [1m-m[0m     change only the modification time[m
+[m
+       [1m-r[0m, [1m--reference[0m=[4mFILE[24m[m
+              use this file's times instead of current time[m
+[m
+       [1m-t[0m STAMP[m
+              use [[CC]YY]MMDDhhmm[.ss] instead of current time[m
+[m
+       [1m--time[0m=[4mWORD[24m[m
+              change the specified time: WORD is access, atime, or use: equiv‐[m
+              alent to [1m-a[0m WORD is modify or mtime: equivalent to [1m-m[0m[m
+[7m Manual page touch(1) line 24 (press h for help or q to quit)[27m[K[K[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+       Note that the [1m-d[0m and [1m-t[0m options accept different time-date formats.[m
+[m
+[1mDATE[0m [1mSTRING[0m[m
+       The  --date=STRING  is  a mostly free format human readable date string[m
+       such as "Sun, 29 Feb 2004 16:21:42 -0800" or "2004-02-29  16:21:42"  or[m
+       even  "next Thursday".  A date string may contain items indicating cal‐[m
+       endar date, time of day, time zone, day of week, relative  time,  rela‐[m
+       tive date, and numbers.  An empty string indicates the beginning of the[m
+       day.  The date string format is more complex than is easily  documented[m
+       here but is fully described in the info documentation.[m
+[m
+[1mAUTHOR[0m[m
+       Written  by  Paul  Rubin, Arnold Robbins, Jim Kingdon, David MacKenzie,[m
+       and Randy Smith.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+[7m Manual page touch(1) line 47 (press h for help or q to quit)[27m[K[K       Report touch translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.   License  GPLv3+:  GNU[m
+       GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+       This  is  free  software:  you  are free to change and redistribute it.[m
+       There is NO WARRANTY, to the extent permitted by law.[m
+[m
+[1mSEE[0m [1mALSO[0m[m
+       Full documentation at: <https://www.gnu.org/software/coreutils/touch>[m
+       or available locally via: info '(coreutils) touch invocation'[m
+[m
+GNU coreutils 8.30               February 2019                        TOUCH(1)[m
+[7m Manual page touch(1) line 60/82 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tbklayma1@g7-03:~/i240b/submit/lab6/dir$ man ls
+[?1049h[22;0;0t[?1h=LS(1)                            User Commands                           LS(1)[m
+[m
+[1mNAME[0m[m
+       ls - list directory contents[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mls[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       List  information  about  the FILEs (the current directory by default).[m
+       Sort entries alphabetically if none of [1m-cftuvSUX[0m nor [1m--sort[0m  is  speci‐[m
+       fied.[m
+[m
+       Mandatory  arguments  to  long  options are mandatory for short options[m
+       too.[m
+[m
+       [1m-a[0m, [1m--all[0m[m
+              do not ignore entries starting with .[m
+[m
+       [1m-A[0m, [1m--almost-all[0m[m
+              do not list implied . and ..[m
+[m
+       [1m--author[0m[m
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tbklayma1@g7-03:~/i240b/submit/lab6/dir$ ls T*
+T1.s  T2.s1
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ../dir.*.?
+ls: cannot access '../dir.*.?': No such file or directory
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ../dir.*.?[K[K[K[K/*.?
+../dir/t1.c  ../dir/T1.s  ../dir/t2.c  ../dir/v1.s  ../dir/v.c	../dir/x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls [t-v]*.c
+t1.c  t2.c  v.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ~/bin-c.log [K[K[K[K[K[K[K[K[K[K[K[K[K /bin[K[K[K[K/bin
+bash	       fusermount      ntfscat	      systemd
+bunzip2        getfacl	       ntfscluster    systemd-ask-password
+busybox        grep	       ntfscmp	      systemd-escape
+bzcat	       gunzip	       ntfsfallocate  systemd-hwdb
+bzcmp	       gzexe	       ntfsfix	      systemd-inhibit
+bzdiff	       gzip	       ntfsinfo       systemd-machine-id-setup
+bzegrep        hciconfig       ntfsls	      systemd-notify
+bzexe	       hostname        ntfsmove       systemd-sysusers
+bzfgrep        ip	       ntfsrecover    systemd-tmpfiles
+bzgrep	       journalctl      ntfssecaudit   systemd-tty-ask-password-agent
+bzip2	       kbd_mode        ntfstruncate   tar
+bzip2recover   keyctl	       ntfsusermap    tcsh
+bzless	       kill	       ntfswipe       tempfile
+bzmore	       kmod	       openvt	      touch
+cat	       ln	       pidof	      true
+chacl	       loadkeys        ping	      udevadm
+chgrp	       login	       ping4	      ulockmgr_server
+chmod	       loginctl        ping6	      umount
+chown	       lowntfs-3g      ps	      uname
+chvt	       ls	       pwd	      uncompress
+cp	       lsblk	       rbash	      unicode_start
+cpio	       lsmod	       readlink       vdir
+csh	       mkdir	       red	      wdctl
+dash	       mknod	       rm	      which
+date	       mktemp	       rmdir	      ypdomainname
+dd	       more	       rnano	      zcat
+df	       mount	       run-parts      zcmp
+dir	       mountpoint      rzsh	      zdiff
+dmesg	       mt	       sed	      zegrep
+dnsdomainname  mt-gnu	       setfacl	      zfgrep
+domainname     mv	       setfont	      zforce
+dumpkeys       nano	       setupcon       zgrep
+echo	       nc	       sh	      zless
+ed	       nc.traditional  sh.distrib     zmore
+egrep	       netcat	       sleep	      znew
+false	       netstat	       ss	      zsh
+fgconsole      networkctl      stty	      zsh5
+fgrep	       nisdomainname   su
+findmnt        ntfs-3g	       sync
+fuser	       ntfs-3g.probe   systemctl
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin ?[p-s]*
+ls: cannot access '?[p-s]*': No such file or directory
+/bin:
+bash	       fusermount      ntfscat	      systemd
+bunzip2        getfacl	       ntfscluster    systemd-ask-password
+busybox        grep	       ntfscmp	      systemd-escape
+bzcat	       gunzip	       ntfsfallocate  systemd-hwdb
+bzcmp	       gzexe	       ntfsfix	      systemd-inhibit
+bzdiff	       gzip	       ntfsinfo       systemd-machine-id-setup
+bzegrep        hciconfig       ntfsls	      systemd-notify
+bzexe	       hostname        ntfsmove       systemd-sysusers
+bzfgrep        ip	       ntfsrecover    systemd-tmpfiles
+bzgrep	       journalctl      ntfssecaudit   systemd-tty-ask-password-agent
+bzip2	       kbd_mode        ntfstruncate   tar
+bzip2recover   keyctl	       ntfsusermap    tcsh
+bzless	       kill	       ntfswipe       tempfile
+bzmore	       kmod	       openvt	      touch
+cat	       ln	       pidof	      true
+chacl	       loadkeys        ping	      udevadm
+chgrp	       login	       ping4	      ulockmgr_server
+chmod	       loginctl        ping6	      umount
+chown	       lowntfs-3g      ps	      uname
+chvt	       ls	       pwd	      uncompress
+cp	       lsblk	       rbash	      unicode_start
+cpio	       lsmod	       readlink       vdir
+csh	       mkdir	       red	      wdctl
+dash	       mknod	       rm	      which
+date	       mktemp	       rmdir	      ypdomainname
+dd	       more	       rnano	      zcat
+df	       mount	       run-parts      zcmp
+dir	       mountpoint      rzsh	      zdiff
+dmesg	       mt	       sed	      zegrep
+dnsdomainname  mt-gnu	       setfacl	      zfgrep
+domainname     mv	       setfont	      zforce
+dumpkeys       nano	       setupcon       zgrep
+echo	       nc	       sh	      zless
+ed	       nc.traditional  sh.distrib     zmore
+egrep	       netcat	       sleep	      znew
+false	       netstat	       ss	      zsh
+fgconsole      networkctl      stty	      zsh5
+fgrep	       nisdomainname   su
+findmnt        ntfs-3g	       sync
+fuser	       ntfs-3g.probe   systemctl
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin ?[p-s]*
+ls: cannot access '?[p-s]*': No such file or directory
+/bin:
+bash	       fusermount      ntfscat	      systemd
+bunzip2        getfacl	       ntfscluster    systemd-ask-password
+busybox        grep	       ntfscmp	      systemd-escape
+bzcat	       gunzip	       ntfsfallocate  systemd-hwdb
+bzcmp	       gzexe	       ntfsfix	      systemd-inhibit
+bzdiff	       gzip	       ntfsinfo       systemd-machine-id-setup
+bzegrep        hciconfig       ntfsls	      systemd-notify
+bzexe	       hostname        ntfsmove       systemd-sysusers
+bzfgrep        ip	       ntfsrecover    systemd-tmpfiles
+bzgrep	       journalctl      ntfssecaudit   systemd-tty-ask-password-agent
+bzip2	       kbd_mode        ntfstruncate   tar
+bzip2recover   keyctl	       ntfsusermap    tcsh
+bzless	       kill	       ntfswipe       tempfile
+bzmore	       kmod	       openvt	      touch
+cat	       ln	       pidof	      true
+chacl	       loadkeys        ping	      udevadm
+chgrp	       login	       ping4	      ulockmgr_server
+chmod	       loginctl        ping6	      umount
+chown	       lowntfs-3g      ps	      uname
+chvt	       ls	       pwd	      uncompress
+cp	       lsblk	       rbash	      unicode_start
+cpio	       lsmod	       readlink       vdir
+csh	       mkdir	       red	      wdctl
+dash	       mknod	       rm	      which
+date	       mktemp	       rmdir	      ypdomainname
+dd	       more	       rnano	      zcat
+df	       mount	       run-parts      zcmp
+dir	       mountpoint      rzsh	      zdiff
+dmesg	       mt	       sed	      zegrep
+dnsdomainname  mt-gnu	       setfacl	      zfgrep
+domainname     mv	       setfont	      zforce
+dumpkeys       nano	       setupcon       zgrep
+echo	       nc	       sh	      zless
+ed	       nc.traditional  sh.distrib     zmore
+egrep	       netcat	       sleep	      znew
+false	       netstat	       ss	      zsh
+fgconsole      networkctl      stty	      zsh5
+fgrep	       nisdomainname   su
+findmnt        ntfs-3g	       sync
+fuser	       ntfs-3g.probe   systemctl
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin ?[p-s]*[1P?[p-s]*/?[p-s]*
+/bin/cp    /bin/grep  /bin/lsblk   /bin/ps    /bin/ypdomainname
+/bin/cpio  /bin/ip    /bin/lsmod   /bin/ss    /bin/zsh
+/bin/csh   /bin/ls    /bin/openvt  /bin/true  /bin/zsh5
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /etc/*rc
+/etc/bash.bashrc    /etc/gnashthumbnailrc  /etc/Muttrc	       /etc/screenrc
+/etc/chktexrc	    /etc/inputrc	   /etc/nanorc	       /etc/slsh.rc
+/etc/csh.cshrc	    /etc/lintianrc	   /etc/pbuilderrc     /etc/wgetrc
+/etc/gnashpluginrc  /etc/mail.rc	   /etc/quilt.quiltrc
+/etc/gnashrc	    /etc/matplotlibrc	   /etc/sbclrc
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin/???
+/bin/cat  /bin/csh  /bin/dir  /bin/pwd	/bin/red  /bin/sed  /bin/tar  /bin/zsh
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls
+t1.c  T1.s  t2.c  T2.s1  t3  v1.s  v.c	x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls > ls.log
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat ls.log
+ls.log
+t1.c
+T1.s
+t2.c
+T2.s1
+t3
+v1.s
+v.c
+x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat >cat.log
+line
+garbage
+text
+z ^Z
+[1]+  Stopped                 cat > cat.log
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat cat.log
+line
+garbage
+text
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls dir >>ls.log
+ls: cannot access 'dir': No such file or directory
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /dir >>ls.log
+ls: cannot access '/dir': No such file or directory
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls dir >> ls.log
+ls: cannot access 'dir': No such file or directory
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat ls.log
+ls.log
+t1.c
+T1.s
+t2.c
+T2.s1
+t3
+v1.s
+v.c
+x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls [K /dr[Kir
+ls: cannot access '/dir': No such file or directory
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ../dir
+cat.log  ls.log  t1.c  T1.s  t2.c  T2.s1  t3  v1.s  v.c  x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ../dir >>ls.log
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat ls.log
+ls.log
+t1.c
+T1.s
+t2.c
+T2.s1
+t3
+v1.s
+v.c
+x.c
+cat.log
+ls.log
+t1.c
+T1.s
+t2.c
+T2.s1
+t3
+v1.s
+v.c
+x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat <ls.log
+ls.log
+t1.c
+T1.s
+t2.c
+T2.s1
+t3
+v1.s
+v.c
+x.c
+cat.log
+ls.log
+t1.c
+T1.s
+t2.c
+T2.s1
+t3
+v1.s
+v.c
+x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ wc -l
+vei
+f
+f
+f
+^Z
+[2]+  Stopped                 wc -l
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ man wc
+[?1049h[22;0;0t[?1h=WC(1)                            User Commands                           WC(1)[m
+[m
+[1mNAME[0m[m
+       wc - print newline, word, and byte counts for each file[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwc[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+       [1mwc[0m [[4mOPTION[24m]... [4m--files0-from=F[24m[m
+[m
+[1mDESCRIPTION[0m[m
+       Print newline, word, and byte counts for each FILE, and a total line if[m
+       more than one FILE is specified.  A word is a non-zero-length  sequence[m
+       of characters delimited by white space.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       The  options  below may be used to select which counts are printed, al‐[m
+       ways in the following order: newline, word,  character,  byte,  maximum[m
+       line length.[m
+[m
+       [1m-c[0m, [1m--bytes[0m[m
+              print the byte counts[m
+[m
+[7m Manual page wc(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tbklayma1@g7-03:~/i240b/submit/lab6/dir$ ls | wc -l
+10
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ../bin ???? | wc -l
+ls: cannot access '../bin': No such file or directory
+4
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls ../bin
+ls: cannot access '../bin': No such file or directory
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls b[K/bin
+bash	       fusermount      ntfscat	      systemd
+bunzip2        getfacl	       ntfscluster    systemd-ask-password
+busybox        grep	       ntfscmp	      systemd-escape
+bzcat	       gunzip	       ntfsfallocate  systemd-hwdb
+bzcmp	       gzexe	       ntfsfix	      systemd-inhibit
+bzdiff	       gzip	       ntfsinfo       systemd-machine-id-setup
+bzegrep        hciconfig       ntfsls	      systemd-notify
+bzexe	       hostname        ntfsmove       systemd-sysusers
+bzfgrep        ip	       ntfsrecover    systemd-tmpfiles
+bzgrep	       journalctl      ntfssecaudit   systemd-tty-ask-password-agent
+bzip2	       kbd_mode        ntfstruncate   tar
+bzip2recover   keyctl	       ntfsusermap    tcsh
+bzless	       kill	       ntfswipe       tempfile
+bzmore	       kmod	       openvt	      touch
+cat	       ln	       pidof	      true
+chacl	       loadkeys        ping	      udevadm
+chgrp	       login	       ping4	      ulockmgr_server
+chmod	       loginctl        ping6	      umount
+chown	       lowntfs-3g      ps	      uname
+chvt	       ls	       pwd	      uncompress
+cp	       lsblk	       rbash	      unicode_start
+cpio	       lsmod	       readlink       vdir
+csh	       mkdir	       red	      wdctl
+dash	       mknod	       rm	      which
+date	       mktemp	       rmdir	      ypdomainname
+dd	       more	       rnano	      zcat
+df	       mount	       run-parts      zcmp
+dir	       mountpoint      rzsh	      zdiff
+dmesg	       mt	       sed	      zegrep
+dnsdomainname  mt-gnu	       setfacl	      zfgrep
+domainname     mv	       setfont	      zforce
+dumpkeys       nano	       setupcon       zgrep
+echo	       nc	       sh	      zless
+ed	       nc.traditional  sh.distrib     zmore
+egrep	       netcat	       sleep	      znew
+false	       netstat	       ss	      zsh
+fgconsole      networkctl      stty	      zsh5
+fgrep	       nisdomainname   su
+findmnt        ntfs-3g	       sync
+fuser	       ntfs-3g.probe   systemctl
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin ???? | wc -l
+163
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls
+cat.log  ls.log  t1.c  T1.s  t2.c  T2.s1  t3  v1.s  v.c  x.c
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ touch bin-c.log
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin ?[Kc* > bin-c.log 
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat bin-c.log 
+cat.log
+
+/bin:
+bash
+bunzip2
+busybox
+bzcat
+bzcmp
+bzdiff
+bzegrep
+bzexe
+bzfgrep
+bzgrep
+bzip2
+bzip2recover
+bzless
+bzmore
+cat
+chacl
+chgrp
+chmod
+chown
+chvt
+cp
+cpio
+csh
+dash
+date
+dd
+df
+dir
+dmesg
+dnsdomainname
+domainname
+dumpkeys
+echo
+ed
+egrep
+false
+fgconsole
+fgrep
+findmnt
+fuser
+fusermount
+getfacl
+grep
+gunzip
+gzexe
+gzip
+hciconfig
+hostname
+ip
+journalctl
+kbd_mode
+keyctl
+kill
+kmod
+ln
+loadkeys
+login
+loginctl
+lowntfs-3g
+ls
+lsblk
+lsmod
+mkdir
+mknod
+mktemp
+more
+mount
+mountpoint
+mt
+mt-gnu
+mv
+nano
+nc
+nc.traditional
+netcat
+netstat
+networkctl
+nisdomainname
+ntfs-3g
+ntfs-3g.probe
+ntfscat
+ntfscluster
+ntfscmp
+ntfsfallocate
+ntfsfix
+ntfsinfo
+ntfsls
+ntfsmove
+ntfsrecover
+ntfssecaudit
+ntfstruncate
+ntfsusermap
+ntfswipe
+openvt
+pidof
+ping
+ping4
+ping6
+ps
+pwd
+rbash
+readlink
+red
+rm
+rmdir
+rnano
+run-parts
+rzsh
+sed
+setfacl
+setfont
+setupcon
+sh
+sh.distrib
+sleep
+ss
+stty
+su
+sync
+systemctl
+systemd
+systemd-ask-password
+systemd-escape
+systemd-hwdb
+systemd-inhibit
+systemd-machine-id-setup
+systemd-notify
+systemd-sysusers
+systemd-tmpfiles
+systemd-tty-ask-password-agent
+tar
+tcsh
+tempfile
+touch
+true
+udevadm
+ulockmgr_server
+umount
+uname
+uncompress
+unicode_start
+vdir
+wdctl
+which
+ypdomainname
+zcat
+zcmp
+zdiff
+zegrep
+zfgrep
+zforce
+zgrep
+zless
+zmore
+znew
+zsh
+zsh5
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin c*
+cat.log
+
+/bin:
+bash	       fusermount      ntfscat	      systemd
+bunzip2        getfacl	       ntfscluster    systemd-ask-password
+busybox        grep	       ntfscmp	      systemd-escape
+bzcat	       gunzip	       ntfsfallocate  systemd-hwdb
+bzcmp	       gzexe	       ntfsfix	      systemd-inhibit
+bzdiff	       gzip	       ntfsinfo       systemd-machine-id-setup
+bzegrep        hciconfig       ntfsls	      systemd-notify
+bzexe	       hostname        ntfsmove       systemd-sysusers
+bzfgrep        ip	       ntfsrecover    systemd-tmpfiles
+bzgrep	       journalctl      ntfssecaudit   systemd-tty-ask-password-agent
+bzip2	       kbd_mode        ntfstruncate   tar
+bzip2recover   keyctl	       ntfsusermap    tcsh
+bzless	       kill	       ntfswipe       tempfile
+bzmore	       kmod	       openvt	      touch
+cat	       ln	       pidof	      true
+chacl	       loadkeys        ping	      udevadm
+chgrp	       login	       ping4	      ulockmgr_server
+chmod	       loginctl        ping6	      umount
+chown	       lowntfs-3g      ps	      uname
+chvt	       ls	       pwd	      uncompress
+cp	       lsblk	       rbash	      unicode_start
+cpio	       lsmod	       readlink       vdir
+csh	       mkdir	       red	      wdctl
+dash	       mknod	       rm	      which
+date	       mktemp	       rmdir	      ypdomainname
+dd	       more	       rnano	      zcat
+df	       mount	       run-parts      zcmp
+dir	       mountpoint      rzsh	      zdiff
+dmesg	       mt	       sed	      zegrep
+dnsdomainname  mt-gnu	       setfacl	      zfgrep
+domainname     mv	       setfont	      zforce
+dumpkeys       nano	       setupcon       zgrep
+echo	       nc	       sh	      zless
+ed	       nc.traditional  sh.distrib     zmore
+egrep	       netcat	       sleep	      znew
+false	       netstat	       ss	      zsh
+fgconsole      networkctl      stty	      zsh5
+fgrep	       nisdomainname   su
+findmnt        ntfs-3g	       sync
+fuser	       ntfs-3g.probe   systemctl
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ ls /bin c*cat bin-c.log [9@ls /bin c* >[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@/
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat bin-c.log 
+/bin/cat
+/bin/chacl
+/bin/chgrp
+/bin/chmod
+/bin/chown
+/bin/chvt
+/bin/cp
+/bin/cpio
+/bin/csh
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ cat bin-c.log | wc -l
+9
+bklayma1@g7-03:~/i240b/submit/lab6/dir$ man tr
+[?1049h[22;0;0t[?1h=TR(1)                            User Commands                           TR(1)[m
+[m
+[1mNAME[0m[m
+       tr - translate or delete characters[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mtr[0m [[4mOPTION[24m]... [4mSET1[24m [[4mSET2[24m][m
+[m
+[1mDESCR
