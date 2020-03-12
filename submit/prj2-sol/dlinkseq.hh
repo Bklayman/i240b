@@ -11,10 +11,9 @@ private:
   DLinkSeq* next;
   DLinkSeq* prev;
 
-  enum class Private { TAG, DEFAULT_SIZE = 8 };
 public:
-  static SeqPtr<E> make(int size = static_cast<int>(Private::DEFAULT_SIZE)) {
-    return std::make_unique<DLinkSeq<E>>(size, Private::TAG);
+  static SeqPtr<E> make() {
+    return std::make_unique<DLinkSeq<E>>();
   }
 
   DLinkSeq(const E& it, DLinkSeq* prevp, DLinkSeq* nextp){
@@ -41,15 +40,15 @@ public:
   }
 
   E pop() {
-    return NULL;
+    return 0;
   }
 
   E shift(){
-    return NULL;
+    return 0;
   }
 
   E unshift(){
-    return NULL;
+    return 0;
   }
 
   int size() const { return 0; }
@@ -66,13 +65,16 @@ public:
 
 template <typename E> class DLinkSeqIter : public ConstIter<E>{
 private:
-
+  DLinkSeq<E>* next;
+  DLinkSeq<E>* prev;
+  E element;
 public:
 
-  DLinkSeqIter(DLinkSeq<E>* node, bool isHead = true)
-    : node(node),
-      
-  { }
+  DLinkSeqIter(DLinkSeq<E>* node){
+    next = node->next;
+    prev = node->prev;
+    element = node->element;
+  }
 
   DLinkSeqIter& operator++(){
     return NULL;
