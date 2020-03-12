@@ -16,6 +16,12 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
+  DLinkSeq(const E& it){
+    element = it;
+    next = nullptr;
+    prev = nullptr;
+  }
+
   DLinkSeq(const E& it, DLinkSeq* prevp, DLinkSeq* nextp){
     element = it;
     next = nextp;
@@ -32,11 +38,29 @@ public:
   void clear() { element = 0; }
 
   void unshift(const E& item){
-
+    DLinkSeq<TestType> newNode = DLinkSeq<TestType>(item);
+    if(prev == nullptr){
+      prev = &newNode;
+      return;
+    }
+    DLinkSeq<TestType>* curNode = prev;
+    while(curNode->prev != nullptr){
+      curNode = curNode->prev;
+    }
+    curNode->prev = &newNode;
   }
 
   void push(const E& item){
-
+    DLinkSeq<TestType> newNode = DLinkSeq<TestType>(item);
+    if(next == nullptr){
+      next = &newNode;
+      return;
+    }
+    DLinkSeq<TestType>* curNode = next;
+    while(curNode->next != nullptr){
+      curNode = curNode->next;
+    }
+    curNode->next = &newNode;
   }
 
   E pop() {
@@ -54,46 +78,65 @@ public:
   int size() const { return 0; }
 
   ConstIterPtr<E> cbegin() const {
-    return NULL;
+    const DLinkSeq<E>* curNode = static_cast<const DLinkSeq*>(this);
+    while(curNode->prev != nullptr){
+      curNode = curNode->prev;
+    }
+    ConstIterPtr<TestType> iterator = std::make_unique<ArraySeqConstIter<TestType>>(curNode);
+    return iterator;
   }
 
   virtual ConstIterPtr<E> cend() const {
     return NULL;
   }
 
+  DLinkSeq* getNext() const{
+    return next;
+  }
+
+  DLinkSeq* getPrev() const{
+    return prev;
+  }
+
+  E* getElement() const{
+    return &element;
+  }
+
 };
 
 template <typename E> class DLinkSeqIter : public ConstIter<E>{
 private:
-  DLinkSeq<E>* next;
-  DLinkSeq<E>* prev;
-  E element;
+  const DLinkSeq<E>* curNode;
+
 public:
 
-  DLinkSeqIter(DLinkSeq<E>* node){
-    next = node->next;
-    prev = node->prev;
-    element = node->element;
+  DLinkSeqIter(const DLinkSeq<E>* node){
+    curNode = node;
   }
 
   DLinkSeqIter& operator++(){
-    return NULL;
+    curNode = curNode->getNext();
+    return *this;
   }
 
   DLinkSeqIter& operator--(){
-    return NULL;
+    curNode = curNode->getPrev();
+    return *this;
   }
 
   virtual operator bool() {
-    return false;
+    if(curNode == nullptr){
+      return false;
+    }
+    return true;
   }
 
   const E& operator*() {
-    return NULL;
+    return *(curNode->getElement());
   }
 
   const E* operator->() {
-    return NULL;
+    return curNode->getElement();
   }
 
 };

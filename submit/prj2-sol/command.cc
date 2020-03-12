@@ -78,7 +78,7 @@ getCommandType(std::string command) {
   }
   return CommandType::ERROR;
 }
-  
+
 
 void Command::help(std::ostream& out) {
   out << "[REPEAT] COMMAND [VALUE]" << std::endl
@@ -120,4 +120,3 @@ void Command::run() {
   }
   out << seq << std::endl;
 }
-
