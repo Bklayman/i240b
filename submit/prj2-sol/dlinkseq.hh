@@ -36,7 +36,16 @@ public:
 
   ~DLinkSeq() { delete[] next; delete[] prev; }
 
-  void clear() { element = 0; }
+  void clear() {
+    element = 0;
+    isEmpty = true;
+    if(next != nullptr){
+      next = nullptr;
+    }
+    if(prev != nullptr){
+      prev = nullptr;
+    }
+  }
 
   void unshift(const E& item){
     if(isEmpty){
@@ -69,15 +78,53 @@ public:
   }
 
   E pop() {
-    return 0;
+    if(isEmpty == true){
+      return 0;
+    }
+    if(next == nullptr && prev == nullptr){
+      isEmpty = true;
+      E returnValue = element;
+      element = 0;
+      return returnValue;
+    } else if(next == nullptr){
+      E returnValue = element;
+      element = prev->element;
+      prev = prev->prev;
+      next = nullptr;
+      return returnValue;
+    }
+    DLinkSeq<TestType>* curNode = this;
+    while(curNode->next != nullptr){
+      curNode = curNode->next;
+    }
+    E returnValue = curNode->element;
+    curNode->prev->next = NULL;
+    return returnValue;
   }
 
   E shift(){
-    return 0;
-  }
-
-  E unshift(){
-    return 0;
+    if(isEmpty == true){
+      return 0;
+    }
+    if(next == nullptr && prev == nullptr){
+      isEmpty = true;
+      E returnValue = element;
+      element = 0;
+      return returnValue;
+    } else if(prev == nullptr){
+      E returnValue = element;
+      element = next->element;
+      next = next->next;
+      prev = nullptr;
+      return returnValue;
+    }
+    DLinkSeq<TestType>* curNode = this;
+    while(curNode->prev != nullptr){
+      curNode = curNode->prev;
+    }
+    E returnValue = curNode->element;
+    curNode->next->prev = NULL;
+    return returnValue;
   }
 
   int size() const { return 0; }
