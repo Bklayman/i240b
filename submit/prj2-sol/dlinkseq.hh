@@ -6,12 +6,12 @@
 template <typename E> class DLinkSeqIter;
 
 template <typename E> class DLinkSeq : public Seq<E>{
-private:
+public:
   E element;
   DLinkSeq* next;
   DLinkSeq* prev;
+  bool isEmpty = false;
 
-public:
   static SeqPtr<E> make() {
     return std::make_unique<DLinkSeq<E>>();
   }
@@ -31,6 +31,7 @@ public:
   DLinkSeq(DLinkSeq* prevp = NULL, DLinkSeq* nextp = NULL){
     prev = prevp;
     next = nextp;
+    isEmpty = true;
   }
 
   ~DLinkSeq() { delete[] next; delete[] prev; }
@@ -38,29 +39,33 @@ public:
   void clear() { element = 0; }
 
   void unshift(const E& item){
-    DLinkSeq<TestType> newNode = DLinkSeq<TestType>(item);
-    if(prev == nullptr){
-      prev = &newNode;
+    if(isEmpty){
+      isEmpty = !isEmpty;
+      element = item;
       return;
     }
-    DLinkSeq<TestType>* curNode = prev;
+    DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
+    DLinkSeq<TestType>* curNode = this;
     while(curNode->prev != nullptr){
       curNode = curNode->prev;
     }
-    curNode->prev = &newNode;
+    curNode->prev = newNode;
+    newNode->next = curNode;
   }
 
   void push(const E& item){
-    DLinkSeq<TestType> newNode = DLinkSeq<TestType>(item);
-    if(next == nullptr){
-      next = &newNode;
+    if(isEmpty){
+      isEmpty = !isEmpty;
+      element = item;
       return;
     }
-    DLinkSeq<TestType>* curNode = next;
+    DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
+    DLinkSeq<TestType>* curNode = this;
     while(curNode->next != nullptr){
       curNode = curNode->next;
     }
-    curNode->next = &newNode;
+    curNode->next = newNode;
+    newNode->prev = curNode;
   }
 
   E pop() {
@@ -82,24 +87,15 @@ public:
     while(curNode->prev != nullptr){
       curNode = curNode->prev;
     }
-    ConstIterPtr<TestType> iterator = std::make_unique<ArraySeqConstIter<TestType>>(curNode);
-    return iterator;
+    return std::make_unique<DLinkSeqIter<E>>(curNode);
   }
 
   virtual ConstIterPtr<E> cend() const {
-    return NULL;
-  }
-
-  DLinkSeq* getNext() const{
-    return next;
-  }
-
-  DLinkSeq* getPrev() const{
-    return prev;
-  }
-
-  E* getElement() const{
-    return &element;
+    const DLinkSeq<E>* curNode = static_cast<const DLinkSeq*>(this);
+    while(curNode->next != nullptr){
+      curNode = curNode->next;
+    }
+    return std::make_unique<DLinkSeqIter<E>>(curNode);
   }
 
 };
@@ -110,17 +106,17 @@ private:
 
 public:
 
-  DLinkSeqIter(const DLinkSeq<E>* node){
-    curNode = node;
-  }
+  DLinkSeqIter(const DLinkSeq<E>* node)
+    : curNode(node)
+  { }
 
   DLinkSeqIter& operator++(){
-    curNode = curNode->getNext();
+    curNode = curNode->next;
     return *this;
   }
 
   DLinkSeqIter& operator--(){
-    curNode = curNode->getPrev();
+    curNode = curNode->prev;
     return *this;
   }
 
@@ -132,11 +128,11 @@ public:
   }
 
   const E& operator*() {
-    return *(curNode->getElement());
+    return curNode->element;
   }
 
   const E* operator->() {
-    return curNode->getElement();
+    return &(curNode->element);
   }
 
 };
