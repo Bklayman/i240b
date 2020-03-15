@@ -1,6 +1,8 @@
 #ifndef DLink_SEQ_HH_
 #define DLink_SEQ_HH_
 
+#include <memory>
+
 #include "seq.hh"
 
 template <typename E> class DLinkSeqIter;
@@ -11,10 +13,6 @@ public:
   DLinkSeq* next;
   DLinkSeq* prev;
   bool isEmpty = false;
-
-  static SeqPtr<E> make() {
-    return std::make_unique<DLinkSeq<E>>();
-  }
 
   DLinkSeq(const E& it){
     element = it;
@@ -32,6 +30,10 @@ public:
     prev = prevp;
     next = nextp;
     isEmpty = true;
+  }
+
+  static SeqPtr<E> make() {
+    return std::make_unique<DLinkSeq<E>>();
   }
 
   ~DLinkSeq() { delete[] next; delete[] prev; }
@@ -79,7 +81,8 @@ public:
 
   E pop() {
     if(isEmpty == true){
-      return 0;
+      std::cerr << "Error: No node to pop" << std::endl;
+      exit(0);
     }
     if(next == nullptr && prev == nullptr){
       isEmpty = true;
@@ -104,7 +107,8 @@ public:
 
   E shift(){
     if(isEmpty == true){
-      return 0;
+      std::cerr << "Error: No node to pop" << std::endl;
+      exit(0);
     }
     if(next == nullptr && prev == nullptr){
       isEmpty = true;
