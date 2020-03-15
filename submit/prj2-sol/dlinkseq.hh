@@ -36,7 +36,7 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
-  ~DLinkSeq() { delete[] next; delete[] prev; }
+  ~DLinkSeq() { }
 
   void clear() {
     element = 0;
@@ -81,7 +81,7 @@ public:
 
   E pop() {
     if(isEmpty == true){
-      std::cerr << "Error: No node to shift" << std::endl;
+      std::cerr << "Error: No node to pop" << std::endl;
       exit(0);
     }
     if(next == nullptr && prev == nullptr){
@@ -99,6 +99,9 @@ public:
     if(curNode == this){
       element = prev->element;
       prev = prev->prev;
+      if(prev != NULL){
+        prev->next = this; //seg fault
+      }
       next = NULL;
     }
     return returnValue;
@@ -114,12 +117,6 @@ public:
       E returnValue = element;
       element = 0;
       return returnValue;
-    } else if(prev == nullptr){
-      E returnValue = element;
-      element = next->element;
-      next = next->next;
-      prev = nullptr;
-      return returnValue;
     }
     DLinkSeq<TestType>* curNode = this;
     while(curNode->prev != nullptr){
@@ -127,10 +124,31 @@ public:
     }
     E returnValue = curNode->element;
     curNode->next->prev = NULL;
+    if(curNode == this){
+      element = next->element;
+      next = next->next;
+      if(next != NULL){
+        next->prev = this; //seg fault
+      }
+      prev = NULL;
+    }
     return returnValue;
   }
 
-  int size() const { return 0; }
+  int size() const {
+    int count = 1;
+    const DLinkSeq<TestType>* curNodePrev = this;
+    const DLinkSeq<TestType>* curNodeNext = this;
+    while(curNodePrev->prev != NULL){
+      count++;
+      curNodePrev = curNodePrev->prev;
+    }
+    while(curNodeNext->next != NULL){
+      count++;
+      curNodeNext = curNodeNext->next;
+    }
+    return count;
+  }
 
   ConstIterPtr<E> cbegin() const {
     const DLinkSeq<E>* curNode = static_cast<const DLinkSeq*>(this);
