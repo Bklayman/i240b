@@ -70,13 +70,12 @@ public:
       element = item;
       return;
     }
-    DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
     DLinkSeq<TestType>* curNode = this;
     while(curNode->next != nullptr){
       curNode = curNode->next;
     }
-    curNode->next = newNode;
-    newNode->prev = curNode;
+    curNode->next = new DLinkSeq<TestType>(item);
+    curNode->next->prev = curNode;
   }
 
   E pop() {
@@ -107,7 +106,7 @@ public:
 
   E shift(){
     if(isEmpty == true){
-      std::cerr << "Error: No node to pop" << std::endl;
+      std::cerr << "Error: No node to shift" << std::endl;
       exit(0);
     }
     if(next == nullptr && prev == nullptr){
