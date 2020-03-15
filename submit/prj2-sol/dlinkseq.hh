@@ -36,7 +36,7 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
-  ~DLinkSeq() { delete[] next; delete[] prev; }
+  ~DLinkSeq() { delete[] this; }
 
   void clear() {
     element = 0;
@@ -100,6 +100,7 @@ public:
       curNode = curNode->next;
     }
     E returnValue = curNode->element;
+    delete[] curNode->prev->next;
     curNode->prev->next = NULL;
     return returnValue;
   }
@@ -126,6 +127,7 @@ public:
       curNode = curNode->prev;
     }
     E returnValue = curNode->element;
+    delete[] curNode->next->prev;
     curNode->next->prev = NULL;
     return returnValue;
   }
