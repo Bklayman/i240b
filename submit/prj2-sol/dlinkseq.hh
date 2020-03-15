@@ -36,7 +36,7 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
-  ~DLinkSeq() { delete[] this; }
+  ~DLinkSeq() { delete[] next; delete[] prev; }
 
   void clear() {
     element = 0;
@@ -70,17 +70,18 @@ public:
       element = item;
       return;
     }
+    DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
     DLinkSeq<TestType>* curNode = this;
     while(curNode->next != nullptr){
       curNode = curNode->next;
     }
-    curNode->next = new DLinkSeq<TestType>(item);
-    curNode->next->prev = curNode;
+    curNode->next = newNode;
+    newNode->prev = curNode;
   }
 
   E pop() {
     if(isEmpty == true){
-      std::cerr << "Error: No node to pop" << std::endl;
+      std::cerr << "Error: No node to shift" << std::endl;
       exit(0);
     }
     if(next == nullptr && prev == nullptr){
@@ -88,20 +89,18 @@ public:
       E returnValue = element;
       element = 0;
       return returnValue;
-    } else if(next == nullptr){
-      E returnValue = element;
-      element = prev->element;
-      prev = prev->prev;
-      next = nullptr;
-      return returnValue;
     }
     DLinkSeq<TestType>* curNode = this;
     while(curNode->next != nullptr){
       curNode = curNode->next;
     }
     E returnValue = curNode->element;
-    delete[] curNode->prev->next;
     curNode->prev->next = NULL;
+    if(curNode == this){
+      element = prev->element;
+      prev = prev->prev;
+      next = NULL;
+    }
     return returnValue;
   }
 
@@ -127,7 +126,6 @@ public:
       curNode = curNode->prev;
     }
     E returnValue = curNode->element;
-    delete[] curNode->next->prev;
     curNode->next->prev = NULL;
     return returnValue;
   }
