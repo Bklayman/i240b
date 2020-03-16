@@ -39,11 +39,11 @@ public:
   ~DLinkSeq() {
     if(next != nullptr){
       next = NULL;
-      delete next;
+      //delete next;
     }
     if(prev != nullptr){
       prev = NULL;
-      delete prev;
+      //delete[] prev;
     }
   }
 
@@ -114,10 +114,10 @@ public:
       }
       next = NULL;
       toDelete = NULL;
-      delete[] toDelete;
+      //delete[] toDelete;
     }
     curNode = NULL;
-    delete curNode;
+    //delete curNode;
     return returnValue;
   }
 
@@ -147,10 +147,10 @@ public:
       }
       prev = NULL;
       toDelete = NULL;
-      delete[] toDelete;
+      //delete[] toDelete;
     }
     curNode = NULL;
-    delete curNode;
+    //delete curNode;
     return returnValue;
   }
 
