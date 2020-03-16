@@ -108,7 +108,7 @@ public:
       delete[] toDelete;
     }
     curNode = NULL;
-    delete[] curNode;
+    delete curNode;
     return returnValue;
   }
 
@@ -141,7 +141,7 @@ public:
       delete[] toDelete;
     }
     curNode = NULL;
-    delete[] curNode;
+    delete curNode;
     return returnValue;
   }
 
