@@ -36,7 +36,16 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
-  ~DLinkSeq() { }
+  ~DLinkSeq() {
+    if(next != nullptr){
+      next = NULL;
+      delete next;
+    }
+    if(prev != nullptr){
+      prev = NULL;
+      delete prev;
+    }
+  }
 
   void clear() {
     element = 0;
