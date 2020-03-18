@@ -99,12 +99,14 @@ public:
     E returnValue = curNode->element;
     curNode->prev->next = NULL;
     if(curNode == this){
+      DLinkSeq<TestType>* toDelete = prev;
       element = prev->element;
       prev = prev->prev;
       if(prev != NULL){
         prev->next = this; //seg fault
       }
       next = NULL;
+      delete prev;
     } else {
       std::cerr << "Deallocating: " << curNode << std::endl;
       delete curNode;
@@ -130,12 +132,14 @@ public:
     E returnValue = curNode->element;
     curNode->next->prev = NULL;
     if(curNode == this){
+      DLinkSeq<TestType>* toDelete = next;
       element = next->element;
       next = next->next;
       if(next != NULL){
         next->prev = this;
       }
       prev = NULL;
+      delete toDelete;
     } else {
       std::cerr << "Deallocating: " << curNode << std::endl;
       delete curNode;
