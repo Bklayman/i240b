@@ -36,16 +36,7 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
-  ~DLinkSeq() {
-    if(next != nullptr){
-      next = NULL;
-      //delete next;
-    }
-    if(prev != nullptr){
-      prev = NULL;
-      //delete[] prev;
-    }
-  }
+  ~DLinkSeq() { }
 
   void clear() {
     element = 0;
@@ -65,6 +56,7 @@ public:
       return;
     }
     DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
+    std::cerr << "Allocated: " << newNode << std::endl;
     DLinkSeq<TestType>* curNode = this;
     while(curNode->prev != nullptr){
       curNode = curNode->prev;
@@ -80,6 +72,7 @@ public:
       return;
     }
     DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
+    std::cerr << "Allocated: " << newNode << std::endl;
     DLinkSeq<TestType>* curNode = this;
     while(curNode->next != nullptr){
       curNode = curNode->next;
@@ -106,18 +99,16 @@ public:
     E returnValue = curNode->element;
     curNode->prev->next = NULL;
     if(curNode == this){
-      DLinkSeq<TestType>* toDelete = curNode->prev;
       element = prev->element;
       prev = prev->prev;
       if(prev != NULL){
         prev->next = this; //seg fault
       }
       next = NULL;
-      toDelete = NULL;
-      //delete[] toDelete;
+    } else {
+      std::cerr << "Deallocating: " << curNode << std::endl;
+      delete curNode;
     }
-    curNode = NULL;
-    //delete curNode;
     return returnValue;
   }
 
@@ -139,18 +130,16 @@ public:
     E returnValue = curNode->element;
     curNode->next->prev = NULL;
     if(curNode == this){
-      DLinkSeq<TestType>* toDelete = curNode->next;
       element = next->element;
       next = next->next;
       if(next != NULL){
-        next->prev = this; //seg fault
+        next->prev = this;
       }
       prev = NULL;
-      toDelete = NULL;
-      //delete[] toDelete;
+    } else {
+      std::cerr << "Deallocating: " << curNode << std::endl;
+      delete curNode;
     }
-    curNode = NULL;
-    //delete curNode;
     return returnValue;
   }
 
