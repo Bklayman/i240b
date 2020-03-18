@@ -56,7 +56,6 @@ public:
       return;
     }
     DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
-    std::cerr << "Allocated: " << newNode << std::endl;
     DLinkSeq<TestType>* curNode = this;
     while(curNode->prev != nullptr){
       curNode = curNode->prev;
@@ -72,7 +71,6 @@ public:
       return;
     }
     DLinkSeq<TestType>* newNode = new DLinkSeq<TestType>(item);
-    std::cerr << "Allocated: " << newNode << std::endl;
     DLinkSeq<TestType>* curNode = this;
     while(curNode->next != nullptr){
       curNode = curNode->next;
@@ -106,7 +104,6 @@ public:
       }
       next = NULL;
     }
-    std::cerr << "Deallocating: " << curNode << std::endl;
     delete curNode;
     return returnValue;
   }
@@ -136,7 +133,6 @@ public:
       }
       prev = NULL;
     }
-    std::cerr << "Deallocating: " << curNode << std::endl;
     delete curNode;
     return returnValue;
   }
