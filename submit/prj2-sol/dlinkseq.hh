@@ -36,7 +36,16 @@ public:
     return std::make_unique<DLinkSeq<E>>();
   }
 
-  ~DLinkSeq() { }
+  ~DLinkSeq() {
+    if(next != NULL){
+      next->prev = NULL;
+      delete next;
+    }
+    if(prev != NULL){
+      prev->next = NULL;
+      delete prev;
+    }
+  }
 
   void clear() {
     element = 0;
@@ -106,7 +115,7 @@ public:
         prev->next = this; //seg fault
       }
       next = NULL;
-      delete prev;
+      delete toDelete;
     } else {
       std::cerr << "Deallocating: " << curNode << std::endl;
       delete curNode;
