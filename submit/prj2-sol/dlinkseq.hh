@@ -103,8 +103,9 @@ public:
         prev->next = this; //seg fault
       }
       next = NULL;
+    } else {
+      delete curNode;
     }
-    delete curNode;
     return returnValue;
   }
 
@@ -132,8 +133,9 @@ public:
         next->prev = this;
       }
       prev = NULL;
+    } else {
+      delete curNode;
     }
-    delete curNode;
     return returnValue;
   }
 
