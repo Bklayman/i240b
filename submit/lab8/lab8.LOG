@@ -1,0 +1,103 @@
+Script started on Thu Mar 26 15:55:23 2020
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ env
+TERM_PROGRAM=Apple_Terminal
+TERM=xterm-256color
+SHELL=/bin/bash
+TMPDIR=/var/folders/r6/4qxzwhk97_33lwvhkdbglz1w0000gn/T/
+TERM_PROGRAM_VERSION=433
+TERM_SESSION_ID=A81F44FA-43A5-42D0-829A-EDFB21EB7AF9
+SCRIPT=lab8.LOG
+USER=RedRapidash
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.2F1W35TVFg/Listeners
+PATH=/anaconda2/bin:/anaconda2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+_=/usr/bin/env
+PWD=/Users/RedRapidash/i240b/submit/lab8
+LANG=en_US.UTF-8
+XPC_FLAGS=0x0
+XPC_SERVICE_NAME=0
+HOME=/Users/RedRapidash
+SHLVL=2
+LOGNAME=RedRapidash
+DISPLAY=/private/tmp/com.apple.launchd.cphFMXGnWl/org.macosforge.xquartz:0
+bash-3.2$ echo $HOME
+/Users/RedRapidash
+bash-3.2$ echo $PATH
+/anaconda2/bin:/anaconda2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+bash-3.2$ echo $xxx
+
+bash-3.2$ xxx=123
+bash-3.2$ exho[K[K[Kcho $xxx
+123
+bash-3.2$ env | grep xxx
+bash-3.2$ export xxx
+bash-3.2$ env | grep xx
+xxx=123
+bash-3.2$ export xx=456
+bash-3.2$ env | grep xx
+xxx=123
+xx=456
+bash-3.2$ p=$HOME
+bash-3.2$ echo p
+p
+bash-3.2$ echo $p
+/Users/RedRapidash
+bash-3.2$ PATH=
+bash-3.2$ echo $PATH
+
+bash-3.2$ ls
+bash: ls: No such file or directory
+bash-3.2$ PATH=p
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ PATH=$p
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ $PATH=p
+bash: /Users/RedRapidash=p: No such file or directory
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ echo $PATH
+/Users/RedRapidash
+bash-3.2$ $PATH=""
+bash: /Users/RedRapidash=: No such file or directory
+bash-3.2$ PATH=""
+bash-3.2$ ls
+bash: ls: No such file or directory
+bash-3.2$ $PATH=p
+bash: =p: No such file or directory
+bash-3.2$ PATH=p
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ echo $PATH
+p
+bash-3.2$ $PATH=$p[1PPATH=$p
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ echo %[K$PATH
+/Users/RedRapidash
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ echo $Pa[KATHG
+
+bash-3.2$ echo $PATHG[K
+/Users/RedRapidash
+bash-3.2$ echo PATH
+PATH
+bash-3.2$ echo $p
+/Users/RedRapidash
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ export PATH=$p
+bash-3.2$ ls
+bash: ls: command not found
+bash-3.2$ echo $PATH
+/Users/RedRapidash
+bash-3.2$ p=$PATH
+bash-3.2$ PATH=
+bash-3.2$ echo $PATH
