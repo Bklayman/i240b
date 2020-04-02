@@ -1136,3 +1136,25 @@ sleep 5 ; echo 123 &[C[C[C[C[C[C[C[C[C[C[K
 bash-3.2$ sleep 5 && echo 123 &
 [2] 1407
 bash-3.2$ 123
+exit
+There are stopped jobs.
+[2]-  Done                    sleep 5 && echo 123
+bash-3.2$ git add -A
+bash-3.2$ git commit -a -m "Submotte[K[K[K[Kitted lab 8"
+[master ce5930c] Submitted lab 8
+ 5 files changed, 148922 insertions(+)
+ create mode 100644 submit/lab8/3-subshells/Makefile
+ create mode 100644 submit/lab8/c-files.lst
+ create mode 100644 submit/lab8/lab8-2.LOG
+ create mode 100644 submit/lab8/lab8.LOG
+bash-3.2$ git push
+Enumerating objects: 13, done.
+Counting objects:   7% (1/13)   Counting objects:  15% (2/13)   Counting objects:  23% (3/13)   Counting objects:  30% (4/13)   Counting objects:  38% (5/13)   Counting objects:  46% (6/13)   Counting objects:  53% (7/13)   Counting objects:  61% (8/13)   Counting objects:  69% (9/13)   Counting objects:  76% (10/13)   Counting objects:  84% (11/13)   Counting objects:  92% (12/13)   Counting objects: 100% (13/13)   Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
+Writing objects:  10% (1/10)   Writing objects:  20% (2/10)   Writing objects:  30% (3/10)   Writing objects:  40% (4/10)   Writing objects:  50% (5/10)   Writing objects:  60% (6/10)   Writing objects:  70% (7/10)   Writing objects:  80% (8/10)   Writing objects:  90% (9/10)   Writing objects: 100% (10/10)   Writing objects: 100% (10/10), 1.01 MiB | 5.22 MiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To https://github.com/Bklayman/i240b.git
+   2d02d40..ce5930c  master -> master
+bash-3.2$ 
