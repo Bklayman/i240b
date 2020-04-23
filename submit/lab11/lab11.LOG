@@ -271,4 +271,25 @@ bash-3.2$ make
 g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
 g++ balanced.o -o main
 bash-3.2$ git add -A
-bash-3.2$ git com
+bash-3.2$ git commit a[K-a -m "Submitted lab 11"
+[master 68cd581] Submitted lab 11
+ 7 files changed, 422 insertions(+)
+ create mode 100644 submit/lab11/Makefile
+ create mode 100644 submit/lab11/balanced.cc
+ create mode 100644 submit/lab11/hl-fine_blue.css
+ create mode 100644 submit/lab11/hl-fine_blue.sty
+ create mode 100644 submit/lab11/lab11.LOG
+ create mode 100755 submit/lab11/main
+bash-3.2$ git push
+Enumerating objects: 14, done.
+Counting objects:   7% (1/14)   Counting objects:  14% (2/14)   Counting objects:  21% (3/14)   Counting objects:  28% (4/14)   Counting objects:  35% (5/14)   Counting objects:  42% (6/14)   Counting objects:  50% (7/14)   Counting objects:  57% (8/14)   Counting objects:  64% (9/14)   Counting objects:  71% (10/14)   Counting objects:  78% (11/14)   Counting objects:  85% (12/14)   Counting objects:  92% (13/14)   Counting objects: 100% (14/14)   Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects:   9% (1/11)   Compressing objects:  18% (2/11)   Compressing objects:  27% (3/11)   Compressing objects:  36% (4/11)   Compressing objects:  45% (5/11)   Compressing objects:  54% (6/11)   Compressing objects:  63% (7/11)   Compressing objects:  72% (8/11)   Compressing objects:  81% (9/11)   Compressing objects:  90% (10/11)   Compressing objects: 100% (11/11)   Compressing objects: 100% (11/11), done.
+Writing objects:   9% (1/11)   Writing objects:  18% (2/11)   Writing objects:  27% (3/11)   Writing objects:  36% (4/11)   Writing objects:  45% (5/11)   Writing objects:  54% (6/11)   Writing objects:  63% (7/11)   Writing objects:  72% (8/11)   Writing objects:  81% (9/11)   Writing objects:  90% (10/11)   Writing objects: 100% (11/11)   Writing objects: 100% (11/11), 9.67 KiB | 9.67 MiB/s, done.
+Total 11 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To https://github.com/Bklayman/i240b.git
+   9467161..68cd581  master -> master
+bash-3.2$ ./main "<" "{" "[" "]" ")"
+ERROR: Unbalanced delimiter at argument 5
+bash-3.2$ 
