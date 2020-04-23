@@ -1,0 +1,274 @@
+Script started on Thu Apr 23 16:19:33 2020
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ ls
+Makefile		hl-fine_blue.css	lab11.LOG
+balanced.cpp		hl-fine_blue.sty
+bash-3.2$ ,[Kmake
+g++  -o main
+clang: [0;1;31merror: [0mno input files[0m
+make: *** [main] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:11:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'stdk'; did you mean
+      'std'?[0m
+      stdk[stkIndex] = num;
+[0;1;32m      ^~~~
+[0m[0;32m      std
+[0m[1m/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iostream:47:1: [0m[0;1;30mnote: [0m
+      'std' declared here[0m
+_LIBCPP_BEGIN_NAMESPACE_STD
+[0;1;32m^
+[0m[1m/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config:871:47: [0m[0;1;30mnote: [0m
+      expanded from macro '_LIBCPP_BEGIN_NAMESPACE_STD'[0m
+#define _LIBCPP_BEGIN_NAMESPACE_STD namespace std { inline namespace _LI...
+[0;1;32m                                              ^
+[0m[1mbalanced.cc:11:7: [0m[0;1;31merror: [0m[1munexpected namespace name 'std': expected expression[0m
+      stdk[stkIndex] = num;
+[0;1;32m      ^
+[0m[1mbalanced.cc:31:2: [0m[0;1;31merror: [0m[1mexpected ';' after class[0m
+}
+[0;1;32m ^
+[0m[0;32m ;
+[0m3 errors generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:11:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'stdk'; did you mean
+      'std'?[0m
+      stdk[stkIndex] = num;
+[0;1;32m      ^~~~
+[0m[0;32m      std
+[0m[1m/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iostream:47:1: [0m[0;1;30mnote: [0m
+      'std' declared here[0m
+_LIBCPP_BEGIN_NAMESPACE_STD
+[0;1;32m^
+[0m[1m/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config:871:47: [0m[0;1;30mnote: [0m
+      expanded from macro '_LIBCPP_BEGIN_NAMESPACE_STD'[0m
+#define _LIBCPP_BEGIN_NAMESPACE_STD namespace std { inline namespace _LI...
+[0;1;32m                                              ^
+[0m[1mbalanced.cc:11:7: [0m[0;1;31merror: [0m[1munexpected namespace name 'std': expected expression[0m
+      stdk[stkIndex] = num;
+[0;1;32m      ^
+[0m2 errors generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:25:3: [0m[0;1;35mwarning: [0m[1mcontrol may reach end of non-void function
+      [-Wreturn-type][0m
+  }
+[0;1;32m  ^
+[0m1 warning generated.
+g++ balanced.o -o main
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture x86_64
+clang: [0;1;31merror: [0mlinker command failed with exit code 1 (use -v to see invocation)[0m
+make: *** [main] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture x86_64
+clang: [0;1;31merror: [0mlinker command failed with exit code 1 (use -v to see invocation)[0m
+make: *** [main] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+make: *** No rule to make target `.gitignore', needed by `all'.  Stop.
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:4:29: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'argv'[0m
+  for(int i = 0; i < sizeof(argv)/sizeof(argv[0]); i++){
+[0;1;32m                            ^
+[0m[1mbalanced.cc:4:42: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'argv'[0m
+  for(int i = 0; i < sizeof(argv)/sizeof(argv[0]); i++){
+[0;1;32m                                         ^
+[0m[1mbalanced.cc:5:18: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'argv'[0m
+    std::cout << argv[i] << std::endl;
+[0;1;32m                 ^
+[0m3 errors generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:3:5: [0m[0;1;31merror: [0m[1msecond parameter of 'main' (argument array) must be of
+      type 'char **'[0m
+int main(int argc, int argv[]){
+[0;1;32m    ^
+[0m[1mbalanced.cc:4:28: [0m[0;1;35mwarning: [0m[1msizeof on array function parameter will return size
+      of 'int *' instead of 'int []' [-Wsizeof-array-argument][0m
+  for(int i = 0; i < sizeof(argv)/sizeof(argv[0]); i++){
+[0;1;32m                           ^
+[0m[1mbalanced.cc:3:24: [0m[0;1;30mnote: [0mdeclared here[0m
+int main(int argc, int argv[]){
+[0;1;32m                       ^
+[0m[1mbalanced.cc:4:34: [0m[0;1;35mwarning: [0m[1m'sizeof (argv)' will return the size of the pointer,
+      not the array itself [-Wsizeof-pointer-div][0m
+  for(int i = 0; i < sizeof(argv)/sizeof(argv[0]); i++){
+[0;1;32m                     ~~~~~~~~~~~~^
+[0m2 warnings and 1 error generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+make: *** No rule to make target `.gitignore', needed by `all'.  Stop.
+bash-3.2$ ./b[K[K[Kls
+Makefile		hl-fine_blue.css	main
+balanced.cc		hl-fine_blue.sty
+balanced.o		lab11.LOG
+bash-3.2$ ./main 
+./main
+bash-3.2$ ./main 2 3 4 54
+./main
+bash-3.2$ ./main 2 3 4 54[Kls[Kmake
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+make: *** No rule to make target `.gitignore', needed by `all'.  Stop.
+bash-3.2$ make./main 2 3 4 54
+2
+3
+4
+54
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+make: *** No rule to make target `.gitignore', needed by `all'.  Stop.
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:17:2: [0m[0;1;31merror: [0m[1mexpected ';' after top level declarator[0m
+}
+[0;1;32m ^
+[0m[0;32m ;
+[0m1 error generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+make: *** No rule to make target `.gitignore', needed by `all'.  Stop.
+bash-3.2$ make
+make: Nothing to be done for `all'.
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:29:3: [0m[0;1;31merror: [0m[1munknown type name 'Stack'[0m
+  Stack delims;
+[0;1;32m  ^
+[0m1 error generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:67:5: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'check'[0m
+    check = chkDelim(argv[i][0]);
+[0;1;32m    ^
+[0m[1mbalanced.cc:68:8: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'check'[0m
+    if(check == -42){
+[0;1;32m       ^
+[0m[1mbalanced.cc:72:8: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'check'[0m
+    if(check < 0){
+[0;1;32m       ^
+[0m[1mbalanced.cc:75:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'closeDelim'[0m
+      closeDelim = delims.pop();
+[0;1;32m      ^
+[0m[1mbalanced.cc:76:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'checkClose'[0m
+      checkClose = chkDelim(closeDelim);
+[0;1;32m      ^
+[0m[1mbalanced.cc:76:29: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'closeDelim'[0m
+      checkClose = chkDelim(closeDelim);
+[0;1;32m                            ^
+[0m[1mbalanced.cc:77:10: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'checkClose'[0m
+      if(checkClose != -1 * check){
+[0;1;32m         ^
+[0m[1mbalanced.cc:77:29: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'check'[0m
+      if(checkClose != -1 * check){
+[0;1;32m                            ^
+[0m8 errors generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:75:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'closeDelim'[0m
+      closeDelim = delims.pop();
+[0;1;32m      ^
+[0m[1mbalanced.cc:76:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'checkClose'[0m
+      checkClose = chkDelim(closeDelim);
+[0;1;32m      ^
+[0m[1mbalanced.cc:76:29: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'closeDelim'[0m
+      checkClose = chkDelim(closeDelim);
+[0;1;32m                            ^
+[0m[1mbalanced.cc:77:10: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'checkClose'[0m
+      if(checkClose != -1 * check){
+[0;1;32m         ^
+[0m4 errors generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+[1mbalanced.cc:75:7: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'closeDelim'[0m
+      closeDelim = delims.pop();
+[0;1;32m      ^
+[0m[1mbalanced.cc:76:33: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'closeDelim'[0m
+      int checkClose = chkDelim(closeDelim);
+[0;1;32m                                ^
+[0m2 errors generated.
+make: *** [balanced.o] Error 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ ./main 
+bash-3.2$ ./main < < < > > >
+bash: syntax error near unexpected token `<'
+bash-3.2$ ;[Kls
+Makefile		hl-fine_blue.css	main
+balanced.cc		hl-fine_blue.sty
+balanced.o		lab11.LOG
+bash-3.2$ ./main "<" "<"
+ERROR: Unbalenced delimiter at argument 1
+bash-3.2$ ./main "<" "<" ">"
+ERROR: Unbalenced delimiter at argument 1
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ ./main <[K"M[K<" ">"
+ERROR: Trying to pop an empty stack
+bash-3.2$ ./main "<" ">"[K[K[K[K
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ make./main "<"
+bash-3.2$ ./main "<" <"[K[K">"
+bash-3.2$ ./main [K[K[K[K[K[K[K./main "<" ">"[K[6Pmake./main "<"[6Pmake
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ make./main "<" ">"
+bash-3.2$ ./main "<" ">"[C[C[C[C[C[C[C[C[C[Cmake[K
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ .m[K/main "^"
+ERROR: Invalid delimeter ^ at argument 1
+bash-3.2$ ./main "^"[K[K[K"<" ">" "*"
+ERROR: Invalid delimeter * at argument 3
+bash-3.2$ ./main "<" ">" "*" "
+ERROR: Input delimiter not of length one at argument 3
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ make./main "<" ">" "* "
+ERROR: Input delimiter *  not of length one at argument 3
+bash-3.2$ ./main "<" "<" ">"
+ERROR: Unbalenced final stack of delimiters
+bash-3.2$ make
+g++ -g -Wall -std=c++17   -c -o balanced.o balanced.cc
+g++ balanced.o -o main
+bash-3.2$ git add -A
+bash-3.2$ git com
